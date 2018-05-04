@@ -25,12 +25,14 @@ public class ProtoGenerator implements IGenerator{
 
     public void init(){
         Properties properties = new Properties();
-        //properties.setProperty(RuntimeConstants.RESOURCE_LOADER,"class");
-        //properties.setProperty("class.resource.loader.class","org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+        String rootPath=ProtoGenerator.class.getResource("/").getPath();
+        System.out.println(rootPath);
+        properties.setProperty(VelocityEngine.RESOURCE_LOADER,"class");
+        properties.setProperty("class.resource.loader.class","org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
         properties.put("input.encoding", "UTF-8");
         properties.put("output.encoding", "UTF-8");
-        ve = new VelocityEngine(properties);
-        ve.init();
+        ve = new VelocityEngine();
+        ve.init(properties);
 
         VelocityContext ctx = new VelocityContext();
         ProtoContext context = new ProtoContext();
@@ -38,13 +40,13 @@ public class ProtoGenerator implements IGenerator{
         context.setPakage("com.einstein.test");
         context.setMessage("Test");
         IField field = new Field("int","id");
-        IField field1 = new Field("bool","flag");
-        IField field2 = new Field("string","name");
+        IField field1 = new Field("boolean","flag");
+        IField field2 = new Field("String","name");
         context.addField(field);
         context.addField(field1);
         context.addField(field2);
         ctx.put("proto",context);
-       // Template t = ve.getTemplate("Study/EInstein/eproto/src/main/java/org/einstein/eproto/protobuf/generator/proto.vm","UTF-8");
+        Template t = ve.getTemplate("org.einstein.eproto.velocity\\proto.vm","UTF-8");
         StringWriter writer = new StringWriter();
         t.merge(ctx,writer);
         System.out.println(writer.toString());
