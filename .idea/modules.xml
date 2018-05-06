@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EInstein.iml" filepath="$PROJECT_DIR$/EInstein.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eproto/eproto.iml" filepath="$PROJECT_DIR$/eproto/eproto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/einstein.iml" filepath="$PROJECT_DIR$/einstein.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eproto/einstein-eproto.iml" filepath="$PROJECT_DIR$/eproto/einstein-eproto.iml" />
     </modules>
   </component>
 </project>
