@@ -3,6 +3,7 @@ package org.einstein.framework.impl;
 import org.einstein.framework.IField;
 import org.einstein.framework.ITemplete;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +15,23 @@ public class Templete implements ITemplete {
     private String templete_name_;
     private List<IField> fields_;
     private int class_entity_id_; //also is the templete id
+
+    private Templete(){}
+
+    public Templete(int class_entity_id, String eproto_name, EType type){
+        this.class_entity_id_ = class_entity_id;
+        this.eproto_name_ = eproto_name;
+        this.type_ = type;
+        fields_ = new ArrayList<IField>(10);
+    }
+
+    public void setTempleteName(String templete_name){
+        this.templete_name_ = templete_name;
+    }
+
+    public void addField(IField field){
+        fields_.add(field);
+    }
 
     public String getTempleteName() {
         return templete_name_;

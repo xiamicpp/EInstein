@@ -3,7 +3,7 @@ package org.einstein.framework;
 /**
  * @author kevin
  **/
-public interface IGenerator {
+public interface IGenerator extends IInitialize {
 
     boolean generate();
 }

@@ -14,6 +14,6 @@ public interface ITemplete {
     EType getType();
 
     enum EType{
-        UNKNOWN,ENTITY,MAP,LIST;
+        UNKNOWN,CLASS,MAP,COLLECTION;
     }
 }
