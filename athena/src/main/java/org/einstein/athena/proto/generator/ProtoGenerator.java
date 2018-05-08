@@ -38,12 +38,12 @@ public class ProtoGenerator implements IGenerator {
         context.setClassname("Test");
         context.setPakage("com.einstein.test");
         context.setMessage("Test");
-        IField field = new Field("int","id");
-        IField field1 = new Field("boolean","flag");
-        IField field2 = new Field("String","name");
-        context.addField(field);
-        context.addField(field1);
-        context.addField(field2);
+       // IField field = new Field("int","id");
+       // IField field1 = new Field("boolean","flag");
+        //IField field2 = new Field("String","name");
+        //context.addField(field);
+        //context.addField(field1);
+        //context.addField(field2);
         ctx.put("proto",context);
         Template t = ve.getTemplate("templete\\proto\\proto.vm","UTF-8");
         StringWriter writer = new StringWriter();
@@ -59,6 +59,10 @@ public class ProtoGenerator implements IGenerator {
     }
 
     public boolean generate() {
+        return false;
+    }
+
+    public boolean initialize() {
         return false;
     }
 }

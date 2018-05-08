@@ -1,7 +1,9 @@
 package org.einstein.framework.impl;
 
+import org.einstein.athena.proto.generator.ProtoGenerator;
 import org.einstein.framework.IParser;
 import org.einstein.framework.ITemplete;
+import org.einstein.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +29,11 @@ public class EProtoParser implements IParser{
             return;
         }
         logger.info("Start to load file..");
-        List<String> bos = loadFileNames(eproto_path_);
+        File root = new File(eproto_path_);
+        if(!root.exists())
+            return;
+        List<File> bo_files = FileUtil.getFileList(root,".java");
+
 
 
     }
@@ -49,6 +55,16 @@ public class EProtoParser implements IParser{
     }
 
     private void analysis(List<String> list){
-        Class c = Class.forName()
+       // Class c = Class.forName()
     }
+
+    public static void main(String[] args) {
+        try {
+            Class bo = Class.forName("ProtoGenerator");
+            System.out.println(bo.getPackage().getName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
