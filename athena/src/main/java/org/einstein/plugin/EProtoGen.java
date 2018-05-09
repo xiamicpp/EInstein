@@ -31,12 +31,14 @@ public class EProtoGen
         extends AbstractMojo {
     /**
      * templete source
+     *
      * @parameter expression="${source}"
      * @required
      */
     private String business_object_source;
     /**
      * out put dir
+     *
      * @parameter expression= "${outPut}"
      * @required
      */

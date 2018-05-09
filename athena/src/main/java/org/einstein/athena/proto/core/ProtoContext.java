@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @author kevin
  **/
-public class ProtoContext implements IPortoContext{
+public class ProtoContext implements IPortoContext {
     private String m_proto_version_ = "proto3";
     private String m_proto_pakage_;
     private String m_proto_classname_;
@@ -26,7 +26,7 @@ public class ProtoContext implements IPortoContext{
     }
 
     public String getClassname() {
-        return m_proto_classname_+proto_classname_suffix_;
+        return m_proto_classname_ + proto_classname_suffix_;
     }
 
     public String getMessage() {
@@ -37,23 +37,23 @@ public class ProtoContext implements IPortoContext{
         return m_fields_;
     }
 
-    public void setVersion(String protoVersion){
+    public void setVersion(String protoVersion) {
         this.m_proto_version_ = protoVersion;
     }
 
-    public void setPakage(String pakage){
+    public void setPakage(String pakage) {
         this.m_proto_pakage_ = pakage;
     }
 
-    public void setClassname(String classname){
+    public void setClassname(String classname) {
         this.m_proto_classname_ = classname;
     }
 
-    public void setMessage(String message){
-        this.m_proto_message_=message;
+    public void setMessage(String message) {
+        this.m_proto_message_ = message;
     }
 
-    public void addField(IField field){
+    public void addField(IField field) {
         this.m_fields_.add(field);
     }
 }

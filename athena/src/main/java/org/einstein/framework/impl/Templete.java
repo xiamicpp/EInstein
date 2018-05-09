@@ -16,20 +16,23 @@ public class Templete implements ITemplete {
     private List<IField> fields_;
     private int class_entity_id_; //also is the templete id
 
-    private Templete(){}
+    private Templete() {
+    }
 
-    public Templete(int class_entity_id, String eproto_name, EType type){
-        this.class_entity_id_ = class_entity_id;
-        this.eproto_name_ = eproto_name;
+    public Templete(EType type) {
         this.type_ = type;
         fields_ = new ArrayList<IField>(10);
     }
 
-    public void setTempleteName(String templete_name){
+    public void setClassEntityId(int id){this.class_entity_id_ = id;}
+
+    public void setEprotoName(String name){this.eproto_name_ = name;}
+
+    public void setTempleteName(String templete_name) {
         this.templete_name_ = templete_name;
     }
 
-    public void addField(IField field){
+    public void addField(IField field) {
         fields_.add(field);
     }
 

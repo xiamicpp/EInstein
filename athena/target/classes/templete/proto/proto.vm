@@ -8,19 +8,19 @@ message ${proto.message} {
 #set($count = 1)
 #foreach(${field} in ${proto.fields})
     #if(${field.type} == "double")
-        double ${field.name} = ${count};
+    double ${field.name} = ${count};
     #elseif(${field.type} == "float")
-        float ${field.name} =  ${count};
+    float ${field.name} =  ${count};
     #elseif(${field.type} == "int")
-        sint32 ${field.name} =  ${count};
+    sint32 ${field.name} =  ${count};
     #elseif(${field.type} == "long")
-        sint64 ${field.name} =  ${count};
+    sint64 ${field.name} =  ${count};
     #elseif(${field.type} == "boolean")
-        bool ${field.name} =  ${count};
+    bool ${field.name} =  ${count};
     #elseif(${field.type} == "String")
-        string ${field.name} =  ${count};
+    string ${field.name} =  ${count};
     #elseif(${field.type} == "ByteString")
-        bytes ${field.name} =  ${count};
+    bytes ${field.name} =  ${count};
     #end
     #set($count=$count+1)
 #end

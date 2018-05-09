@@ -16,18 +16,19 @@ public class FileUtil {
 
     /**
      * get file list
-     * @param root root dir
+     *
+     * @param root   root dir
      * @param suffix
      * @return
      */
-    public static List<File> getFileList(File root, String suffix){
+    public static List<File> getFileList(File root, String suffix) {
         List<File> result = new ArrayList<File>();
         File[] dirAndFiles = root.listFiles();
-        for(File file:dirAndFiles){
-            if(file.isDirectory()){
-                List<File> tempList = getFileList(file,suffix);
+        for (File file : dirAndFiles) {
+            if (file.isDirectory()) {
+                List<File> tempList = getFileList(file, suffix);
                 result.addAll(tempList);
-            }else if(suffix==null||file.getName().endsWith(suffix)){
+            } else if (suffix == null || file.getName().endsWith(suffix)) {
                 result.add(file);
             }
         }

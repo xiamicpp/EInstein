@@ -12,16 +12,16 @@ public class Field implements IField {
     private FTYPE m_type_ = FTYPE.UNKNOWN;
     private int templete_id_;
 
-    public Field(FTYPE type){
+    public Field(FTYPE type) {
         this.m_type_ = type;
     }
 
-    public void setField(String type, String name){
+    public void setField(String type, String name) {
         this.m_field_name_ = name;
         this.m_field_type_ = type;
     }
 
-    public void setTemplete_id(int id){
+    public void setTemplete_id(int id) {
         this.templete_id_ = id;
     }
 
