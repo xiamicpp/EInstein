@@ -1,8 +1,6 @@
 ###EInstein
 
 
-[TOC]
-
 
 #### INTRODUCE
 
