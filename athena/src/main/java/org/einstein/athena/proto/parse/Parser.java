@@ -1,14 +1,18 @@
 package org.einstein.athena.proto.parse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.einstein.exception.ESynatx;
 import org.einstein.framework.IParser;
 import org.einstein.framework.ITemplete;
+import org.einstein.framework.impl.ProtoEntityTemplete;
 import org.einstein.util.FileUtil;
+import org.einstein.util.ParserUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,8 +24,17 @@ public class Parser implements IParser<List<ITemplete>,String>{
     private BufferedReader reader = null;
     private String m_dir;
     private List<File> m_files = new ArrayList<>(10);
-    private List<ITemplete> templetes;
-    private ITemplete templete;
+    private List<ITemplete> m_templetes;
+    private ITemplete m_templete;
+    private static HashMap<String,IParser> parsers;
+
+    static {
+        parsers = new HashMap<>();
+        parsers.put("package",new PackageParser());
+        parsers.put("lineType",new ParserUtil());
+        parsers.put("@EProtoEntity",new ProtoEntityParser());
+        parsers.put("ProtoEntityDefine",new ProtoDefineParser());
+    }
 
 
     @Override
@@ -29,13 +42,13 @@ public class Parser implements IParser<List<ITemplete>,String>{
         this.m_dir = data;
         this.loadFiles();
         Iterator<File> it = this.m_files.iterator();
-        this.templetes = new ArrayList<>();
+        this.m_templetes = new ArrayList<>();
         while (it.hasNext()){
             File file = it.next();
             parseEProto(file);
             this.reader =null;
         }
-        return this.templetes;
+        return this.m_templetes;
     }
 
 
@@ -49,6 +62,7 @@ public class Parser implements IParser<List<ITemplete>,String>{
     private void parseEProto(File file) throws ESynatx {
         try {
             this.reader = new BufferedReader(new FileReader(file));
+            parseContent();
         } catch (FileNotFoundException e) {
             throw new ESynatx("Can not open eproto file",e);
         }finally {
@@ -63,11 +77,47 @@ public class Parser implements IParser<List<ITemplete>,String>{
     private void parseContent() throws ESynatx {
         String line = null;
         try {
-            while ((line = this.reader.readLine()) != null) {
+            ParserUtil lineTypeParse = (ParserUtil) parsers.get("lineType");
+            ProtoEntityTemplete templete = new ProtoEntityTemplete();
 
+            while ((line = this.reader.readLine()) != null) {
+                line = StringUtils.trim(line);
+                switch (lineTypeParse.parse(line)){
+                    case " ": //skip blank
+                        break;
+                    case "package":
+                        PackageParser packageParser = (PackageParser)parsers.get("package");
+                        templete.setM_packageName(packageParser.parse(line));
+                        break;
+                    case "/*":
+                        StringBuilder sb = new StringBuilder();
+                        while (!StringUtils.endsWith(line,"*/")){
+                            sb.append(line);
+                            line = this.reader.readLine();
+                        }
+                        sb.append(line);
+                        templete.setM_comments(sb.toString());
+                        break;
+                    case "@EProtoEntity":
+                        ProtoEntityParser eProtoParser = (ProtoEntityParser) parsers.get("@EProtoEntity");
+                        templete.setM_id(eProtoParser.parse(line));
+                        break;
+                    case "public interface":
+                        ProtoDefineParser protoDefineParser = (ProtoDefineParser) parsers.get("ProtoEntityDefine");
+                        ProtoDefineParser.ProtoHeader header = protoDefineParser.parse(line);
+                        templete.setM_name(header.class_name);
+                        templete.setM_extends(header.extends_);
+                        break;
+                    case "@":  //proto field
+                        //TODO Persist annotation
+                       // while(StringUtils.startsWith("@"))
+
+                }
             }
         }catch (IOException e){
             throw new ESynatx("file content read error",e);
+        } catch (Exception e) {
+            throw new ESynatx("parse line failed",e);
         }
     }
 

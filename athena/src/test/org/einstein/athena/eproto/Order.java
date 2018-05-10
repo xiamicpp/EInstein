@@ -23,4 +23,5 @@ public interface Order extends IVersion {
     @EProtoField(desc = "price")
     double price = 0.0;
 
+
 }

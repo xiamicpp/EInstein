@@ -1,6 +1,7 @@
 package org.einstein.framework.impl;
 
 import org.einstein.framework.IField;
+import org.einstein.framework.IWrapperType;
 
 /**
  * @author kevin
@@ -9,35 +10,85 @@ public class Field implements IField {
 
     private String m_field_type_;
     private String m_field_name_;
-    private FTYPE m_type_ = FTYPE.UNKNOWN;
-    private int templete_id_;
+    private String m_field_annotation_;
+    private String m_field_comment_;
+    private boolean m_isList_ = false;
+    private String m_field_getterMethod_;
+    private String m_field_setterMethod_;
+    private IWrapperType m_field_wrapperType_;
 
-    public Field(FTYPE type) {
-        this.m_type_ = type;
+
+    public Field() { }
+
+    @Override
+    public String getAnnotation() {
+        return m_field_annotation_;
     }
 
-    public void setField(String type, String name) {
-        this.m_field_name_ = name;
-        this.m_field_type_ = type;
+    @Override
+    public String getComment() {
+        return m_field_comment_;
     }
 
-    public void setTemplete_id(int id) {
-        this.templete_id_ = id;
-    }
-
-    public String getType() {
-        return m_field_type_;
-    }
-
-    public String getName() {
+    @Override
+    public String getFieldName() {
         return m_field_name_;
     }
 
-    public FTYPE getFieldType() {
-        return m_type_;
+    @Override
+    public String getFieldRawType() {
+        return m_field_type_;
     }
 
-    public int getTempleteID() {
-        return templete_id_;
+    @Override
+    public String getGetterMethodName() {
+        return m_field_getterMethod_;
+    }
+
+    @Override
+    public String getSetterMethodName() {
+        return m_field_setterMethod_;
+    }
+
+    @Override
+    public IWrapperType getWrapperType() {
+        return m_field_wrapperType_;
+    }
+
+    @Override
+    public boolean getIsList() {
+        return m_isList_;
+    }
+
+    public void setM_field_type_(String m_field_type_) {
+        this.m_field_type_ = m_field_type_;
+    }
+
+    public void setM_field_name_(String m_field_name_) {
+        this.m_field_name_ = m_field_name_;
+    }
+
+    public void setM_field_annotation_(String m_field_annotation_) {
+        this.m_field_annotation_ = m_field_annotation_;
+    }
+
+    public void setM_field_comment_(String m_field_comment_) {
+        this.m_field_comment_ = m_field_comment_;
+    }
+
+    public void setM_isList_(boolean m_isList_) {
+        this.m_isList_ = m_isList_;
+    }
+
+    public void setM_field_getterMethod_(String m_field_getterMethod_) {
+        this.m_field_getterMethod_ = m_field_getterMethod_;
+    }
+
+    public void setM_field_setterMethod_(String m_field_setterMethod_) {
+        this.m_field_setterMethod_ = m_field_setterMethod_;
+    }
+
+    public void setM_field_wrapperType_(IWrapperType m_field_wrapperType_) {
+        this.m_field_wrapperType_ = m_field_wrapperType_;
     }
 }

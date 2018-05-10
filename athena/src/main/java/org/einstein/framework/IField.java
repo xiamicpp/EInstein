@@ -7,25 +7,13 @@ package org.einstein.framework;
  */
 
 public interface IField {
-    /**
-     * field type
-     *
-     * @return
-     */
-    String getType();
 
-    /**
-     * field name
-     *
-     * @return
-     */
-    String getName();
-
-    FTYPE getFieldType();
-
-    int getTempleteID();
-
-    enum FTYPE {
-        UNKNOWN, COMMON, LIST, MAP, ENTITY;
-    }
+    String getAnnotation(); //field annotation
+    String getComment(); //field comment
+    String getFieldName();
+    String getFieldRawType();
+    String getGetterMethodName();
+    String getSetterMethodName();
+    IWrapperType getWrapperType();
+    boolean getIsList();
 }

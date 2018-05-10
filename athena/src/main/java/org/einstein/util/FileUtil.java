@@ -3,7 +3,7 @@ package org.einstein.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,4 +34,35 @@ public class FileUtil {
         }
         return result;
     }
+
+
+    public static void close(Writer out){
+        if(out!=null){
+            try {
+                out.close();
+            }catch (IOException e){
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public static void flush(Writer out){
+        if(out!=null){
+            try {
+                out.flush();
+            }catch (IOException e){
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public static Writer createFile(String fileName,String packageName, String outPutDirectory) throws IOException {
+        String directory = outPutDirectory;
+        if(packageName!=null){
+            directory = directory +"/"+packageName.replace(".","/");
+        }
+        (new File(directory)).mkdirs();
+        return new PrintWriter(new BufferedWriter(new FileWriter(directory+"/"+fileName)));
+    }
+
 }

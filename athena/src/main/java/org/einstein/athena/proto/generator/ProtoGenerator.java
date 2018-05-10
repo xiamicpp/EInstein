@@ -30,6 +30,7 @@ public class ProtoGenerator implements IGenerator {
         ve = new VelocityEngine();
         ve.init(properties);
 
+
         VelocityContext ctx = new VelocityContext();
         ProtoContext context = new ProtoContext();
         context.setClassname("Test");
