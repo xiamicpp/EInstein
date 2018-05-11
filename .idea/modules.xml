@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/athena/athena-maven-plugin.iml" filepath="$PROJECT_DIR$/athena/athena-maven-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businessframework/businessframework.iml" filepath="$PROJECT_DIR$/businessframework/businessframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" filepath="$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coreframework/coreframework.iml" filepath="$PROJECT_DIR$/coreframework/coreframework.iml" />
       <module fileurl="file://$PROJECT_DIR$/einstein.iml" filepath="$PROJECT_DIR$/einstein.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eproto/einstein-eproto.iml" filepath="$PROJECT_DIR$/eproto/einstein-eproto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coreframework/eproto/eproto.iml" filepath="$PROJECT_DIR$/coreframework/eproto/eproto.iml" />
     </modules>
   </component>
 </project>

@@ -6,12 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="einstein-eproto" />
+        <module name="athena-maven-plugin" />
+        <module name="businessframework" />
+        <module name="codegenerator" />
+        <module name="eproto" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="athena" target="1.5" />
+      <module name="athena-maven-plugin" target="1.5" />
+      <module name="businessframework" target="1.5" />
+      <module name="codegenerator" target="1.5" />
+      <module name="coreframework" target="1.5" />
       <module name="einstein" target="1.5" />
       <module name="einstein-eproto" target="1.5" />
+      <module name="eproto" target="1.5" />
+      <module name="test" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
