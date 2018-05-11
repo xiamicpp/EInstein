@@ -1,12 +1,12 @@
 package org.einstein.codegen.parse;
 
 import org.apache.commons.lang3.StringUtils;
-import org.einstein.framework.IParser;
+import org.einstein.codegen.api.IParser;
 
 /**
  * @create by kevin
  **/
-public class PackageParser implements IParser<String,String>{
+public class PackageParser implements IParser<String,String> {
 
     private static final String split_ = " ";
 

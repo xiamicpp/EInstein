@@ -1,5 +1,7 @@
 package org.einstein.codegen.api;
 
+import java.util.List;
+
 /**
  * field interface
  *
@@ -8,10 +10,11 @@ package org.einstein.codegen.api;
 
 public interface IField {
 
-    String getAnnotation(); //field annotation
+    List<String> getAnnotation(); //field annotation
     String getComment(); //field comment
     String getFieldName();
     String getFieldRawType();
+    String getDefaultValue();
     String getGetterMethodName();
     String getSetterMethodName();
     IWrapperType getWrapperType();

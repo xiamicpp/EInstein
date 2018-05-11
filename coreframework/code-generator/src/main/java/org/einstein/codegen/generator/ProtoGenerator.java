@@ -3,10 +3,11 @@ package org.einstein.codegen.generator;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
-import org.einstein.athena.proto.core.ProtoContext;
-import org.einstein.framework.IGenerator;
+import org.einstein.codegen.api.IGenerator;
+import org.einstein.codegen.core.ProtoContext;
 
 import java.io.StringWriter;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -23,10 +24,7 @@ public class ProtoGenerator implements IGenerator {
         Properties properties = new Properties();
         String rootPath = ProtoGenerator.class.getResource("/").getPath();
         System.out.println(rootPath);
-        properties.setProperty(VelocityEngine.RESOURCE_LOADER, "class");
-        properties.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
-        properties.put("input.encoding", "UTF-8");
-        properties.put("output.encoding", "UTF-8");
+
         ve = new VelocityEngine();
         ve.init(properties);
 
@@ -58,6 +56,11 @@ public class ProtoGenerator implements IGenerator {
 
     public boolean generate() {
         return false;
+    }
+
+    @Override
+    public void init(List code_templete, String outputdir) {
+
     }
 
     public boolean initialize() {

@@ -1,11 +1,12 @@
 package org.einstein.codegen.parse;
 
 import org.apache.commons.lang3.StringUtils;
-import org.einstein.exception.ESynatx;
-import org.einstein.framework.IParser;
-import org.einstein.framework.ITemplete;
-import org.einstein.framework.impl.ProtoEntityTemplete;
-import org.einstein.util.FileUtil;
+import org.einstein.codegen.api.IParser;
+import org.einstein.codegen.api.ITemplete;
+import org.einstein.codegen.api.impl.Field;
+import org.einstein.codegen.api.impl.ProtoEntityTemplete;
+import org.einstein.codegen.exception.ESynatx;
+import org.einstein.codegen.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,8 +32,8 @@ public class Parser implements IParser<List<ITemplete>, String> {
         parsers = new HashMap<>();
         parsers.put(TypeParser.PARSER_TYPE.PACKAGE, new PackageParser());
         parsers.put(TypeParser.PARSER_TYPE.TYPE, new TypeParser());
-        parsers.put("@EProtoEntity", new ProtoEntityParser());
-        parsers.put("ProtoEntityDefine", new ProtoDefineParser());
+        parsers.put(TypeParser.PARSER_TYPE.IMPORTRS,new ImportParser());
+        parsers.put(TypeParser.PARSER_TYPE.PROPERTY,new PropertyParser());
     }
 
 
@@ -78,7 +79,7 @@ public class Parser implements IParser<List<ITemplete>, String> {
         try {
             TypeParser lineTypeParse = (TypeParser) parsers.get(TypeParser.PARSER_TYPE.TYPE);
             ProtoEntityTemplete templete = new ProtoEntityTemplete();
-
+            Field property_field = new Field();
             while ((line = this.reader.readLine()) != null) {
                 line = StringUtils.trim(line);
                 switch (lineTypeParse.parse(line)) {
@@ -89,39 +90,45 @@ public class Parser implements IParser<List<ITemplete>, String> {
                         templete.setM_packageName(packageParser.parse(line));
                         break;
                     case IMPORTRS:
+                        ImportParser importParser = (ImportParser) parsers.get(TypeParser.PARSER_TYPE.IMPORTRS);
+                        templete.addImport(importParser.parse(line));
                         break;
                     case COMMENT_START:
-                        StringBuilder sb = new StringBuilder();
-                        while (!StringUtils.endsWith(line, "*/")) {
-                            sb.append(line);
+                        StringBuilder coments = new StringBuilder();
+                        while (lineTypeParse.parse(line)!= TypeParser.PARSER_TYPE.COMMENT_END){
                             line = this.reader.readLine();
+                            coments.append(line);
                         }
-                        sb.append(line);
-                        templete.setM_comments(sb.toString());
-                        break;
-                    case COMMENT_BODY:
-                        break;
-                    case COMMENT_END:
+                        coments.append(line);
+                        templete.setM_comments(coments.toString());
                         break;
                     case CLASS_ANNOTATION:
-                        ProtoEntityParser eProtoParser = (ProtoEntityParser) parsers.get("@EProtoEntity");
-                        templete.setM_id(eProtoParser.parse(line));
+                        templete.addClassAnnotation(line);
                         break;
                     case CLASS_HEADER:
-                        ProtoDefineParser protoDefineParser = (ProtoDefineParser) parsers.get("ProtoEntityDefine");
-                        ProtoDefineParser.ProtoHeader header = protoDefineParser.parse(line);
+                        ClassHeaderParser protoDefineParser = (ClassHeaderParser) parsers.get("ProtoEntityDefine");
+                        ClassHeaderParser.ProtoHeader header = protoDefineParser.parse(line);
                         templete.setM_name(header.class_name);
                         templete.setM_extends(header.extends_);
                         break;
                     case PROPERTY_ANNOTATION:  //proto field
-                        //TODO Persist annotation
-                        // while(StringUtils.startsWith("@"))
+                        property_field.addFieldAnnotation(line);
                         break;
                     case PROPERTY:
+                        PropertyParser propertyParser =(PropertyParser)parsers.get(TypeParser.PARSER_TYPE.PROPERTY);
+                        PropertyParser.Property property = propertyParser.parse(line);
+                        property_field.setDefaultValue(property.value);
+                        property_field.setM_field_type_(property.type);
+                        property_field.setM_field_name_(property.name);
+                        if(property_field!=null){
+                            templete.addField(property_field);
+                        }
+                        property_field = new Field();
                         break;
                     case ANNOTATION:
                         break;
                     case CLASS_END:
+                        this.m_templetes.add(templete);
                         break;
                     case UNKNOWN:
                         break;

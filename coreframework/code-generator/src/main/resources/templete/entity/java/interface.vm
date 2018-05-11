@@ -1,18 +1,19 @@
-package ${context.packageName};
+package ${packageName};
 
-${context.imports}
+#foreach($import in ${imports})
+    import $import;
+#end
 
 #parse("comment.vm")
 
-public interface ${context.entityName} #if(${context.hasInterfaces}==true) extends ${contex.interfaces} #end{
-    #if(!${context.isMutable})
-        static final int PROTO_CLASS_ID_ = ${context.PROTO_CLASS_ID};
+public interface ${entityName} #if(${hasInterfaces}==true) extends ${interfaces} #end{
+    #if(!${isMutable})
+        static final int PROTO_CLASS_ID_ = ${PROTO_CLASS_ID};
     #end
 
     #if(${getterMethod})
         #foreach($field in ${context.fields})
             $!{field.comment}
-            ${field.annotation}
             #if(${field.isList})
                 List<${field.wrapperType.fullName}> ${field.getterMethodName}();
             #else

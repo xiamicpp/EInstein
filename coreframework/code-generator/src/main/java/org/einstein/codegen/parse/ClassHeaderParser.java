@@ -1,7 +1,7 @@
 package org.einstein.codegen.parse;
 
 import org.apache.commons.lang3.StringUtils;
-import org.einstein.framework.IParser;
+import org.einstein.codegen.api.IParser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @create by kevin
  **/
-public class ProtoDefineParser implements IParser<ProtoDefineParser.ProtoHeader,String>{
+public class ClassHeaderParser implements IParser<ClassHeaderParser.ProtoHeader,String> {
 
     @Override
     public ProtoHeader parse(String data) throws Exception {

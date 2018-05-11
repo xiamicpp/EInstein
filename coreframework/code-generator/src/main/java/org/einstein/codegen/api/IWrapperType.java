@@ -6,4 +6,5 @@ package org.einstein.codegen.api;
 public interface IWrapperType {
     String getFullName();
     String getSimpleName();
+    boolean isReservedType();
 }

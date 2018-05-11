@@ -1,7 +1,12 @@
 package org.einstein.codegen.api.impl;
 
-import org.einstein.framework.IField;
-import org.einstein.framework.IWrapperType;
+
+import org.apache.commons.lang3.StringUtils;
+import org.einstein.codegen.api.IField;
+import org.einstein.codegen.api.IWrapperType;
+import org.einstein.codegen.parse.PropertyParser;
+
+import java.util.List;
 
 /**
  * @author kevin
@@ -10,18 +15,19 @@ public class Field implements IField {
 
     private String m_field_type_;
     private String m_field_name_;
-    private String m_field_annotation_;
+    private List<String> m_field_annotation_;
     private String m_field_comment_;
     private boolean m_isList_ = false;
     private String m_field_getterMethod_;
     private String m_field_setterMethod_;
     private IWrapperType m_field_wrapperType_;
+    private String m_default_value;
 
 
     public Field() { }
 
     @Override
-    public String getAnnotation() {
+    public List<String> getAnnotation() {
         return m_field_annotation_;
     }
 
@@ -38,6 +44,11 @@ public class Field implements IField {
     @Override
     public String getFieldRawType() {
         return m_field_type_;
+    }
+
+    @Override
+    public String getDefaultValue() {
+        return m_default_value;
     }
 
     @Override
@@ -68,27 +79,16 @@ public class Field implements IField {
         this.m_field_name_ = m_field_name_;
     }
 
-    public void setM_field_annotation_(String m_field_annotation_) {
-        this.m_field_annotation_ = m_field_annotation_;
-    }
-
     public void setM_field_comment_(String m_field_comment_) {
         this.m_field_comment_ = m_field_comment_;
     }
 
-    public void setM_isList_(boolean m_isList_) {
-        this.m_isList_ = m_isList_;
+
+    public void addFieldAnnotation(String annotation){
+        this.m_field_annotation_.add(annotation);
     }
 
-    public void setM_field_getterMethod_(String m_field_getterMethod_) {
-        this.m_field_getterMethod_ = m_field_getterMethod_;
-    }
-
-    public void setM_field_setterMethod_(String m_field_setterMethod_) {
-        this.m_field_setterMethod_ = m_field_setterMethod_;
-    }
-
-    public void setM_field_wrapperType_(IWrapperType m_field_wrapperType_) {
-        this.m_field_wrapperType_ = m_field_wrapperType_;
+    public void setDefaultValue(String value){
+        this.m_default_value = value;
     }
 }

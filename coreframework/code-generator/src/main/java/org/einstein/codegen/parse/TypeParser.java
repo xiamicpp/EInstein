@@ -1,6 +1,7 @@
 package org.einstein.codegen.parse;
 
-import org.einstein.framework.IParser;
+
+import org.einstein.codegen.api.IParser;
 
 import java.util.regex.Pattern;
 

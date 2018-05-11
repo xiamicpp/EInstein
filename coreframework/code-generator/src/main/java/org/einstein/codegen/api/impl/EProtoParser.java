@@ -1,7 +1,7 @@
 package org.einstein.codegen.api.impl;
 
 import org.apache.commons.lang3.StringUtils;
-import org.einstein.framework.ITemplete;
+import org.einstein.codegen.api.ITemplete;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

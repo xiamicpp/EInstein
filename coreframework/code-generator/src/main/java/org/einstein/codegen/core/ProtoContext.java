@@ -1,7 +1,8 @@
 package org.einstein.codegen.core;
 
 
-import org.einstein.framework.IField;
+
+import org.einstein.codegen.api.IField;
 
 import java.util.ArrayList;
 import java.util.List;

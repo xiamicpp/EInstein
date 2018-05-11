@@ -11,7 +11,7 @@ import java.lang.annotation.*;
 @Documented
 public @interface EProtoEntity {
 
-    int id() default -1;
+    int id();
 
     String desc() default "";
 

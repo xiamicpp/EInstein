@@ -18,6 +18,12 @@ package org.einstein.codegen.plugin;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.velocity.VelocityContext;
+import org.einstein.codegen.api.IGenerator;
+import org.einstein.codegen.generator.JavaCodeGenerator;
+import org.einstein.codegen.parse.Parser;
+
+import java.util.HashMap;
 
 
 /**
@@ -44,8 +50,32 @@ public class EProtoGen
      */
     private String out_put_dir;
 
+    /**
+     * @parameter expression="${type}"
+     * @required
+     */
+    private String type;
+
+    private static HashMap<String,Class<?>> generators = new HashMap<>();
+
+    static {
+        generators.put("java", JavaCodeGenerator.class);
+    }
+
     public void execute()
             throws MojoExecutionException {
+        try {
+            if (type != null) {
+                IGenerator generator = (IGenerator) generators.get(type).newInstance();
+                Parser parser = new Parser();
+                generator.init(parser.parse(this.business_object_source),out_put_dir);
+
+                generator.initialize();
+                generator.generate();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 }

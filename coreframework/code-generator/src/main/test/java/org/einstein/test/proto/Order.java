@@ -26,6 +26,4 @@ public interface Order extends IEVersion {
 
     @EProtoField(desc = "price")
     double price = 0.0;
-
-
 }
