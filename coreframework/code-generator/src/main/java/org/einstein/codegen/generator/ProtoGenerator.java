@@ -24,6 +24,10 @@ public class ProtoGenerator implements IGenerator {
         Properties properties = new Properties();
         String rootPath = ProtoGenerator.class.getResource("/").getPath();
         System.out.println(rootPath);
+        properties.setProperty(VelocityEngine.RESOURCE_LOADER, "class");
+        properties.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+        properties.put("input.encoding", "UTF-8");
+        properties.put("output.encoding", "UTF-8");
 
         ve = new VelocityEngine();
         ve.init(properties);
@@ -41,7 +45,7 @@ public class ProtoGenerator implements IGenerator {
         //context.addField(field1);
         //context.addField(field2);
         ctx.put("proto", context);
-        Template t = ve.getTemplate("templete\\proto\\proto.vm", "UTF-8");
+        Template t = ve.getTemplate("templete/proto/proto.vm", "UTF-8");
         StringWriter writer = new StringWriter();
         t.merge(ctx, writer);
         System.out.println(writer.toString());
@@ -58,7 +62,6 @@ public class ProtoGenerator implements IGenerator {
         return false;
     }
 
-    @Override
     public void init(List code_templete, String outputdir) {
 
     }

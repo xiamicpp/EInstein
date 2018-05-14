@@ -17,8 +17,8 @@ public class TypeParser implements IParser<TypeParser.PARSER_TYPE, String> {
     private static final Pattern pattern_blank = Pattern.compile("^[\\s]*");
     private static final Pattern pattern_propertyAnno = Pattern.compile("^(@)[\\S]*\\([\\s\\S]*\\)");
     private static final Pattern pattern_Comment_Start = Pattern.compile("^/\\*\\*");
-    private static final Pattern pattern_Comment_Body = Pattern.compile("^\\*[\\s\\S]*");
-    private static final Pattern pattern_Comment_End = Pattern.compile("^\\*\\*/");
+    private static final Pattern pattern_Comment_Body = Pattern.compile("^[\\s]*\\*{1}[\\s\\S]*");
+    private static final Pattern pattern_Comment_End = Pattern.compile("^[\\s]*\\*\\*/");
     private static final Pattern pattern_annotation = Pattern.compile("^\\\\[\\s\\S]*");
     private static final Pattern pattern_classEnd = Pattern.compile("^}");
 

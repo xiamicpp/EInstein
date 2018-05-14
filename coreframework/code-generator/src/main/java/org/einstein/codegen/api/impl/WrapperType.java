@@ -11,10 +11,8 @@ public class WrapperType implements IWrapperType {
     private String simpleName;
     private String m_name;
     private boolean isReservedType = false;
-
-    private static final String[] s_reserverdType = new String[]{
-            "byte","short","int","long","float","double","char","boolean"
-    };
+    private String m_field_getterMethod_;
+    private String m_field_setterMethod_;
 
     @Override
     public String getFullName() {
@@ -31,6 +29,16 @@ public class WrapperType implements IWrapperType {
         return isReservedType;
     }
 
+    @Override
+    public String getGetterMethodName() {
+        return m_field_getterMethod_;
+    }
+
+    @Override
+    public String getSetterMethodName() {
+        return m_field_setterMethod_;
+    }
+
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
@@ -41,5 +49,13 @@ public class WrapperType implements IWrapperType {
 
     public void setName(String name){
         this.m_name = name;
+    }
+
+    public void setGetterMethodName(String name){
+        this.m_field_getterMethod_ = name;
+    }
+
+    public void setSetterMethodName(String name){
+        this.m_field_setterMethod_ = name;
     }
 }

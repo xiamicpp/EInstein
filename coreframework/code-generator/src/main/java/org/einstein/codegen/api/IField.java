@@ -15,8 +15,8 @@ public interface IField {
     String getFieldName();
     String getFieldRawType();
     String getDefaultValue();
-    String getGetterMethodName();
-    String getSetterMethodName();
     IWrapperType getWrapperType();
+    void setWrapperType(IWrapperType type);
     boolean getIsList();
+    boolean isReserverdType();
 }

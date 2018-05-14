@@ -7,4 +7,6 @@ public interface IWrapperType {
     String getFullName();
     String getSimpleName();
     boolean isReservedType();
+    String getGetterMethodName();
+    String getSetterMethodName();
 }

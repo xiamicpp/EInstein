@@ -62,7 +62,7 @@ public class FileUtil {
             directory = directory +"/"+packageName.replace(".","/");
         }
         (new File(directory)).mkdirs();
-        return new PrintWriter(new BufferedWriter(new FileWriter(directory+"/"+fileName)));
+        return new PrintWriter(new BufferedWriter(new FileWriter(directory+"/"+fileName+".java")));
     }
 
 }

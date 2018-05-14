@@ -6,6 +6,7 @@ import org.einstein.codegen.api.IField;
 import org.einstein.codegen.api.IWrapperType;
 import org.einstein.codegen.parse.PropertyParser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,13 +16,16 @@ public class Field implements IField {
 
     private String m_field_type_;
     private String m_field_name_;
-    private List<String> m_field_annotation_;
+    private List<String> m_field_annotation_ = new ArrayList<>();
     private String m_field_comment_;
     private boolean m_isList_ = false;
-    private String m_field_getterMethod_;
-    private String m_field_setterMethod_;
     private IWrapperType m_field_wrapperType_;
     private String m_default_value;
+    private boolean m_reserverdType = true;
+
+    private static final String[] s_reserverdType = new String[]{
+            "byte","short","int","long","float","double","char","boolean","string"
+    };
 
 
     public Field() { }
@@ -52,18 +56,13 @@ public class Field implements IField {
     }
 
     @Override
-    public String getGetterMethodName() {
-        return m_field_getterMethod_;
-    }
-
-    @Override
-    public String getSetterMethodName() {
-        return m_field_setterMethod_;
-    }
-
-    @Override
     public IWrapperType getWrapperType() {
         return m_field_wrapperType_;
+    }
+
+    @Override
+    public void setWrapperType(IWrapperType type) {
+        this.m_field_wrapperType_ = type;
     }
 
     @Override
@@ -71,8 +70,22 @@ public class Field implements IField {
         return m_isList_;
     }
 
+    @Override
+    public boolean isReserverdType() {
+        return this.m_reserverdType;
+    }
+
     public void setM_field_type_(String m_field_type_) {
         this.m_field_type_ = m_field_type_;
+        if(StringUtils.equalsIgnoreCase(this.m_field_type_,"LIST"))
+            this.m_isList_ = true;
+        this.m_reserverdType = true;
+        for(String type:s_reserverdType){
+            if(StringUtils.equalsIgnoreCase(type,this.m_field_type_)) {
+                this.m_reserverdType = true;
+                break;
+            }
+        }
     }
 
     public void setM_field_name_(String m_field_name_) {

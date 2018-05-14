@@ -34,6 +34,7 @@ public class Parser implements IParser<List<ITemplete>, String> {
         parsers.put(TypeParser.PARSER_TYPE.TYPE, new TypeParser());
         parsers.put(TypeParser.PARSER_TYPE.IMPORTRS,new ImportParser());
         parsers.put(TypeParser.PARSER_TYPE.PROPERTY,new PropertyParser());
+        parsers.put(TypeParser.PARSER_TYPE.CLASS_HEADER,new ClassHeaderParser());
     }
 
 
@@ -54,6 +55,7 @@ public class Parser implements IParser<List<ITemplete>, String> {
 
     private void loadFiles() throws ESynatx {
         File file = new File(this.m_dir);
+        System.out.println(file.getAbsolutePath());
         if (!file.exists())
             throw new ESynatx("File not exists");
         this.m_files = FileUtil.getFileList(file, ".java");
@@ -95,7 +97,9 @@ public class Parser implements IParser<List<ITemplete>, String> {
                         break;
                     case COMMENT_START:
                         StringBuilder coments = new StringBuilder();
-                        while (lineTypeParse.parse(line)!= TypeParser.PARSER_TYPE.COMMENT_END){
+                        coments.append(line);
+                        line = this.reader.readLine();
+                        while (lineTypeParse.parse(line)== TypeParser.PARSER_TYPE.COMMENT_BODY){
                             line = this.reader.readLine();
                             coments.append(line);
                         }
@@ -106,7 +110,7 @@ public class Parser implements IParser<List<ITemplete>, String> {
                         templete.addClassAnnotation(line);
                         break;
                     case CLASS_HEADER:
-                        ClassHeaderParser protoDefineParser = (ClassHeaderParser) parsers.get("ProtoEntityDefine");
+                        ClassHeaderParser protoDefineParser = (ClassHeaderParser) parsers.get(TypeParser.PARSER_TYPE.CLASS_HEADER);
                         ClassHeaderParser.ProtoHeader header = protoDefineParser.parse(line);
                         templete.setM_name(header.class_name);
                         templete.setM_extends(header.extends_);

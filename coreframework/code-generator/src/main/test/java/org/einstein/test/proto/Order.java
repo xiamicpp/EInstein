@@ -3,6 +3,8 @@ package org.einstein.test.proto;
 import org.einstein.eproto.anno.*;
 import org.einstein.eproto.api.IEVersion;
 
+import java.util.List;
+
 /**
  * @create by kevin
  **/
@@ -26,4 +28,9 @@ public interface Order extends IEVersion {
 
     @EProtoField(desc = "price")
     double price = 0.0;
+
+    @EProtoField(desc = "test list")
+    List<String> legs = null;
+
+    short d=1;
 }
