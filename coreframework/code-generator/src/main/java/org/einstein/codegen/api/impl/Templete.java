@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Templete implements ITemplete {
     private String eproto_name_;
-    private ITemplete.EType type_;
+
     private String templete_name_;
     private List<IField> fields_;
     private int class_entity_id_; //also is the templete id
@@ -20,10 +20,7 @@ public class Templete implements ITemplete {
     private Templete() {
     }
 
-    public Templete(EType type) {
-        this.type_ = type;
-        fields_ = new ArrayList<IField>(10);
-    }
+
 
     public void setClassEntityId(int id){this.class_entity_id_ = id;}
 
@@ -53,7 +50,4 @@ public class Templete implements ITemplete {
         return fields_;
     }
 
-    public EType getType() {
-        return type_;
-    }
 }

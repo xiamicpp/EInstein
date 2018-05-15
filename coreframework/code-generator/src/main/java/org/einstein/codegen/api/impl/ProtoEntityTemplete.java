@@ -24,7 +24,7 @@ public class ProtoEntityTemplete implements IEntityTemplete {
     private List<String> m_imports = new ArrayList<>();
     private List<String> m_classAnnotation = new ArrayList<>();
 
-    private EType type;
+
     @Override
     public String getPackageName() {
         return m_packageName;
@@ -36,18 +36,12 @@ public class ProtoEntityTemplete implements IEntityTemplete {
         return null;
     }
 
-    @Override
-    public EType getType() {
-        return type;
-    }
+
 
     public void setM_packageName(String m_packageName) {
         this.m_packageName = m_packageName;
     }
 
-    public void setType(EType type) {
-        this.type = type;
-    }
 
     public String getM_name() {
         return m_name;

@@ -1,10 +1,10 @@
 package org.einstein.codegen.generator;
 
-import com.sun.org.apache.bcel.internal.classfile.Code;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
+import org.einstein.codegen.api.ICodeTemplete;
 import org.einstein.codegen.api.IGenerator;
 import org.einstein.codegen.api.impl.CodeTemplete;
 import org.einstein.codegen.core.ProtoContext;
@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.Field;
 import java.util.*;
@@ -21,39 +20,24 @@ import java.util.*;
 /**
  * @author kevin
  **/
-public class GoogleProtoGenerator implements IGenerator<CodeTemplete> {
+public class GoogleProtoGenerator implements IGenerator<ICodeTemplete> {
     private static Logger logger = LoggerFactory.getLogger(GoogleProtoGenerator.class);
     private static String OS = System.getProperty("os.name").toLowerCase();
     private static final String USER_DIR = System.getProperty("user.dir");
     private static final String PROTOBUF_VERSION = "proto3";
-    private List<CodeTemplete> codes;
-    private Map<String, CodeTemplete> codesMap = new HashMap<>();
+    private List<ICodeTemplete> codes;
+    private Map<String, ICodeTemplete> codesMap = new HashMap<>();
     private String outPutPath;
     private VelocityEngine ve;
     private Template template;
     private static  String PB_CLASS_PREFFIX = "PB";
     private static  String PB_CLASS_SUFFIX = ".proto";
 
-
-    public void init() {
-        VelocityContext ctx = new VelocityContext();
-        ProtoContext context = new ProtoContext();
-        context.setClassname("Test");
-        context.setPakage("com.einstein.test");
-        context.setMessage("Test");
-        ctx.put("proto", context);
-        Template t = ve.getTemplate("templete/proto/proto.vm", "UTF-8");
-        StringWriter writer = new StringWriter();
-        t.merge(ctx, writer);
-        System.out.println(writer.toString());
-    }
-
-
     @Override
     public boolean generate() {
-        for(CodeTemplete code:codes){
+        for(ICodeTemplete code:codes){
             //step1 generate proto file
-            generateProtoFile(code);
+            generateProtoFile((CodeTemplete) code);
             //step2 generate java proto class
 
         }
@@ -61,7 +45,7 @@ public class GoogleProtoGenerator implements IGenerator<CodeTemplete> {
     }
 
     @Override
-    public void init(List<CodeTemplete> code_templete, String outputdir) {
+    public void init(List<ICodeTemplete> code_templete, String outputdir) {
         this.codes = code_templete;
         this.outPutPath = USER_DIR+"/"+outputdir;
         code_templete.forEach(code->{
@@ -93,7 +77,9 @@ public class GoogleProtoGenerator implements IGenerator<CodeTemplete> {
             ctx.put("classname",decorateClassName(code.getProtoClassName(),true,false));
             ctx.put("message",decorateClassName(code.getProtoClassName(),true,false));
             generateProtoImports(ctx,code);
-            generateProtoImports(ctx,code);
+            generateProtoFields(ctx,code);
+            this.template.merge(ctx,out);
+            FileUtil.flush(out);
         } catch (IOException e) {
             logger.error("failed to create writer, {}",e);
         }finally {

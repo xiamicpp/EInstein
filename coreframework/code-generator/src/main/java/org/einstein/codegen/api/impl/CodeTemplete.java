@@ -27,14 +27,17 @@ public class CodeTemplete implements ICodeTemplete{
         }
     }
 
+    @Override
     public String getProtoClassName(){
         return this.ProtoClassName;
     }
 
+    @Override
     public String getProtoPackageName(){
         return this.ProtoPackageName;
     }
 
+    @Override
     public Field[] getAllFields(){
         return  proto.getFields();
     }
