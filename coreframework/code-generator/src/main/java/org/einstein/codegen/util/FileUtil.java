@@ -5,7 +5,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @create by kevin
@@ -21,12 +23,12 @@ public class FileUtil {
      * @param suffix
      * @return
      */
-    public static List<File> getFileList(File root, String suffix) {
-        List<File> result = new ArrayList<File>();
+    public static Set<File> getFileList(File root, String suffix) {
+        Set<File> result = new HashSet<>();
         File[] dirAndFiles = root.listFiles();
         for (File file : dirAndFiles) {
             if (file.isDirectory()) {
-                List<File> tempList = getFileList(file, suffix);
+                Set<File> tempList = getFileList(file, suffix);
                 result.addAll(tempList);
             } else if (suffix == null || file.getName().endsWith(suffix)) {
                 result.add(file);
@@ -56,13 +58,13 @@ public class FileUtil {
         }
     }
 
-    public static Writer createFile(String fileName,String packageName, String outPutDirectory) throws IOException {
+    public static Writer createFileWriter(String fileName,String packageName, String outPutDirectory) throws IOException {
         String directory = outPutDirectory;
         if(packageName!=null){
             directory = directory +"/"+packageName.replace(".","/");
         }
         (new File(directory)).mkdirs();
-        return new PrintWriter(new BufferedWriter(new FileWriter(directory+"/"+fileName+".java")));
+        return new PrintWriter(new BufferedWriter(new FileWriter(directory+"/"+fileName)));
     }
 
 }

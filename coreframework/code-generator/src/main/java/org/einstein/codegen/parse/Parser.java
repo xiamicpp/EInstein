@@ -58,7 +58,7 @@ public class Parser implements IParser<List<ITemplete>, String> {
         System.out.println(file.getAbsolutePath());
         if (!file.exists())
             throw new ESynatx("File not exists");
-        this.m_files = FileUtil.getFileList(file, ".java");
+       // this.m_files = FileUtil.getFileList(file, ".java");
     }
 
     private void parseEProto(File file) throws ESynatx {

@@ -2,6 +2,7 @@ package org.einstein.codegen.parse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.einstein.codegen.api.IParser;
+import org.einstein.codegen.exception.ESynatx;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 public class ClassHeaderParser implements IParser<ClassHeaderParser.ProtoHeader,String> {
 
     @Override
-    public ProtoHeader parse(String data) throws Exception {
+    public ProtoHeader parse(String data) throws ESynatx {
         ProtoHeader header = new ProtoHeader();
         String str = StringUtils.removeEnd(data,"{").trim();
         header.class_name=StringUtils.trim(StringUtils.substringBetween(str,"interface","extends"));

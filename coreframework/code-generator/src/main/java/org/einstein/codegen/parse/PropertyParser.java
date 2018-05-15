@@ -2,6 +2,7 @@ package org.einstein.codegen.parse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.einstein.codegen.api.IParser;
+import org.einstein.codegen.exception.ESynatx;
 
 /**
  * @create by xiamicpp
@@ -10,7 +11,7 @@ public class PropertyParser implements IParser<PropertyParser.Property,String> {
 
 
     @Override
-    public Property parse(String data) throws Exception {
+    public Property parse(String data) throws ESynatx {
         String[] fields = StringUtils.split(data," ");
         Property property = new Property();
         property.type = fields[0].trim();

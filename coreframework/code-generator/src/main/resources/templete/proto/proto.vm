@@ -1,28 +1,40 @@
-syntax = "${proto.version}"
+syntax = "${version}"
 
-option java_package = "${proto.package}"
-option java_outer_classname = "${proto.classname}"
+option java_package = "${package}"
+option java_outer_classname = "${classname}"
 
-message ${proto.message} {
+#foreach(${import} in ${imports})
+import ${import}
+#end
+
+message ${message} {
+
+#set($typeFormat = {"double":"double",
+                    "float":"float",
+                    "int":"sint32",
+                    "long":"sint64",
+                    "boolean":"bool",
+                    "String":"string",
+                    "ByteString":"bytes"})
 
 #set($count = 1)
-#foreach(${field} in ${proto.fields})
-    #if(${field.type} == "double")
-    double ${field.name} = ${count};
-    #elseif(${field.type} == "float")
-    float ${field.name} =  ${count};
-    #elseif(${field.type} == "int")
-    sint32 ${field.name} =  ${count};
-    #elseif(${field.type} == "long")
-    sint64 ${field.name} =  ${count};
-    #elseif(${field.type} == "boolean")
-    bool ${field.name} =  ${count};
-    #elseif(${field.type} == "String")
-    string ${field.name} =  ${count};
-    #elseif(${field.type} == "ByteString")
-    bytes ${field.name} =  ${count};
+#foreach(${field} in ${fields})
+    #if(${field.type} == "List")
+    repeated #if(${filed.listType} == "Object")$typeFormat.get(${field.listType})#else${field.objectRealType}#end ${field.name} = ${count};
+    #elseif(${field.type} == "Object")
+    ${field.objectRealType} ${field.name} = ${count};
+    #elseif(${field.type}=="Enum")
+    enum ${field.objectRealType}
+    {
+        #foreach(${enumItem} in ${field.enumItems})
+        ${enumItem} = ${enumItem.value};
+        #end
+    }
+    #else
+    $typeFormat.get(${field.type}) ${field.name} = ${count};
     #end
     #set($count=$count+1)
 #end
+
 
 }

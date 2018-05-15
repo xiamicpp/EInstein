@@ -2,6 +2,7 @@ package org.einstein.codegen.parse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.einstein.codegen.api.IParser;
+import org.einstein.codegen.exception.ESynatx;
 
 /**
  * @create by kevin
@@ -9,7 +10,7 @@ import org.einstein.codegen.api.IParser;
 public class ClassAnnotationParser implements IParser<ClassAnnotationParser.ClassAnnotation,String> {
 
     @Override
-    public ClassAnnotationParser.ClassAnnotation parse(String data) throws Exception {
+    public ClassAnnotationParser.ClassAnnotation parse(String data) throws ESynatx {
         String rawdata=StringUtils.substringBetween(data,"@EProtoEntity(",")");
         String[] fields = StringUtils.split(rawdata,",");
         ClassAnnotation annotation = new ClassAnnotation();

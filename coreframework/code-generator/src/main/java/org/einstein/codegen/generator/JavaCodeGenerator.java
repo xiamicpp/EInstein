@@ -78,7 +78,7 @@ public class JavaCodeGenerator implements IGenerator<ProtoEntityTemplete> {
     public void generateImmutableInterface() {
         Writer out = null;
         try {
-            out = FileUtil.createFile(this.m_immutableInterfaceName,m_proto.getPackageName(),m_outPutDir);
+            out = FileUtil.createFileWriter(this.m_immutableInterfaceName,m_proto.getPackageName(),m_outPutDir);
             Template t = ve.getTemplate("templete/entity/java/interface.vm", "UTF-8");
             VelocityContext ctx = new VelocityContext();
             this.initPackage(ctx);
