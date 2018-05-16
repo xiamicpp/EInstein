@@ -3,7 +3,10 @@ package org.einstein.codegen.api.impl;
 import org.einstein.codegen.api.ICodeTemplete;
 import org.einstein.codegen.exception.ESynatx;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @create by xiamicpp
@@ -38,8 +41,25 @@ public class CodeTemplete implements ICodeTemplete{
     }
 
     @Override
-    public Field[] getAllFields(){
-        return  proto.getFields();
+    public List<Field> getAllFields(){
+        return  filterField(proto.getFields());
+    }
+
+    @Override
+    public List<Field> getDeclaredFields() {
+        return filterField(proto.getDeclaredFields());
+    }
+
+    private List<Field> filterField(Field[] fields){
+        List<Field> rets = new ArrayList<>(fields.length);
+        for(Field field:fields){
+            Annotation[] annotations=field.getDeclaredAnnotations();
+            for(Annotation annotation:annotations){
+                if(annotation.annotationType().getSimpleName().equalsIgnoreCase("EProtoField"))
+                   rets.add(field);
+            }
+        }
+        return rets;
     }
 
 

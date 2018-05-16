@@ -1,10 +1,6 @@
 package org.einstein.codegen.api.impl;
 
-
-import org.apache.commons.lang3.StringUtils;
 import org.einstein.codegen.api.IField;
-import org.einstein.codegen.api.IWrapperType;
-import org.einstein.codegen.parse.PropertyParser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,95 +9,88 @@ import java.util.List;
  * @author kevin
  **/
 public class Field implements IField {
-
-    private String m_field_type_;
-    private String m_field_name_;
-    private List<String> m_field_annotation_ = new ArrayList<>();
-    private String m_field_comment_;
-    private boolean m_isList_ = false;
-    private IWrapperType m_field_wrapperType_;
-    private String m_default_value;
-    private boolean m_reserverdType = true;
+    private String type;
+    private String name;
+    private Object defaultValue;
+    private boolean isList = false;
+    private boolean isEProtoObject = false;
+    private boolean isEnum = false;
+    private boolean isConstant = false;
+    private List<IField> fields = new ArrayList<>();
 
     private static final String[] s_reserverdType = new String[]{
             "byte","short","int","long","float","double","char","boolean","string"
     };
 
-
-    public Field() { }
-
     @Override
-    public List<String> getAnnotation() {
-        return m_field_annotation_;
+    public String getType() {
+        return type;
     }
 
     @Override
-    public String getComment() {
-        return m_field_comment_;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public String getFieldName() {
-        return m_field_name_;
+    public Object getDefaultValue() {
+        return defaultValue;
     }
 
     @Override
-    public String getFieldRawType() {
-        return m_field_type_;
+    public boolean isList() {
+        return isList;
     }
 
     @Override
-    public String getDefaultValue() {
-        return m_default_value;
+    public boolean isEProtoObject() {
+        return isEProtoObject;
     }
 
     @Override
-    public IWrapperType getWrapperType() {
-        return m_field_wrapperType_;
+    public boolean isEnum() {
+        return isEnum;
     }
 
     @Override
-    public void setWrapperType(IWrapperType type) {
-        this.m_field_wrapperType_ = type;
+    public boolean isConstant() {
+        return isConstant;
     }
 
     @Override
-    public boolean getIsList() {
-        return m_isList_;
+    public List<IField> getFields() {
+        return fields;
     }
 
-    @Override
-    public boolean isReserverdType() {
-        return this.m_reserverdType;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setM_field_type_(String m_field_type_) {
-        this.m_field_type_ = m_field_type_;
-        if(StringUtils.equalsIgnoreCase(this.m_field_type_,"LIST"))
-            this.m_isList_ = true;
-        this.m_reserverdType = true;
-        for(String type:s_reserverdType){
-            if(StringUtils.equalsIgnoreCase(type,this.m_field_type_)) {
-                this.m_reserverdType = true;
-                break;
-            }
-        }
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setM_field_name_(String m_field_name_) {
-        this.m_field_name_ = m_field_name_;
+    public void setDefaultValue(Object defaultValue) {
+        this.defaultValue = defaultValue;
     }
 
-    public void setM_field_comment_(String m_field_comment_) {
-        this.m_field_comment_ = m_field_comment_;
+    public void setList(boolean list) {
+        isList = list;
     }
 
-
-    public void addFieldAnnotation(String annotation){
-        this.m_field_annotation_.add(annotation);
+    public void setEProtoObject(boolean EProtoObject) {
+        isEProtoObject = EProtoObject;
     }
 
-    public void setDefaultValue(String value){
-        this.m_default_value = value;
+    public void setEnum(boolean anEnum) {
+        isEnum = anEnum;
+    }
+
+    public void setConstant(boolean constant) {
+        isConstant = constant;
+    }
+
+    public void setFields(List<IField> fields){
+        this.fields = fields;
     }
 }

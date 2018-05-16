@@ -1,6 +1,5 @@
 package org.einstein.codegen.parse;
 
-import com.sun.org.apache.bcel.internal.classfile.Code;
 import org.apache.commons.lang3.StringUtils;
 import org.einstein.codegen.api.ICodeTemplete;
 import org.einstein.codegen.api.IParser;
@@ -19,7 +18,7 @@ import java.util.regex.Pattern;
  * @create by xiamicpp
  **/
 public class ProtoParser implements IParser<List<ICodeTemplete>, String> {
-    private static Logger logger = LoggerFactory.getLogger(Parser.class);
+    private static Logger logger = LoggerFactory.getLogger(ProtoParser.class);
     private static final String USER_DIR = System.getProperty("user.dir");
     private String protoDir;
     private Set<File> protoSource = new HashSet<>();

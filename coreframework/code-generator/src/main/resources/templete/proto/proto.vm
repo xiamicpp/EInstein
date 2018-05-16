@@ -1,14 +1,13 @@
-syntax = "${version}"
+syntax = "${version}";
 
-option java_package = "${package}"
-option java_outer_classname = "${classname}"
+option java_package = "${package}";
+option java_outer_classname = "${classname}";
 
 #foreach(${import} in ${imports})
-import ${import}
+import ${import};
 #end
 
 message ${message} {
-
 #set($typeFormat = {"double":"double",
                     "float":"float",
                     "int":"sint32",
@@ -16,25 +15,23 @@ message ${message} {
                     "boolean":"bool",
                     "String":"string",
                     "ByteString":"bytes"})
-
 #set($count = 1)
 #foreach(${field} in ${fields})
-    #if(${field.type} == "List")
-    repeated #if(${filed.listType} == "Object")$typeFormat.get(${field.listType})#else${field.objectRealType}#end ${field.name} = ${count};
-    #elseif(${field.type} == "Object")
-    ${field.objectRealType} ${field.name} = ${count};
-    #elseif(${field.type}=="Enum")
-    enum ${field.objectRealType}
+    #if(${field.isList()} == true)
+    repeated #if(${filed.isEProtoObject()} == true)${field.type}#else$typeFormat.get(${field.type})#end ${field.name} = ${count};
+    #elseif(${field.isEProtoObject()} == true)
+    ${field.type} ${field.name} = ${count};
+    #elseif(${field.isEnum()}==true)
+    enum ${field.type}
     {
-        #foreach(${enumItem} in ${field.enumItems})
-        ${enumItem} = ${enumItem.value};
+        #foreach(${item} in ${field.fields})
+        ${item.name} = ${item.defaultValue};
         #end
     }
+    ${field.type} ${field.name} = ${count};
     #else
     $typeFormat.get(${field.type}) ${field.name} = ${count};
     #end
     #set($count=$count+1)
 #end
-
-
 }

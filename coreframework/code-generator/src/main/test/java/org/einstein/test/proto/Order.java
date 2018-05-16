@@ -31,6 +31,4 @@ public interface Order extends IEVersion {
 
     @EProtoField(desc = "test list")
     List<String> legs = null;
-
-    short d=1;
 }

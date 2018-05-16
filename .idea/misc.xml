@@ -48,6 +48,7 @@
       <set>
         <option value="$PROJECT_DIR$/athena/pom.xml" />
         <option value="$PROJECT_DIR$/coreframework/pom.xml" />
+        <option value="$PROJECT_DIR$/coreframework/test/pom.xml" />
         <option value="$PROJECT_DIR$/eproto/pom.xml" />
         <option value="$PROJECT_DIR$/test/pom.xml" />
       </set>

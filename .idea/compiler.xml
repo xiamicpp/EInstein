@@ -13,12 +13,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="athena-maven-plugin" target="1.8" />
       <module name="businessframework" target="1.8" />
       <module name="codegenerator" target="1.8" />
       <module name="coreframework" target="1.8" />
       <module name="einstein" target="1.8" />
       <module name="eproto" target="1.8" />
+      <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

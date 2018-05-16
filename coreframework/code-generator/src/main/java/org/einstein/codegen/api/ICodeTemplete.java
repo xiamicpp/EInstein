@@ -1,6 +1,7 @@
 package org.einstein.codegen.api;
 
 import java.lang.reflect.Field;
+import java.util.List;
 
 /**
  * @create by xiamicpp
@@ -8,5 +9,6 @@ import java.lang.reflect.Field;
 public interface ICodeTemplete extends ITemplete{
     String getProtoClassName();
     String getProtoPackageName();
-    Field[] getAllFields();
+    List<Field> getAllFields();
+    List<Field> getDeclaredFields();
 }
