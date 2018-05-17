@@ -1,7 +1,7 @@
 install:
-  - wget https://protobuf.googlecode.com/files/protobuf-3.5.1.tar.gz
-  - tar -xzvf protobuf-3.5.1.tar.gz
-  - pushd protobuf-3.5.1 && ./configure --prefix=/usr && make && sudo make install && popd
+  - wget https://protobuf.googlecode.com/files/protobuf-all-3.5.1.tar.gz
+  - tar -xzvf protobuf-all-3.5.1.tar.gz
+  - pushd protobuf-all-3.5.1 && ./configure --prefix=/usr && make && sudo make install && popd
 
 language: java
 
