@@ -38,7 +38,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
         if(!generateProtoFile(code)) return false;
         logger.debug("start generate protobuf");
         if(!generateGoogelProtoBuf(code)) return false;
-        return false;
+        return true;
     }
 
     private boolean generateProtoFile(CodeTemplete code){

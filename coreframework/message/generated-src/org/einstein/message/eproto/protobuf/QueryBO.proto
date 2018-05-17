@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "org.einstein.message.eproto.entitys.pb";
+option java_outer_classname = "PBQueryBO";
+
+
+message QueryBO {
+    string id = 1;
+    string destination = 2;
+    sint32 number = 3;
+}

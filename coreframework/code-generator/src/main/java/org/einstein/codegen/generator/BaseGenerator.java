@@ -39,7 +39,7 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplete> {
             result = generateCode((CodeTemplete) code);
             if (!result) return result;
         }
-        return false;
+        return true;
     }
 
     @Override
