@@ -22,6 +22,8 @@ import org.einstein.codegen.exception.ESynatx;
 import org.einstein.codegen.generator.GoogleProtoGenerator;
 import org.einstein.codegen.parse.ProtoParser;
 
+import java.io.File;
+
 /**
  *
  * @goal compile-proto
@@ -35,6 +37,17 @@ public class EProtoGen
      */
     private String proto_dir;
 
+    /**
+     * @parameter expression = "${project.basedir}"
+     * @readonly
+     * @required
+     */
+    private File project_dir;
+
+    /**
+     * @parameter property = "outputdir"
+     * @readonly
+     */
     private String outputdir = "generated-src/";
 
     public void execute()
@@ -42,10 +55,11 @@ public class EProtoGen
         if(proto_dir == null)
             throw new MojoExecutionException("can not find proto resource");
         try {
+            System.out.println(project_dir.getAbsolutePath());
             boolean result = false;
             GoogleProtoGenerator generator = new GoogleProtoGenerator();
             ProtoParser parser = new ProtoParser();
-            generator.init(parser.parse(proto_dir), outputdir);
+            generator.init(parser.parse(project_dir.getAbsolutePath(),proto_dir), project_dir.getAbsolutePath()+"/"+outputdir);
             generator.initialize();
             result=generator.generate();
             CheckResult(result,"GoogleProtoGenerate");

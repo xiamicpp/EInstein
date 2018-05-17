@@ -11,6 +11,7 @@ public class CodeTempleteTest {
     public void getProto() throws ESynatx {
         CodeTemplete codeTemplete = new CodeTemplete("org.einstein.test.proto","Order");
 
+        System.out.println(System.getProperty("project.basedir"));
        // Class t = codeTemplete.getProto();
 
         //t.getInterfaces();

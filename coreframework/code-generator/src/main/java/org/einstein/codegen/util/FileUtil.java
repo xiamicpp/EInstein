@@ -14,7 +14,6 @@ import java.util.Set;
  **/
 public class FileUtil {
     private static Logger logger = LoggerFactory.getLogger(FileUtil.class);
-    public static final String USER_DIR = System.getProperty("user.dir");
 
     /**
      * get file list

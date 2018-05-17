@@ -17,9 +17,9 @@ import java.util.regex.Pattern;
 /**
  * @create by xiamicpp
  **/
-public class ProtoParser implements IParser<List<ICodeTemplete>, String> {
+public class ProtoParser implements IParser<List<ICodeTemplete>, String,String> {
     private static Logger logger = LoggerFactory.getLogger(ProtoParser.class);
-    private static final String USER_DIR = System.getProperty("user.dir");
+    private String projectDir;
     private String protoDir;
     private Set<File> protoSource = new HashSet<>();
     private List<ICodeTemplete> codes = new ArrayList<>();
@@ -27,11 +27,13 @@ public class ProtoParser implements IParser<List<ICodeTemplete>, String> {
     private static Pattern classPackagePattern = Pattern.compile("^package\\s+(\\S*);");
 
 
+
     @Override
-    public List<ICodeTemplete> parse(String data) throws ESynatx {
-        this.protoDir = USER_DIR + "/" + data;
+    public List<ICodeTemplete> parse(String dir,String data) throws ESynatx {
+        this.projectDir = dir;
+        this.protoDir =  data;
         logger.info("==========================CodeParser========================");
-        logger.info("parse:{}", data);
+        logger.info("parse from {} in {}", dir,data);
         this.loadProtoSource();
         Iterator<File> it = this.protoSource.iterator();
         while (it.hasNext()) {
@@ -44,7 +46,7 @@ public class ProtoParser implements IParser<List<ICodeTemplete>, String> {
 
 
     private void loadProtoSource() throws ESynatx {
-        File file = new File(this.protoDir);
+        File file = new File(this.projectDir+"/"+this.protoDir);
         if (!file.exists()) {
             throw new ESynatx("File not exists in " + file.getAbsolutePath());
         }
@@ -90,7 +92,7 @@ public class ProtoParser implements IParser<List<ICodeTemplete>, String> {
             if(StringUtils.isEmpty(packageName)||StringUtils.isEmpty(className))
                 throw  new ESynatx("can not parse packageName or className!");
             CodeTemplete codeTemplete = new CodeTemplete(packageName,className);
-            codeTemplete.reflectClass(USER_DIR+"/target/classes/");
+            codeTemplete.reflectClass(this.projectDir+"/target/classes/");
             return codeTemplete;
         }catch (IOException e){
             throw new ESynatx("read file failed",e);

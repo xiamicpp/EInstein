@@ -45,7 +45,7 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplete> {
     @Override
     public void init(List<ICodeTemplete> code_templete, String outputdir) {
         this.codes = code_templete;
-        this.outPutPath = FileUtil.USER_DIR + "/" + outputdir;
+        this.outPutPath = outputdir;
         for (ICodeTemplete code : code_templete) {
             codesMap.put(code.getProtoClassName(), code);
         }
