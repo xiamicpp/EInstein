@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/coreframework/coreframework.iml" filepath="$PROJECT_DIR$/coreframework/coreframework.iml" />
       <module fileurl="file://$PROJECT_DIR$/einstein.iml" filepath="$PROJECT_DIR$/einstein.iml" />
       <module fileurl="file://$PROJECT_DIR$/coreframework/eproto/eproto.iml" filepath="$PROJECT_DIR$/coreframework/eproto/eproto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coreframework/message/message.iml" filepath="$PROJECT_DIR$/coreframework/message/message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businessframework/proto/proto.iml" filepath="$PROJECT_DIR$/businessframework/proto/proto.iml" />
     </modules>
   </component>
 </project>

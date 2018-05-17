@@ -14,7 +14,7 @@ import java.util.Set;
  **/
 public class FileUtil {
     private static Logger logger = LoggerFactory.getLogger(FileUtil.class);
-
+    public static final String USER_DIR = System.getProperty("user.dir");
 
     /**
      * get file list
@@ -58,13 +58,30 @@ public class FileUtil {
         }
     }
 
-    public static Writer createFileWriter(String fileName,String packageName, String outPutDirectory) throws IOException {
+    public static Writer createFileWriter(String fileName,String outPutDirectory) throws IOException {
         String directory = outPutDirectory;
-        if(packageName!=null){
-            directory = directory +"/"+packageName.replace(".","/");
-        }
-        (new File(directory)).mkdirs();
+        createDir(directory);
         return new PrintWriter(new BufferedWriter(new FileWriter(directory+"/"+fileName)));
+    }
+
+    public static void createDir(String directory){
+        (new File(directory)).mkdirs();
+    }
+
+    public static void deleteDir(String directory){
+        File dir = new File(directory);
+        if(!dir.exists()) return;
+        if(dir.isDirectory()){
+            File[] allfiles = dir.listFiles();
+            for(File file:allfiles){
+                if(file.isDirectory()){
+                    deleteDir(file.getAbsolutePath());
+                }else if(file.isFile()){
+                    file.delete();
+                }
+            }
+        }
+        dir.delete();
     }
 
 }

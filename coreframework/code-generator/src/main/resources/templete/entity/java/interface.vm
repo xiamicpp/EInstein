@@ -7,11 +7,11 @@ package ${packageName};
 #parse("templete/entity/java/comment.vm")
 
 public interface ${entityName} #if(${hasInterfaces}==true) extends ${interfaces} #end{
-    #if(!${isMutable})
+ #if(!${isMutable})
     static final int PROTO_CLASS_ID_ = ${PROTO_CLASS_ID};
-    #end
+ #end
 
-#if(${getterMethod})
+ #if(${getterMethod})
     #foreach($field in ${fields})
     $!{field.comment}
     #if(${field.isList})
@@ -20,12 +20,11 @@ public interface ${entityName} #if(${hasInterfaces}==true) extends ${interfaces}
     ${field.wrapperType.simpleName} ${field.wrapperType.getterMethodName}();
     #end
     #end
-#end
-
-    #if(${setterMethod})
-        #foreach($field in ${fields})
-            $!{field.comment}
-            void ${field.setterMethodName}(#if(${field.isList}) List<${field.wrapperType.fullName}> #else ${field.wrapperType.fullName} #end value);
-        #end
+ #end
+ #if(${setterMethod})
+    #foreach($field in ${fields})
+    $!{field.comment}
+    void ${field.setterMethodName}(#if(${field.isList}) List<${field.wrapperType.fullName}> #else ${field.wrapperType.fullName} #end value);
     #end
+ #end
 }

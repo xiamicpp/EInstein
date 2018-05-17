@@ -18,19 +18,45 @@ package org.beta.einstein;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-
+import org.einstein.codegen.exception.ESynatx;
+import org.einstein.codegen.generator.GoogleProtoGenerator;
+import org.einstein.codegen.parse.ProtoParser;
 
 /**
- * Goal which touches a timestamp file.
  *
- * @goal touch
- * @phase process-sources
+ * @goal compile-proto
+ * @phase generate-sources
+ * @execute phase="compile"
  */
 public class EProtoGen
         extends AbstractMojo {
+    /**
+     * @parameter property = "protodir"
+     */
+    private String proto_dir;
+
+    private String outputdir = "generated-src/";
 
     public void execute()
             throws MojoExecutionException {
+        if(proto_dir == null)
+            throw new MojoExecutionException("can not find proto resource");
+        try {
+            boolean result = false;
+            GoogleProtoGenerator generator = new GoogleProtoGenerator();
+            ProtoParser parser = new ProtoParser();
+            generator.init(parser.parse(proto_dir), outputdir);
+            generator.initialize();
+            result=generator.generate();
+            CheckResult(result,"GoogleProtoGenerate");
+        }catch (ESynatx e){
+            throw new MojoExecutionException("synatx exception "+e.getMessage());
+        }
+    }
 
+
+    private void CheckResult(boolean result, String phase) throws MojoExecutionException {
+        if(!result)
+            throw  new MojoExecutionException(phase+" generate failed!");
     }
 }

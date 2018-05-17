@@ -7,9 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="athena-maven-plugin" />
-        <module name="businessframework" />
         <module name="codegenerator" />
         <module name="eproto" />
+        <module name="message" />
+        <module name="proto" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -18,6 +19,8 @@
       <module name="coreframework" target="1.8" />
       <module name="einstein" target="1.8" />
       <module name="eproto" target="1.8" />
+      <module name="message" target="1.8" />
+      <module name="proto" target="1.8" />
       <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>

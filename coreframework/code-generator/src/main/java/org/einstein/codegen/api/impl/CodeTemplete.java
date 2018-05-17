@@ -5,6 +5,8 @@ import org.einstein.codegen.exception.ESynatx;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +25,20 @@ public class CodeTemplete implements ICodeTemplete{
     public CodeTemplete(String protoPackageName, String protoClassName) throws ESynatx {
         this.ProtoPackageName = protoPackageName;
         this.ProtoClassName = protoClassName;
+    }
+
+    public void reflectClass(String dir) throws ESynatx {
         try {
-            this.proto = Class.forName(this.ProtoPackageName+"."+this.ProtoClassName);
-        } catch (ClassNotFoundException e) {
-            throw new ESynatx("Can not reflect proto class",e);
+            System.out.println(dir);
+            URL url = new URL("file:" + dir);
+            ClassLoader loader = new URLClassLoader(new URL[]{url},this.getClass().getClassLoader());
+            this.proto = loader.loadClass(this.ProtoPackageName+"."+this.ProtoClassName);
+            //this.proto = Class.forName(this.ProtoPackageName+"."+this.ProtoClassName,false,loader);
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new ESynatx("failed to reflect proto class:"+e.getMessage(),e);
         }
+
     }
 
     @Override
@@ -55,6 +66,7 @@ public class CodeTemplete implements ICodeTemplete{
         for(Field field:fields){
             Annotation[] annotations=field.getDeclaredAnnotations();
             for(Annotation annotation:annotations){
+                System.out.println(annotation.annotationType().getSimpleName());
                 if(annotation.annotationType().getSimpleName().equalsIgnoreCase("EProtoField"))
                    rets.add(field);
             }

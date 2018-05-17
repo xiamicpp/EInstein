@@ -90,6 +90,7 @@ public class ProtoParser implements IParser<List<ICodeTemplete>, String> {
             if(StringUtils.isEmpty(packageName)||StringUtils.isEmpty(className))
                 throw  new ESynatx("can not parse packageName or className!");
             CodeTemplete codeTemplete = new CodeTemplete(packageName,className);
+            codeTemplete.reflectClass(USER_DIR+"/target/classes/");
             return codeTemplete;
         }catch (IOException e){
             throw new ESynatx("read file failed",e);

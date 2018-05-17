@@ -11,8 +11,7 @@ import org.einstein.codegen.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -21,82 +20,49 @@ import java.util.*;
 /**
  * @author kevin
  **/
-public class GoogleProtoGenerator implements IGenerator<ICodeTemplete> {
-    private static Logger logger = LoggerFactory.getLogger(GoogleProtoGenerator.class);
+public class GoogleProtoGenerator extends BaseGenerator {
     private static String OS = System.getProperty("os.name").toLowerCase();
-    private static final String USER_DIR = System.getProperty("user.dir");
     private static final String PROTOBUF_VERSION = "proto3";
-    private List<ICodeTemplete> codes;
-    private Map<String, ICodeTemplete> codesMap = new HashMap<>();
-    private String outPutPath;
-    private VelocityEngine ve;
-    private Template template;
     private static  String PB_CLASS_PREFFIX = "PB";
     private static  String PB_CLASS_SUFFIX = ".proto";
-    private static  String GENERATED_PROTO = ".protobuf";
-    private static  String GENERATED_ENTITYS = ".entitys";
-    private static  String GENERATED_API = ".api";
-    private static  String GENERATED_entity = ".entity";
+
 
     @Override
-    public boolean generate() {
-        System.out.println(OS);
-        for(ICodeTemplete code:codes){
-            //step1 generate proto file
-            generateProtoFile((CodeTemplete) code);
-            //step2 generate java proto class
-            /**
-             * user google proto3 tool to generate pb class.
-             * current supported java
-             */
-            generateGoogelProtoBuf();
-
-
-        }
-        return false;
-    }
-
-    @Override
-    public void init(List<ICodeTemplete> code_templete, String outputdir) {
-        this.codes = code_templete;
-        this.outPutPath = USER_DIR+"/"+outputdir;
-        for(ICodeTemplete code:code_templete){
-            codesMap.put(code.getProtoClassName(),code);
-        }
-    }
-
-    @Override
-    public boolean initialize() {
-        Properties properties = new Properties();
-        properties.setProperty(VelocityEngine.RESOURCE_LOADER, "class");
-        properties.setProperty("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
-        properties.put("input.encoding", "UTF-8");
-        properties.put("output.encoding", "UTF-8");
-        ve = new VelocityEngine();
-        ve.init(properties);
+    protected boolean loadVelocityTemplate() {
         template = ve.getTemplate("templete/proto/proto.vm", "UTF-8");
         return true;
     }
 
-    private void generateProtoFile(CodeTemplete code){
+    @Override
+    protected boolean generateCode(CodeTemplete code) {
+        if(!generateProtoFile(code)) return false;
+        logger.debug("start generate protobuf");
+        if(!generateGoogelProtoBuf(code)) return false;
+        return false;
+    }
+
+    private boolean generateProtoFile(CodeTemplete code){
         Writer out =null;
         try {
-            out = FileUtil.createFileWriter(decorateClassName(code.getProtoClassName(),true,true)
-                    ,code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
+            String fielName = decorateClassName(code.getProtoClassName(),false,true);
+            String dir = generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
+            out = FileUtil.createFileWriter(fielName, dir);
             VelocityContext ctx = new VelocityContext();
             ctx.put("version",PROTOBUF_VERSION);
-            ctx.put("package",code.getProtoPackageName());
+            ctx.put("package",code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE);
             ctx.put("classname",decorateClassName(code.getProtoClassName(),true,false));
-            ctx.put("message",decorateClassName(code.getProtoClassName(),true,false));
+            ctx.put("message",decorateClassName(code.getProtoClassName(),false,false));
             generateProtoImports(ctx,code);
             generateProtoFields(ctx,code);
             this.template.merge(ctx,out);
             FileUtil.flush(out);
         } catch (IOException e) {
             logger.error("failed to create writer, {}",e);
+            return false;
         }finally {
             FileUtil.close(out);
         }
+        return true;
     }
 
 
@@ -108,9 +74,9 @@ public class GoogleProtoGenerator implements IGenerator<ICodeTemplete> {
                 continue;
             ICodeTemplete templete = codesMap.get(field.getType().getTypeName());
             if(templete!=null){
-                String path = templete.getProtoPackageName();
+                String path = templete.getProtoPackageName()+GENERATED_PROTO;
                 path=StringUtils.replace(path,".","/").concat("/")
-                        + this.decorateClassName(templete.getProtoClassName(),true,true);
+                        + this.decorateClassName(templete.getProtoClassName(),true,false);
                 protoImports.add(path);
             }
         }
@@ -182,10 +148,45 @@ public class GoogleProtoGenerator implements IGenerator<ICodeTemplete> {
     }
 
 
-    private void  generateGoogelProtoBuf(){
-        System.out.println(USER_DIR);
+    private boolean  generateGoogelProtoBuf(CodeTemplete code){
+        String fielName = decorateClassName(code.getProtoClassName(),false,true);
+        String dir = generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
+        String outDir = generateOutPutDir(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE,this.outPutPath);
+        String cmd = "protoc -I="+dir+" --java_out="+this.outPutPath+" "+dir+fielName;
+        FileUtil.createDir(outDir);
+        logger.info(cmd);
+        try {
+            Process protoc_process = Runtime.getRuntime().exec(cmd);
 
-        System.out.println();
+            InputStream in = protoc_process.getInputStream();
+            InputStream err =protoc_process.getErrorStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            BufferedReader err_br = new BufferedReader(new InputStreamReader(err));
+
+            String line = null;
+            String error = null;
+            boolean hasError = false;
+            while ((line=reader.readLine())!=null||((error=err_br.readLine())!=null)){
+                if(!StringUtils.isEmpty(line))
+                    logger.info(line);
+                if(!StringUtils.isEmpty(error)) {
+                    logger.info(error);
+                    hasError = true;
+                }
+            }
+            int resultCode = protoc_process.waitFor();
+            if(resultCode != 0||hasError){
+                logger.error("generate protobuf class failed");
+                return false;
+            }else {
+                logger.info("Generate protobuf class success");
+                return true;
+            }
+        } catch (IOException |InterruptedException e) {
+            logger.error("Failed to generate protobuf, {}",e);
+            e.printStackTrace();
+            return false;
+        }
     }
 
     private String decorateClassName(String classname, boolean preffix, boolean suffix){
@@ -193,5 +194,13 @@ public class GoogleProtoGenerator implements IGenerator<ICodeTemplete> {
         temp = preffix==true? PB_CLASS_PREFFIX+StringUtils.capitalize(classname):StringUtils.capitalize(classname);
         temp = suffix==true? temp+PB_CLASS_SUFFIX:temp;
         return temp;
+    }
+
+    private String generateOutPutDir(String packageName,String outPutPath){
+        String directory = outPutPath;
+        if(packageName!=null){
+            directory = directory +packageName.replace(".","/")+"/";
+        }
+        return directory;
     }
 }
