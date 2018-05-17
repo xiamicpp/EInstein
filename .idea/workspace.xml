@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="180dba17-b648-4135-abb2-5986c65dbda0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/businessframework/proto/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoClean.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/message/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/message/src/main/java/org/einstein/message/eproto/QueryBO.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/businessframework/pom.xml" afterPath="$PROJECT_DIR$/businessframework/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" afterPath="$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/pom.xml" afterPath="$PROJECT_DIR$/coreframework/code-generator/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoGen.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoGen.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ProtoParser.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ProtoParser.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/FileUtil.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/FileUtil.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/thirdParty/protoc/windows_64/protoc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/coreframework/pom.xml" afterPath="$PROJECT_DIR$/coreframework/pom.xml" />
-    </list>
+    <list default="true" id="180dba17-b648-4135-abb2-5986c65dbda0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/eproto/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/coreframework/target/" />
@@ -1176,7 +1154,7 @@
       <workItem from="1526280910167" duration="11495000" />
       <workItem from="1526363491938" duration="17201000" />
       <workItem from="1526396900755" duration="1943000" />
-      <workItem from="1526544816222" duration="9632000" />
+      <workItem from="1526544816222" duration="10151000" />
     </task>
     <servers />
   </component>
@@ -1213,7 +1191,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113592000" />
+    <option name="totallyTimeSpent" value="114111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1041" extended-state="6" />
