@@ -1,3 +1,6 @@
+before_install:
+  - ./install-protobuf.sh
+  
 language: java
 
 java:
