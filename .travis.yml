@@ -1,7 +1,11 @@
-install:
-  - wget https://github.com/google/protobuf/releases/download/v3.5.1/protobuf-all-3.5.1.tar.gz
-  - tar -xzvf protobuf-all-3.5.1.tar.gz
-  - cd protobuf-3.5.1 && ./configure --prefix=/usr && make && sudo make instal
+before_install:
+  - ./dependence_protobuf.sh
+
+cache:
+  directories:
+  - .autoconf
+  - $HOME/.m2
+  - /usr
 
 language: java
 
