@@ -1,5 +1,5 @@
 before_install:
-  - ./dependence_protobuf.sh
+  -./dependence_protobuf.sh
 
 cache:
   directories:
