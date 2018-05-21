@@ -5,7 +5,6 @@ import org.apache.velocity.app.VelocityEngine;
 import org.einstein.codegen.api.ICodeTemplete;
 import org.einstein.codegen.api.IGenerator;
 import org.einstein.codegen.api.impl.CodeTemplete;
-import org.einstein.codegen.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +23,8 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplete> {
     protected String outPutPath;
     protected VelocityEngine ve;
     protected Template template;
+
+    protected static String ENCODE = "UTF-8";
 
     protected static  String GENERATED_PROTO = ".protobuf";
     protected static  String GENERATED_ENTITYS = ".entitys";
@@ -65,4 +66,12 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplete> {
 
     protected abstract boolean loadVelocityTemplate();
     protected abstract boolean generateCode(CodeTemplete code);
+
+    protected String generateOutPutDir(String packageName,String outPutPath){
+        String directory = outPutPath;
+        if(packageName!=null){
+            directory = directory +packageName.replace(".","/")+"/";
+        }
+        return directory;
+    }
 }

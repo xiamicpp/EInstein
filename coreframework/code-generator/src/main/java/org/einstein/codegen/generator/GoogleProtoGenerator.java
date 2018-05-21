@@ -25,11 +25,11 @@ public class GoogleProtoGenerator extends BaseGenerator {
     private static final String PROTOBUF_VERSION = "proto3";
     private static  String PB_CLASS_PREFFIX = "PB";
     private static  String PB_CLASS_SUFFIX = ".proto";
-
+    private static String protobuf_template = "templete/proto/proto.vm";
 
     @Override
     protected boolean loadVelocityTemplate() {
-        template = ve.getTemplate("templete/proto/proto.vm", "UTF-8");
+        template = ve.getTemplate(protobuf_template, ENCODE);
         return true;
     }
 
@@ -196,11 +196,5 @@ public class GoogleProtoGenerator extends BaseGenerator {
         return temp;
     }
 
-    private String generateOutPutDir(String packageName,String outPutPath){
-        String directory = outPutPath;
-        if(packageName!=null){
-            directory = directory +packageName.replace(".","/")+"/";
-        }
-        return directory;
-    }
+
 }

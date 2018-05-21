@@ -61,6 +61,10 @@ public class CodeTemplete implements ICodeTemplete{
         return filterField(proto.getDeclaredFields());
     }
 
+    public Class<?>[] getInterfaces(){
+        return proto.getInterfaces();
+    }
+
     private List<Field> filterField(Field[] fields){
         List<Field> rets = new ArrayList<>(fields.length);
         for(Field field:fields){
@@ -73,6 +77,8 @@ public class CodeTemplete implements ICodeTemplete{
         }
         return rets;
     }
+
+
 
 
 }
