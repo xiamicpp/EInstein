@@ -50,7 +50,6 @@ public final class PBQueryBO {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:QueryBO)
       QueryBOOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use QueryBO.newBuilder() to construct.
     private QueryBO(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -64,19 +63,14 @@ public final class PBQueryBO {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private QueryBO(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -86,8 +80,7 @@ public final class PBQueryBO {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -117,7 +110,6 @@ public final class PBQueryBO {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -231,7 +223,6 @@ public final class PBQueryBO {
       if (number_ != 0) {
         output.writeSInt32(3, number_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -249,11 +240,11 @@ public final class PBQueryBO {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt32Size(3, number_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -271,7 +262,6 @@ public final class PBQueryBO {
           .equals(other.getDestination());
       result = result && (getNumber()
           == other.getNumber());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -293,17 +283,6 @@ public final class PBQueryBO {
       return hash;
     }
 
-    public static org.einstein.message.eproto.entitys.pb.PBQueryBO.QueryBO parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.einstein.message.eproto.entitys.pb.PBQueryBO.QueryBO parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static org.einstein.message.eproto.entitys.pb.PBQueryBO.QueryBO parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -457,7 +436,7 @@ public final class PBQueryBO {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -470,12 +449,12 @@ public final class PBQueryBO {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -500,7 +479,6 @@ public final class PBQueryBO {
         if (other.getNumber() != 0) {
           setNumber(other.getNumber());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -692,12 +670,12 @@ public final class PBQueryBO {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -720,7 +698,7 @@ public final class PBQueryBO {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QueryBO(input, extensionRegistry);
+          return new QueryBO(input, extensionRegistry);
       }
     };
 
