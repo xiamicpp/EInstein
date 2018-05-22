@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @author kevin
  **/
-public interface IGenerator<T extends ITemplete> extends IInitialize {
+public interface IGenerator<T extends ITemplate> extends IInitialize {
 
     boolean generate();
 

@@ -6,7 +6,7 @@ package org.einstein.codegen.exception;
 public class ESynatx extends Exception{
     private static final String DEFAULT_ERROR_MSG = "Syntax Error";
 
-    public ESynatx(){
+    public ESynatx(String msg, String name){
         super(DEFAULT_ERROR_MSG);
     }
 

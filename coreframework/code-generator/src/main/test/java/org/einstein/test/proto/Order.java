@@ -1,7 +1,6 @@
 package org.einstein.test.proto;
 
 import org.einstein.eproto.anno.*;
-import org.einstein.eproto.api.IEProtoObject;
 import org.einstein.eproto.api.IEVersion;
 
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
  * @create by kevin
  **/
 @EProtoEntity(id = 1, desc = "Base Order")
-public interface Order extends IEProtoObject {
+public interface Order extends IEVersion {
 
     @EProtoField(desc = "ID")
     String id = null;

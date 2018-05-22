@@ -6,9 +6,10 @@ import java.util.List;
 /**
  * @create by xiamicpp
  **/
-public interface ICodeTemplete extends ITemplete{
+public interface ICodeTemplate extends ITemplate {
     String getProtoClassName();
     String getProtoPackageName();
+    int getProtoClassID();
     List<Field> getAllFields();
     List<Field> getDeclaredFields();
 }

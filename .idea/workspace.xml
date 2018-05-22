@@ -2,12 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="180dba17-b648-4135-abb2-5986c65dbda0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/TimeUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" afterPath="$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplete.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IField.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IField.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IGenerator.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ITemplete.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Field.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Field.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Templete.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/exception/ESynatx.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/exception/ESynatx.java" />
       <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java" />
       <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" />
       <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ProtoParser.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ProtoParser.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/api/impl/CodeTempleteTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/parse/ProtoParserTest.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObjectSupper.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/eproto/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,14 +49,12 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="Order.java" pinned="false" current-in-tab="true">
+            <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="234">
-                    <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
+                  <state relative-caret-position="18">
+                    <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -84,11 +99,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="interface.vm" pinned="false" current-in-tab="false">
+            <file leaf-file-name="interface.vm" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="468">
-                    <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+                  <state relative-caret-position="162">
+                    <caret line="9" column="112" lean-forward="false" selection-start-line="9" selection-start-column="112" selection-end-line="9" selection-end-column="112" />
                     <folding />
                   </state>
                 </provider>
@@ -97,8 +112,8 @@
             <file leaf-file-name="JavaCodeGenerator.class" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/JavaCodeGenerator.class">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="16362">
-                    <caret line="909" column="43" lean-forward="false" selection-start-line="909" selection-start-column="43" selection-end-line="909" selection-end-column="43" />
+                  <state relative-caret-position="1">
+                    <caret line="873" column="0" lean-forward="false" selection-start-line="873" selection-start-column="0" selection-end-line="873" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -107,8 +122,8 @@
             <file leaf-file-name="GoogleProtoGenerator.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-90">
-                    <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+                  <state relative-caret-position="558">
+                    <caret line="131" column="113" lean-forward="false" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="113" />
                     <folding />
                   </state>
                 </provider>
@@ -117,7 +132,7 @@
             <file leaf-file-name="BaseGenerator.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="541">
+                  <state relative-caret-position="1044">
                     <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
                     <folding>
                       <element signature="imports" expanded="true" />
@@ -133,14 +148,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EProtoGen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoGen.java">
+      <file leaf-file-name="JavaCodeGeneratorTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="234">
+              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IOrder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IOrderImmutable.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderImmutable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,94 +181,8 @@
       <file leaf-file-name="JavaCodeGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ICodeTemplete.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeTemplete.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="63" column="21" lean-forward="false" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1871#1872#0" expanded="true" />
-                <element signature="e#1915#1916#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryBO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/message/src/main/java/org/einstein/message/eproto/QueryBO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEProtoObjectSupper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObjectSupper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEVersion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEVersion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IMessage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IMutable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IMutable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEProtoObject.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="217">
+              <caret line="168" column="153" lean-forward="false" selection-start-line="168" selection-start-column="153" selection-end-line="168" selection-end-column="153" />
               <folding />
             </state>
           </provider>
@@ -246,8 +193,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -270,13 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/IEOrderImmutable.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ClassHeaderParser.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ImportParser.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ClassAnnotationParser.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/PropertyParser.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/parse/ProtoParserTest.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ITemplete.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Templete.java" />
         <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObjectSupper.java" />
         <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java" />
@@ -284,8 +224,6 @@
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IEnumField.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplete.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/Parser.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Field.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IField.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-sources/org/einstein/test/proto/protobuf/PBOrder.proto" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/proto/proto.vm" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/plugin/EProtoGen.java" />
@@ -296,15 +234,12 @@
         <option value="$PROJECT_DIR$/coreframework/test/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/ProtoEntityTemplete.java" />
         <option value="$PROJECT_DIR$/coreframework/pom.xml" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/TestRunExec.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/PBOrder.proto" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/pom.xml" />
         <option value="$PROJECT_DIR$/coreframework/message/src/main/java/org/einstein/message/eproto/QueryBO.java" />
         <option value="$PROJECT_DIR$/businessframework/proto/pom.xml" />
         <option value="$PROJECT_DIR$/businessframework/proto/src/main/java/org/einstein/buisiness/eproto/test.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/api/impl/CodeTempleteTest.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IParser.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ProtoParser.java" />
@@ -319,8 +254,20 @@
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IField.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Field.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplate.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplate.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/TimeUtile.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/TimeUtil.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrder.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderImmutable.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm" />
       </list>
     </option>
   </component>
@@ -344,7 +291,17 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="code-generator Maven Mojo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="code-generator Maven Mojo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -369,8 +326,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -393,20 +350,14 @@
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
               <item name="EInstein" type="462c0819:PsiDirectoryNode" />
               <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
               <item name="EInstein" type="462c0819:PsiDirectoryNode" />
               <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -414,7 +365,7 @@
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
               <item name="EInstein" type="462c0819:PsiDirectoryNode" />
               <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -423,10 +374,114 @@
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
               <item name="EInstein" type="462c0819:PsiDirectoryNode" />
               <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="einstein" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="proto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -515,13 +570,7 @@
       <recent name="org.einstein.codegen.parse" />
       <recent name="org.einstein.codegen.api.impl" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -529,6 +578,12 @@
       <recent name="$PROJECT_DIR$/coreframework/code-generator/src/main/java" />
       <recent name="$PROJECT_DIR$/coreframework/code-generator/src/main/resources" />
       <recent name="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/anno" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -543,32 +598,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CodeTempleteTest.getProto">
+  <component name="RunManager" selected="JUnit.JavaCodeGeneratorTest.generateCode">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-    </configuration>
-    <configuration name="CodeTemplete" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.einstein.codegen.api.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.api.impl.CodeTemplete" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="codegenerator" />
-      <envs />
     </configuration>
     <configuration name="TestRunExec" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -696,6 +732,31 @@
       <option name="PACKAGE_NAME" value="org.einstein.codegen.generator" />
       <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.generator.GoogleProtoGeneratorTest" />
       <option name="METHOD_NAME" value="generate" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="JavaCodeGeneratorTest.generateCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.einstein.codegen.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="codegenerator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.einstein.codegen.generator" />
+      <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.generator.JavaCodeGeneratorTest" />
+      <option name="METHOD_NAME" value="generateCode" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1074,19 +1135,19 @@
       <envs />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.CodeTemplete" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CodeTempleteTest.getProto" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ProtoParserTest.parse" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.GoogleProtoGeneratorTest.generate" />
-      <item index="4" class="java.lang.String" itemvalue="Application.TestRunExec" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CodeTempleteTest.getProto" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ProtoParserTest.parse" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GoogleProtoGeneratorTest.generate" />
+      <item index="3" class="java.lang.String" itemvalue="Application.TestRunExec" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.JavaCodeGeneratorTest.generateCode" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CodeTempleteTest.getProto" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.JavaCodeGeneratorTest.generateCode" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.GoogleProtoGeneratorTest.generate" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestRunExec" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ProtoParserTest.parse" />
-        <item index="4" class="java.lang.String" itemvalue="Application.CodeTemplete" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CodeTempleteTest.getProto" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TestRunExec" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ProtoParserTest.parse" />
       </list>
     </recent_temporary>
   </component>
@@ -1118,44 +1179,46 @@
       <workItem from="1526396900755" duration="1943000" />
       <workItem from="1526544816222" duration="10691000" />
       <workItem from="1526568297363" duration="6372000" />
-      <workItem from="1526865623015" duration="6757000" />
+      <workItem from="1526865623015" duration="7296000" />
+      <workItem from="1526951001779" duration="12000" />
+      <workItem from="1526955024436" duration="17032000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CodeTempleteTest_getProto - 2018.05.17 at 23h 02m 15s.xml">
-      <configuration name="CodeTempleteTest.getProto" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 11m 55s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CodeTempleteTest_getProto - 2018.05.17 at 23h 02m 43s.xml">
-      <configuration name="CodeTempleteTest.getProto" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 12m 16s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 11h 19m 35s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 12m 52s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 11h 21m 35s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 13m 22s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 11h 21m 44s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 13m 53s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 11h 24m 51s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 14m 26s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 14h 49m 34s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 16m 19s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 14h 52m 07s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 17m 35s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 14h 53m 46s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 23m 26s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GoogleProtoGeneratorTest_generate - 2018.05.17 at 14h 54m 50s.xml">
-      <configuration name="GoogleProtoGeneratorTest.generate" configurationId="JUnit" />
+    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.05.22 at 18h 29m 21s.xml">
+      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135680000" />
+    <option name="totallyTimeSpent" value="153263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1041" extended-state="6" />
@@ -1163,11 +1226,11 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.48125" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2750533" sideWeight="0.21428572" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="682" y="421" width="555" height="190" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48294243" sideWeight="0.2203125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27526882" sideWeight="0.78571427" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48294243" sideWeight="0.7796875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1176,12 +1239,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978677" sideWeight="0.48125" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978677" sideWeight="0.47916666" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.48125" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="682" y="421" width="555" height="190" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1198,12 +1261,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/api/impl/CodeTempleteTest.java</url>
-          <line>16</line>
+          <line>14</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java</url>
+          <line>249</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1265,48 +1334,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/TestRunExec.java" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/pb/org/einstein/test/proto/PB_Order.java" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/PBOrder.proto" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/Order.proto" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/pb/org/einstein/test/proto/entitys/pb/PBOrder.java" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/pb/PBOrder.java" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/classes/org/beta/einstein/HelpMojo.class" />
-    <entry file="file://$PROJECT_DIR$/coreframework/message/target/classes/org/einstein/message/eproto/QueryBO.class" />
-    <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/foundation/util/bin/com/pingan/pilot/util/selector/IObjectWithFields.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/entitys/pb/PBQueryBO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/protobuf/QueryBO.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/businessframework/proto/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1320,41 +1351,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/api/impl/CodeTempleteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ProtoParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="94" column="53" lean-forward="false" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="75" lean-forward="false" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1410,17 +1410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoGen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1428,14 +1417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1487,10 +1468,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/JavaCodeGenerator.class">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16362">
-          <caret line="909" column="43" lean-forward="false" selection-start-line="909" selection-start-column="43" selection-end-line="909" selection-end-column="43" />
+        <state relative-caret-position="1044">
+          <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/protobuf/QueryBO.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/entitys/pb/PBQueryBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1503,69 +1510,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEKeyed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm">
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEVersion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        <state relative-caret-position="90">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplete.java">
+    <entry file="jar:///usr/lib/Java/jdk1.8.0_121/src.zip!/java/io/Serializable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="168" column="17" lean-forward="false" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="63" column="21" lean-forward="false" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1871#1872#0" expanded="true" />
-            <element signature="e#1915#1916#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1577,10 +1550,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="486">
+          <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="114" column="94" lean-forward="false" selection-start-line="114" selection-start-column="94" selection-end-line="114" selection-end-column="94" />
+          <folding>
+            <element signature="e#1271#1272#0" expanded="false" />
+            <element signature="e#1306#1307#0" expanded="false" />
+            <element signature="e#1361#1362#0" expanded="false" />
+            <element signature="e#1398#1399#0" expanded="false" />
+            <element signature="e#1446#1447#0" expanded="false" />
+            <element signature="e#1476#1477#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/JavaCodeGenerator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="873" column="0" lean-forward="false" selection-start-line="873" selection-start-column="0" selection-end-line="873" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/api/impl/CodeTempleteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/parse/ProtoParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/parse/ProtoParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="78" column="51" lean-forward="false" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2092#2093#0" expanded="false" />
+            <element signature="e#2136#2137#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="15" column="75" lean-forward="false" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/TimeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#282#283#0" expanded="false" />
+            <element signature="e#333#334#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/EOrderImmutable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="131" column="113" lean-forward="false" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="168" column="153" lean-forward="false" selection-start-line="168" selection-start-column="153" selection-end-line="168" selection-end-column="153" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="112" lean-forward="false" selection-start-line="9" selection-start-column="112" selection-end-line="9" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderImmutable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1681,7 +1821,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>message</last-edited>
+          <last-edited>codegenerator</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

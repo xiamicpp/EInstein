@@ -1,15 +1,10 @@
 package org.einstein.codegen.generator;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.VelocityEngine;
-import org.einstein.codegen.api.ICodeTemplete;
-import org.einstein.codegen.api.IGenerator;
-import org.einstein.codegen.api.impl.CodeTemplete;
+import org.einstein.codegen.api.ICodeTemplate;
+import org.einstein.codegen.api.impl.CodeTemplate;
 import org.einstein.codegen.util.FileUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -34,14 +29,14 @@ public class GoogleProtoGenerator extends BaseGenerator {
     }
 
     @Override
-    protected boolean generateCode(CodeTemplete code) {
+    protected boolean generateCode(CodeTemplate code) {
         if(!generateProtoFile(code)) return false;
         logger.debug("start generate protobuf");
         if(!generateGoogelProtoBuf(code)) return false;
         return true;
     }
 
-    private boolean generateProtoFile(CodeTemplete code){
+    private boolean generateProtoFile(CodeTemplate code){
         Writer out =null;
         try {
             String fielName = decorateClassName(code.getProtoClassName(),false,true);
@@ -66,13 +61,13 @@ public class GoogleProtoGenerator extends BaseGenerator {
     }
 
 
-    private void generateProtoImports(VelocityContext ctx, CodeTemplete code){
+    private void generateProtoImports(VelocityContext ctx, CodeTemplate code){
         List<Field> fields = code.getAllFields();
         List<String> protoImports = new ArrayList<>();
         for(Field field:fields){
             if(!field.getType().isMemberClass())
                 continue;
-            ICodeTemplete templete = codesMap.get(field.getType().getTypeName());
+            ICodeTemplate templete = codesMap.get(field.getType().getTypeName());
             if(templete!=null){
                 String path = templete.getProtoPackageName()+GENERATED_PROTO;
                 path=StringUtils.replace(path,".","/").concat("/")
@@ -83,13 +78,13 @@ public class GoogleProtoGenerator extends BaseGenerator {
         ctx.put("imports",protoImports);
     }
 
-    private void generateProtoFields(VelocityContext ctx,CodeTemplete code){
+    private void generateProtoFields(VelocityContext ctx,CodeTemplate code){
         List<Field> fields = code.getAllFields();
         List<org.einstein.codegen.api.impl.Field> convertFields = new ArrayList<>(fields.size());
         try {
             for (Field field : fields) {
                 if (field.getType().isMemberClass()) {
-                    ICodeTemplete templete = codesMap.get(field.getType().getSimpleName());
+                    ICodeTemplate templete = codesMap.get(field.getType().getSimpleName());
                     if (templete != null) {
                         org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
                         convertField.setType(decorateClassName(field.getType().getSimpleName(),true,false));
@@ -123,7 +118,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
                     if(genericType == null) continue;
                     if(genericType instanceof ParameterizedType){
                         Class<?> supper = (Class<?>) ((ParameterizedType)genericType).getActualTypeArguments()[0];
-                        ICodeTemplete templete = codesMap.get(supper.getSimpleName());
+                        ICodeTemplate templete = codesMap.get(supper.getSimpleName());
                         if(templete!=null){
                             convertField.setEProtoObject(true);
                         }
@@ -148,7 +143,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
     }
 
 
-    private boolean  generateGoogelProtoBuf(CodeTemplete code){
+    private boolean  generateGoogelProtoBuf(CodeTemplate code){
         String fielName = decorateClassName(code.getProtoClassName(),false,true);
         String dir = generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
         String outDir = generateOutPutDir(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE,this.outPutPath);

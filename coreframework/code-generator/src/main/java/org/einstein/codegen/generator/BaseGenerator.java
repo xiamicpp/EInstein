@@ -2,9 +2,9 @@ package org.einstein.codegen.generator;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.app.VelocityEngine;
-import org.einstein.codegen.api.ICodeTemplete;
+import org.einstein.codegen.api.ICodeTemplate;
 import org.einstein.codegen.api.IGenerator;
-import org.einstein.codegen.api.impl.CodeTemplete;
+import org.einstein.codegen.api.impl.CodeTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,10 +16,10 @@ import java.util.Properties;
 /**
  * @create by xiamicpp
  **/
-public abstract class BaseGenerator implements IGenerator<ICodeTemplete> {
+public abstract class BaseGenerator implements IGenerator<ICodeTemplate> {
     protected static Logger logger = LoggerFactory.getLogger(BaseGenerator.class);
-    protected List<ICodeTemplete> codes;
-    protected Map<String, ICodeTemplete> codesMap = new HashMap<>();
+    protected List<ICodeTemplate> codes;
+    protected Map<String, ICodeTemplate> codesMap = new HashMap<>();
     protected String outPutPath;
     protected VelocityEngine ve;
     protected Template template;
@@ -36,18 +36,18 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplete> {
     public boolean generate() {
         boolean result = true;
         logger.info("Total {} code need to generate",codes.size());
-        for (ICodeTemplete code : codes) {
-            result = generateCode((CodeTemplete) code);
+        for (ICodeTemplate code : codes) {
+            result = generateCode((CodeTemplate) code);
             if (!result) return result;
         }
         return true;
     }
 
     @Override
-    public void init(List<ICodeTemplete> code_templete, String outputdir) {
+    public void init(List<ICodeTemplate> code_templete, String outputdir) {
         this.codes = code_templete;
         this.outPutPath = outputdir;
-        for (ICodeTemplete code : code_templete) {
+        for (ICodeTemplate code : code_templete) {
             codesMap.put(code.getProtoClassName(), code);
         }
     }
@@ -65,7 +65,7 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplete> {
     }
 
     protected abstract boolean loadVelocityTemplate();
-    protected abstract boolean generateCode(CodeTemplete code);
+    protected abstract boolean generateCode(CodeTemplate code);
 
     protected String generateOutPutDir(String packageName,String outPutPath){
         String directory = outPutPath;
