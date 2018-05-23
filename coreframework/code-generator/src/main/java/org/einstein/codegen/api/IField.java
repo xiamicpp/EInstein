@@ -37,4 +37,10 @@ public interface IField {
      * @return
      */
     List<IField> getFields();
+
+    String getDecorateType();
+
+    String getDecorateMethod();
+
+    String getComment();
 }

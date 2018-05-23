@@ -12,15 +12,14 @@ public class Field implements IField {
     private String type;
     private String name;
     private Object defaultValue;
+    private String comment;
+    private String decorateType;
+    private String decorateMethod;
     private boolean isList = false;
     private boolean isEProtoObject = false;
     private boolean isEnum = false;
     private boolean isConstant = false;
     private List<IField> fields = new ArrayList<>();
-
-    private static final String[] s_reserverdType = new String[]{
-            "byte","short","int","long","float","double","char","boolean","string"
-    };
 
     @Override
     public String getType() {
@@ -62,6 +61,21 @@ public class Field implements IField {
         return fields;
     }
 
+    @Override
+    public String getDecorateType() {
+        return decorateType;
+    }
+
+    @Override
+    public String getDecorateMethod() {
+        return decorateMethod;
+    }
+
+    @Override
+    public String getComment() {
+        return comment;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
@@ -93,4 +107,10 @@ public class Field implements IField {
     public void setFields(List<IField> fields){
         this.fields = fields;
     }
+
+    public void setComment(String comment){this.comment = comment;}
+
+    public void setDecorateType(String decorateType){this.decorateType = decorateType;}
+
+    public void setDecorateMethod(String decorateMethod){this.decorateMethod = decorateMethod;}
 }

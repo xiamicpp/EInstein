@@ -2,22 +2,21 @@ package org.einstein.codegen.api.impl;
 
 
 import org.einstein.codegen.api.IField;
-import org.einstein.codegen.api.ITemplete;
+import org.einstein.codegen.api.ITemplate;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by kevin on 2018/5/6.
  */
-public class Templete implements ITemplete {
+public class Template implements ITemplate {
     private String eproto_name_;
 
     private String templete_name_;
     private List<IField> fields_;
     private int class_entity_id_; //also is the templete id
 
-    private Templete() {
+    private Template() {
     }
 
 

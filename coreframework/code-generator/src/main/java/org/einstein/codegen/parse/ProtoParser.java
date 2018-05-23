@@ -1,9 +1,9 @@
 package org.einstein.codegen.parse;
 
 import org.apache.commons.lang3.StringUtils;
-import org.einstein.codegen.api.ICodeTemplete;
+import org.einstein.codegen.api.ICodeTemplate;
 import org.einstein.codegen.api.IParser;
-import org.einstein.codegen.api.impl.CodeTemplete;
+import org.einstein.codegen.api.impl.CodeTemplate;
 import org.einstein.codegen.exception.ESynatx;
 import org.einstein.codegen.util.FileUtil;
 import org.slf4j.Logger;
@@ -17,19 +17,19 @@ import java.util.regex.Pattern;
 /**
  * @create by xiamicpp
  **/
-public class ProtoParser implements IParser<List<ICodeTemplete>, String,String> {
+public class ProtoParser implements IParser<List<ICodeTemplate>, String,String> {
     private static Logger logger = LoggerFactory.getLogger(ProtoParser.class);
     private String projectDir;
     private String protoDir;
     private Set<File> protoSource = new HashSet<>();
-    private List<ICodeTemplete> codes = new ArrayList<>();
+    private List<ICodeTemplate> codes = new ArrayList<>();
     private static Pattern classNamePattern = Pattern.compile("^public\\s+interface\\s+([a-zA-Z0-9]*)[\\s\\S]*");
     private static Pattern classPackagePattern = Pattern.compile("^package\\s+(\\S*);");
 
 
 
     @Override
-    public List<ICodeTemplete> parse(String dir,String data) throws ESynatx {
+    public List<ICodeTemplate> parse(String dir, String data) throws ESynatx {
         this.projectDir = dir;
         this.protoDir =  data;
         logger.info("==========================CodeParser========================");
@@ -71,7 +71,7 @@ public class ProtoParser implements IParser<List<ICodeTemplete>, String,String> 
         }
     }
 
-    private ICodeTemplete parseContent(BufferedReader reader) throws ESynatx {
+    private ICodeTemplate parseContent(BufferedReader reader) throws ESynatx {
         try {
             String line="";
             String packageName=null;
@@ -91,7 +91,7 @@ public class ProtoParser implements IParser<List<ICodeTemplete>, String,String> 
             }
             if(StringUtils.isEmpty(packageName)||StringUtils.isEmpty(className))
                 throw  new ESynatx("can not parse packageName or className!");
-            CodeTemplete codeTemplete = new CodeTemplete(packageName,className);
+            CodeTemplate codeTemplete = new CodeTemplate(packageName,className);
             codeTemplete.reflectClass(this.projectDir+"/target/classes/");
             return codeTemplete;
         }catch (IOException e){

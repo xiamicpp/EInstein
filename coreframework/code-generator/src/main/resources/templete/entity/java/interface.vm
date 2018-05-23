@@ -6,25 +6,26 @@ package ${packageName};
 
 #parse("templete/entity/java/comment.vm")
 
-public interface ${entityName} #if(${hasInterfaces}==true) extends ${interfaces} #end{
+#set($Count = 1)
+public interface ${entityName} #if(${interfaces.size()}>0)extends #foreach(${interface} in ${interfaces})#if($Count!=1),#end${interface}#set($Count=$Count+1)#end #end{
  #if(!${isMutable})
-    static final int PROTO_CLASS_ID_ = ${PROTO_CLASS_ID};
+    static final int PROTO_CLASS_ID = ${PROTO_CLASS_ID};
  #end
 
  #if(${getterMethod})
     #foreach($field in ${fields})
     $!{field.comment}
-    #if(${field.isList})
-    List<${field.wrapperType.simpleName}> ${field.wrapperType.getterMethodName}();
+    #if(${field.isList()})
+    java.util.List<${field.decorateType}> ${field.decorateMethod}();
     #else
-    ${field.wrapperType.simpleName} ${field.wrapperType.getterMethodName}();
+    ${field.decorateType} ${field.decorateMethod}();
     #end
     #end
  #end
  #if(${setterMethod})
     #foreach($field in ${fields})
     $!{field.comment}
-    void ${field.setterMethodName}(#if(${field.isList}) List<${field.wrapperType.fullName}> #else ${field.wrapperType.fullName} #end value);
+    void ${field.decorateMethod}(#if(${field.isList()}) java.util.List<${field.decorateType}> #else ${field.decorateType} #end value);
     #end
  #end
 }

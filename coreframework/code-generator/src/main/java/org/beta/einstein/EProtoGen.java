@@ -18,11 +18,14 @@ package org.beta.einstein;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.einstein.codegen.api.ICodeTemplate;
 import org.einstein.codegen.exception.ESynatx;
 import org.einstein.codegen.generator.GoogleProtoGenerator;
+import org.einstein.codegen.generator.JavaCodeGenerator;
 import org.einstein.codegen.parse.ProtoParser;
 
 import java.io.File;
+import java.util.List;
 
 /**
  *
@@ -59,10 +62,17 @@ public class EProtoGen
             boolean result = false;
             GoogleProtoGenerator generator = new GoogleProtoGenerator();
             ProtoParser parser = new ProtoParser();
-            generator.init(parser.parse(project_dir.getAbsolutePath(),proto_dir), project_dir.getAbsolutePath()+"/"+outputdir);
+            List<ICodeTemplate> codes = parser.parse(project_dir.getAbsolutePath(),proto_dir);
+            generator.init(codes, project_dir.getAbsolutePath()+"/"+outputdir);
             generator.initialize();
             result=generator.generate();
             CheckResult(result,"GoogleProtoGenerate");
+            result = false;
+            JavaCodeGenerator javaCodeGenerator = new JavaCodeGenerator();
+            javaCodeGenerator.init(codes,project_dir.getAbsolutePath()+"/"+outputdir);
+            javaCodeGenerator.initialize();
+            result = javaCodeGenerator.generate();
+            CheckResult(result,"javaCodeGenerate");
         }catch (ESynatx e){
             throw new MojoExecutionException("synatx exception "+e.getMessage());
         }
