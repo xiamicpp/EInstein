@@ -1,7 +1,7 @@
 package ${packageName};
 
 #foreach($import in ${imports})
-    import $import;
+import $import;
 #end
 
 #parse("templete/entity/java/comment.vm")
@@ -10,8 +10,7 @@ package ${packageName};
 public interface ${entityName} #if(${interfaces.size()}>0)extends #foreach(${interface} in ${interfaces})#if($Count!=1),#end${interface}#set($Count=$Count+1)#end #end{
  #if(!${isMutable})
     static final int PROTO_CLASS_ID = ${PROTO_CLASS_ID};
- #end
-
+ #end##
  #if(${getterMethod})
     #foreach($field in ${fields})
     $!{field.comment}

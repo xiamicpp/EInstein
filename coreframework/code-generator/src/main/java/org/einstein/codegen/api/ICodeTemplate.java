@@ -12,4 +12,5 @@ public interface ICodeTemplate extends ITemplate {
     int getProtoClassID();
     List<Field> getAllFields();
     List<Field> getDeclaredFields();
+    List<Field> getSupperFields();
 }

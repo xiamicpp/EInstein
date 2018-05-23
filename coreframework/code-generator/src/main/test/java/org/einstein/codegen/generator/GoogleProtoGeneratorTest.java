@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.io.File;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by xiamicpp on 2018/5/15.
  */
@@ -15,9 +17,9 @@ public class GoogleProtoGeneratorTest {
         GoogleProtoGenerator generator = new GoogleProtoGenerator();
         ProtoParser parser = new ProtoParser();
         File dir = new File("");
-        generator.init(parser.parse(dir.getAbsolutePath(),"/src/main/test/java/org/einstein/test/proto/"),"target/generated-src/");
+        generator.init(parser.parse(dir.getAbsolutePath(),"/src/main/test/java/org/einstein/test/proto/"),dir.getAbsolutePath()+"/target/generated-src/");
         generator.initialize();
-        generator.generate();
+        assertEquals(true,generator.generate());
     }
 
 }

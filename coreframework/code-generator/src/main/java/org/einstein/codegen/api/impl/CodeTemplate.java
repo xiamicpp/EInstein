@@ -68,6 +68,16 @@ public class CodeTemplate implements ICodeTemplate {
         return filterField(proto.getDeclaredFields());
     }
 
+    @Override
+    public List<Field> getSupperFields() {
+        Class<?>[] interfaces = getInterfaces();
+        List<Field> supperFields = new ArrayList<>();
+        for(Class<?> supper:interfaces){
+            supperFields.addAll(filterField(supper.getFields()));
+        }
+        return supperFields;
+    }
+
     public Class<?>[] getInterfaces(){
         return proto.getInterfaces();
     }

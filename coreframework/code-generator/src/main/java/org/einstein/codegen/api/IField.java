@@ -43,4 +43,6 @@ public interface IField {
     String getDecorateMethod();
 
     String getComment();
+
+    String getDecorateType2();
 }

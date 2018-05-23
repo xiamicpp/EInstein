@@ -15,6 +15,7 @@ public class Field implements IField {
     private String comment;
     private String decorateType;
     private String decorateMethod;
+    private String decorateType2;
     private boolean isList = false;
     private boolean isEProtoObject = false;
     private boolean isEnum = false;
@@ -76,6 +77,11 @@ public class Field implements IField {
         return comment;
     }
 
+    @Override
+    public String getDecorateType2() {
+        return this.decorateType2;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
@@ -111,6 +117,8 @@ public class Field implements IField {
     public void setComment(String comment){this.comment = comment;}
 
     public void setDecorateType(String decorateType){this.decorateType = decorateType;}
+
+    public void setDecorateType2(String decorateType2){this.decorateType2 = decorateType2;}
 
     public void setDecorateMethod(String decorateMethod){this.decorateMethod = decorateMethod;}
 }

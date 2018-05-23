@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.VelocityContext;
 import org.einstein.codegen.api.ICodeTemplate;
 import org.einstein.codegen.api.impl.CodeTemplate;
+import org.einstein.codegen.exception.ESynatx;
 import org.einstein.codegen.util.FileUtil;
 
 import java.io.*;
@@ -20,7 +21,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
     private static final String PROTOBUF_VERSION = "proto3";
     private static  String PB_CLASS_PREFFIX = "PB";
     private static  String PB_CLASS_SUFFIX = ".proto";
-    private static String protobuf_template = "templete/proto/proto.vm";
+    private static String protobuf_template = "template/proto/proto.vm";
 
     @Override
     protected boolean loadVelocityTemplate() {
@@ -29,14 +30,36 @@ public class GoogleProtoGenerator extends BaseGenerator {
     }
 
     @Override
-    protected boolean generateCode(CodeTemplate code) {
-        if(!generateProtoFile(code)) return false;
-        logger.debug("start generate protobuf");
-        if(!generateGoogelProtoBuf(code)) return false;
+    public boolean generate() {
+        boolean result= super.generate();
+        if(result == false){
+            logger.error("GoogleProtobuf generate failed");
+            return false;
+        }
+        try {
+            for (ICodeTemplate code : codes) {
+                generateGoogelProtoBuf((CodeTemplate) code);
+            }
+        }catch (ESynatx e){
+            logger.error("Google protobuf generate failed, {}",e.getMessage());
+            return false;
+        }
         return true;
     }
 
-    private boolean generateProtoFile(CodeTemplate code){
+    @Override
+    protected boolean generateCode(CodeTemplate code) {
+        try {
+            generateProtoFile(code);
+        }catch (ESynatx e){
+            logger.error("Generate google proto failed!, caused by:{}",e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    private boolean generateProtoFile(CodeTemplate code) throws ESynatx {
         Writer out =null;
         try {
             String fielName = decorateClassName(code.getProtoClassName(),false,true);
@@ -52,8 +75,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
             this.template.merge(ctx,out);
             FileUtil.flush(out);
         } catch (IOException e) {
-            logger.error("failed to create writer, {}",e);
-            return false;
+            throw new ESynatx("create writer failed",e);
         }finally {
             FileUtil.close(out);
         }
@@ -61,17 +83,36 @@ public class GoogleProtoGenerator extends BaseGenerator {
     }
 
 
-    private void generateProtoImports(VelocityContext ctx, CodeTemplate code){
-        List<Field> fields = code.getAllFields();
+    private void generateProtoImports(VelocityContext ctx, CodeTemplate code) throws ESynatx {
+        List<Field> fields = code.getDeclaredFields();
         List<String> protoImports = new ArrayList<>();
+
+        Class<?>[] interfaces=code.getInterfaces();
+        int protoSupperCount = 0;
+        for(Class<?> supper:interfaces){
+            ICodeTemplate supperCode = codesMap.get(supper.getSimpleName());
+            if(supperCode!=null){
+                protoSupperCount++;
+                String path = supperCode.getProtoPackageName()+GENERATED_PROTO;
+                path = StringUtils.replace(path,".","/").concat("/")
+                        + this.decorateClassName(supperCode.getProtoClassName(),false,true);
+                protoImports.add(path);
+                ctx.put("hasSupper",true);
+                ctx.put("supperType",decorateClassName(supperCode.getProtoClassName(),false,false));
+            }
+        }
+        if(protoSupperCount>1){
+            throw new ESynatx("proto extends multiple proto!, extends: "+protoImports.toString());
+        }
+
         for(Field field:fields){
             if(!field.getType().isMemberClass())
                 continue;
-            ICodeTemplate templete = codesMap.get(field.getType().getTypeName());
+            ICodeTemplate templete = codesMap.get(field.getType().getSimpleName());
             if(templete!=null){
                 String path = templete.getProtoPackageName()+GENERATED_PROTO;
                 path=StringUtils.replace(path,".","/").concat("/")
-                        + this.decorateClassName(templete.getProtoClassName(),true,false);
+                        + this.decorateClassName(templete.getProtoClassName(),false,true);
                 protoImports.add(path);
             }
         }
@@ -79,7 +120,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
     }
 
     private void generateProtoFields(VelocityContext ctx,CodeTemplate code){
-        List<Field> fields = code.getAllFields();
+        List<Field> fields = code.getDeclaredFields();
         List<org.einstein.codegen.api.impl.Field> convertFields = new ArrayList<>(fields.size());
         try {
             for (Field field : fields) {
@@ -143,11 +184,12 @@ public class GoogleProtoGenerator extends BaseGenerator {
     }
 
 
-    private boolean  generateGoogelProtoBuf(CodeTemplate code){
+    private boolean  generateGoogelProtoBuf(CodeTemplate code) throws ESynatx {
         String fielName = decorateClassName(code.getProtoClassName(),false,true);
-        String dir = generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
+        String dir = this.outPutPath;
+                //generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
         String outDir = generateOutPutDir(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE,this.outPutPath);
-        String cmd = "protoc -I="+dir+" --java_out="+this.outPutPath+" "+dir+fielName;
+        String cmd = "protoc -I="+dir+" --java_out="+this.outPutPath+" "+generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath)+fielName;
         FileUtil.createDir(outDir);
         logger.info(cmd);
         try {
@@ -171,16 +213,13 @@ public class GoogleProtoGenerator extends BaseGenerator {
             }
             int resultCode = protoc_process.waitFor();
             if(resultCode != 0||hasError){
-                logger.error("generate protobuf class failed");
-                return false;
+                throw  new ESynatx("generate protobuf class failed");
             }else {
                 logger.info("Generate protobuf class success");
                 return true;
             }
         } catch (IOException |InterruptedException e) {
-            logger.error("Failed to generate protobuf, {}",e);
-            e.printStackTrace();
-            return false;
+            throw  new ESynatx("Generate protobuf class failed, causes:"+e.getMessage(),e);
         }
     }
 

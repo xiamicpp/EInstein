@@ -4,7 +4,7 @@ option java_package = "${package}";
 option java_outer_classname = "${classname}";
 
 #foreach(${import} in ${imports})
-import ${import};
+import "${import}";
 #end
 
 message ${message} {
@@ -16,6 +16,10 @@ message ${message} {
                     "String":"string",
                     "ByteString":"bytes"})
 #set($count = 1)
+#if(${hasSupper})##
+    ${supperType} super = ${count};
+    #set($count = $count+1)
+#end
 #foreach(${field} in ${fields})
     #if(${field.isList()} == true)
     repeated #if(${filed.isEProtoObject()} == true)${field.type}#else$typeFormat.get(${field.type})#end ${field.name} = ${count};

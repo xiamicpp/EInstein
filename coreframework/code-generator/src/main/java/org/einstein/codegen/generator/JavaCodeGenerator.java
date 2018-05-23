@@ -14,10 +14,8 @@ import java.io.Writer;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @create by xiamicpp
@@ -28,7 +26,7 @@ public class JavaCodeGenerator extends BaseGenerator {
     private Template mutable_interface_template;
     private Template immutable_implement_template;
     private Template mutable_implement_template;
-    private static final String interface_template= "templete/entity/java/interface.vm";
+    private static final String interface_template= "template/entity/java/interface.vm";
 
     private static final String[] CLASS_PREFIX = {"E","I","E","I"};
     private static final String[] CLASS_SUFFIX = {"","","Immutable","Immutable"};
