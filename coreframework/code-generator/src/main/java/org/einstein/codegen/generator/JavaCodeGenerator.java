@@ -26,7 +26,9 @@ public class JavaCodeGenerator extends BaseGenerator {
     private Template mutable_interface_template;
     private Template immutable_implement_template;
     private Template mutable_implement_template;
-    private static final String interface_template= "template/entity/java/interface.vm";
+    private Template implement_template;
+    private static final String interface_template_vm= "template/entity/java/interface.vm";
+    private static final String implement_template_vm= "template/entity/java/implement.vm";
 
     private static final String[] CLASS_PREFIX = {"E","I","E","I"};
     private static final String[] CLASS_SUFFIX = {"","","Immutable","Immutable"};
@@ -36,8 +38,9 @@ public class JavaCodeGenerator extends BaseGenerator {
 
     @Override
     protected boolean loadVelocityTemplate() {
-        this.immutable_interface_template = ve.getTemplate(interface_template,ENCODE);
-        this.mutable_interface_template = ve.getTemplate(interface_template,ENCODE);
+        this.immutable_interface_template = ve.getTemplate(interface_template_vm,ENCODE);
+        this.mutable_interface_template = ve.getTemplate(interface_template_vm,ENCODE);
+        this.implement_template = ve.getTemplate(implement_template_vm,ENCODE);
         return true;
     }
 
@@ -46,6 +49,7 @@ public class JavaCodeGenerator extends BaseGenerator {
         try {
             generateImmutableInterface(code);
             generateMutableInterface(code);
+            generateImplementClass(code);
         }catch (ESynatx e){
             logger.error("generated failed:{}",e.getMessage());
             e.printStackTrace();
@@ -107,19 +111,42 @@ public class JavaCodeGenerator extends BaseGenerator {
         }
     }
 
+    private void generateImplementClass(CodeTemplate code) throws ESynatx {
+        Writer out = null;
+        try {
+            String className = decorateClassName(code.getProtoClassName(), false, false);
+            String dir = generateOutPutDir(code.getProtoPackageName() + GENERATED_ENTITYS + GENERATED_entity, outPutPath);
+            out = FileUtil.createFileWriter(className + ".java", dir);
+            VelocityContext ctx = new VelocityContext();
+            ctx.put("current_time", TimeUtil.CurrentTime());
+
+            this.generatePackage(code,ctx,false,false);
+            this.generateImports(code,ctx,false,false);
+            this.generateClassHeader(code,ctx,false,false);
+            this.generateClassFields(code,ctx);
+            this.implement_template.merge(ctx,out);
+            FileUtil.flush(out);
+
+        }catch (IOException e){
+            logger.error("Failed to generate classImplement for {}, caused by:{}",code.getProtoClassName(),e.getMessage());
+            e.printStackTrace();
+            throw new ESynatx("class file create failed",e);
+        }
+    }
+
 
     private boolean generatePackage(CodeTemplate code, VelocityContext ctx, boolean isInterface, boolean isImmutable){
         if(isInterface)
             ctx.put("packageName",code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API);
         else
-            ctx.put("packageName",code.getProtoClassName()+GENERATED_ENTITYS+GENERATED_entity);
+            ctx.put("packageName",code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_entity);
         return true;
     }
 
     private boolean generateImports(CodeTemplate code, VelocityContext ctx, boolean isInterface, boolean isImmutable){
         List<String> imports = new ArrayList<>();
         if(isInterface&&isImmutable){
-            imports.add(BASE_API_EPOBEJCT);
+            //imports.add(BASE_API_EPOBEJCT);
             imports.add(BASE_API_SERILIZABLE);
         }
 
@@ -142,48 +169,105 @@ public class JavaCodeGenerator extends BaseGenerator {
     private boolean generateClassHeader(CodeTemplate code, VelocityContext ctx, boolean isInterface, boolean isImmutable) throws ESynatx {
         String entityName = decorateClassName(code.getProtoClassName(),isInterface,isImmutable);
         ctx.put("entityName",entityName);
-        List<String> ctxInterfaces = new ArrayList<>();
-        Class<?>[] interfaces = code.getInterfaces();
-        int protoInterfaceCount = 0;
-        String extendsProto ="";
-        String newImport = "";
-        for(Class<?> pinterface:interfaces){
-            ICodeTemplate superCode= codesMap.get(pinterface.getSimpleName());
-            if(superCode!=null){
-                protoInterfaceCount++;
-                extendsProto =superCode.getProtoClassName();
-                newImport = code.getProtoPackageName()+GENERATED_ENTITYS;
+        if(isInterface){
+            List<String> ctxInterfaces = new ArrayList<>();
+            Class<?>[] interfaces = code.getInterfaces();
+            int protoInterfaceCount = 0;
+            String extendsProto ="";
+            String newImport = "";
+            for(Class<?> pinterface:interfaces){
+                ICodeTemplate superCode= codesMap.get(pinterface.getSimpleName());
+                if(superCode!=null){
+                    protoInterfaceCount++;
+                    extendsProto =superCode.getProtoClassName();
+                    newImport = code.getProtoPackageName()+GENERATED_ENTITYS;
+                }
             }
-        }
-        if(protoInterfaceCount>1){
-            logger.error("not allowed extends multiple EProtoObject!, it extends:{}", interfaces.toString());
-            throw new ESynatx("proto extends multiple proto!, it extends:"+interfaces.toString());
-        }
-        if(isImmutable){
-            if(isInterface){
+            if(protoInterfaceCount>1){
+                logger.error("not allowed extends multiple EProtoObject!, it extends:{}", interfaces.toString());
+                throw new ESynatx("proto extends multiple proto!, it extends:"+interfaces.toString());
+            }
+
+            if(isImmutable){
                 if(protoInterfaceCount>0){
                     ctxInterfaces.add(newImport+GENERATED_API+"."+decorateClassName(extendsProto,true,true));
                 }else {
-                    String mutable = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,false);
-                    String immutable = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,true);
-                    ctxInterfaces.add(BASE_API_EPOBEJCT+"<"+mutable+","+immutable+">");
+                    //String mutable = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,false);
+                    //String immutable = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,true);
+                    //ctxInterfaces.add(BASE_API_EPOBEJCT+"<"+mutable+","+immutable+">");
                     ctxInterfaces.add(BASE_API_SERILIZABLE);
                 }
             }else{
-                ctxInterfaces.add(newImport+GENERATED_API+"."+decorateClassName(extendsProto,true,true));
+                if(protoInterfaceCount>0){
+                    ctxInterfaces.add(newImport+GENERATED_API+"."+decorateClassName(extendsProto,true,false));
+                }
+                ctxInterfaces.add(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,true));
             }
-        }else {
-            if(isInterface){
-             if(protoInterfaceCount>0){
-                 ctxInterfaces.add(newImport+GENERATED_API+"."+decorateClassName(extendsProto,true,false));
-             }
-             ctxInterfaces.add(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,true));
-            }else{
-
-            }
+            ctx.put("interfaces",ctxInterfaces);
+        }else{
+            String mutableInterface = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,false);
+            ctx.put("mutableInterface",mutableInterface);
         }
-        ctx.put("interfaces",ctxInterfaces);
+
         return true;
+    }
+
+    private void generateClassFields(CodeTemplate code, VelocityContext ctx) throws ESynatx{
+        //childFields
+        List<Field> fields=code.getDeclaredFields();
+        List<org.einstein.codegen.api.impl.Field> convertFields = new ArrayList<>(fields.size());
+        try {
+            for (Field field : fields) {
+                if (field.getType().isMemberClass()) {
+                    ICodeTemplate memeber = codesMap.get(field.getType().getSimpleName());
+                    if (memeber == null) {
+                        logger.error("can not match member in code map, name:{}", field.getType().getSimpleName());
+                        throw new ESynatx("Interface field generate failed, field:" + field.getName());
+                    }
+                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
+                    convertField.setType(decorateClassName(memeber.getProtoClassName(), true, false));
+                    convertField.setName(field.getName());
+                    convertField.setDefaultValue(field.get(null));
+                    convertField.setDecorateType(memeber.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
+                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,false));
+                    convertFields.add(convertField);
+                }else if(field.getType().isAssignableFrom(List.class)){
+                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
+                    convertField.setList(true);
+                    Type genericType=field.getGenericType();
+                    if(genericType == null) continue;
+                    if(genericType instanceof ParameterizedType){
+                        Class<?> supper = (Class<?>) ((ParameterizedType)genericType).getActualTypeArguments()[0];
+                        ICodeTemplate templete = codesMap.get(supper.getSimpleName());
+                        if(templete!=null){
+                            convertField.setEProtoObject(true);
+                            convertField.setType(decorateClassName(templete.getProtoClassName(),true,false));
+                            convertField.setName(field.getName());
+                            convertField.setDecorateType(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
+                        }else {
+                            convertField.setName(field.getName());
+                            convertField.setType(supper.getSimpleName());
+                            convertField.setDecorateType(supper.getName());
+                        }
+                        convertField.setDecorateMethod(decorateMethod(field.getName(),true,false));
+                        convertField.setDefaultValue(field.get(null));
+                        convertFields.add(convertField);
+                    }
+                }else{
+                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
+                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,false));
+                    convertField.setDecorateType(field.getType().getName());
+                    convertField.setName(field.getName());
+                    convertFields.add(convertField);
+                }
+            }
+        }catch (IllegalAccessException e){
+            throw new ESynatx("can not get default value",e);
+        }
+        ctx.put("childfields",convertFields);
+
+        //supperClass
+
     }
 
     private void generateInterfaceFields(CodeTemplate code, VelocityContext ctx, boolean isImmutable) throws ESynatx {
@@ -202,7 +286,7 @@ public class JavaCodeGenerator extends BaseGenerator {
             for (Field field : fields) {
                 if (field.getType().isMemberClass()) {
                     ICodeTemplate memeber = codesMap.get(field.getType().getSimpleName());
-                    if (template == null) {
+                    if (memeber == null) {
                         logger.error("can not match member in code map, name:{}", field.getType().getSimpleName());
                         throw new ESynatx("Interface field generate failed, field:" + field.getName());
                     }
@@ -239,6 +323,7 @@ public class JavaCodeGenerator extends BaseGenerator {
                     org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
                     convertField.setDecorateMethod(decorateMethod(field.getName(),true,isImmutable));
                     convertField.setDecorateType(field.getType().getName());
+                    convertField.setName(field.getName());
                     convertFields.add(convertField);
                 }
             }

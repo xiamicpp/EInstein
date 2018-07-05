@@ -82,6 +82,7 @@ public class CodeTemplate implements ICodeTemplate {
         return proto.getInterfaces();
     }
 
+
     private List<Field> filterField(Field[] fields){
         List<Field> rets = new ArrayList<>(fields.length);
         for(Field field:fields){

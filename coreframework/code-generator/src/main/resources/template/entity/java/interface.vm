@@ -4,7 +4,7 @@ package ${packageName};
 import $import;
 #end
 
-#parse("templete/entity/java/comment.vm")
+#parse("template/entity/java/comment.vm")
 
 #set($Count = 1)
 public interface ${entityName} #if(${interfaces.size()}>0)extends #foreach(${interface} in ${interfaces})#if($Count!=1),#end${interface}#set($Count=$Count+1)#end #end{

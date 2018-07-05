@@ -1,183 +1,108 @@
-package ${packageName}
+package ${packageName};##
 
-#foreach($import in ${imports})
+#foreach($import in ${imports})##
 import $import;
-#end
-
+#end##
 #parse("template/entity/java/comment.vm")
 
-public class ${mutableClass} implements ${mutableInterface},Cloneable{
-    private ${ImmutableClass} m_entity = new ${ImmutableClass}();
+public class ${entityName} implements ${mutableInterface}{
 
-    ##############################################################
-    ## method
-    ##############################################################
-    #foreach(${field} in ${fields})##
-        ##getMethod###############################################
-        @Override
-        #if(${field.isList()}==true)##
-        public List<${field.decorateType}> get${field.decorateMethod}(){
-        #else
-        public ${field.decorateType} get${field.decorateMethod}(){
-        #end##
-            return m_entity.get${field.decorateMethod}();
-        }
-        ##########################################################
-        ##setMethod###############################################
-        @Override
-        #if(${field.isList()}==true)##
-        public void set${field.decorateMethod}(List<${field.decorateType}> value){
-        #else
-        public void set${field.decorateMethod}(${field.decorateMethod} value){
-        #end##
-            m_entity.__set${field.decorateMethod}(value);
-        }
-        ##########################################################
+#foreach($field in ${childfields})
+    #if(${field.isList()})
+    private java.util.List<${field.decorateType}> m_${field.name};
+    #else
+    private ${field.decorateType} m_${field.name};
     #end
-    ##############################################################
-    ## createMutable
-    @Override
-    public ${mutableInterface} createMutable() throws EProtoException {
-        try{
-            return clone();
-        }catch(CloneNotSupportedException){
-            throw new EProtoException(EProtoException.ERROR_TYPE.CLONEFAILED,e);
-        }
-    }
-    ## createImmutable
-    @Override
-    public ${ImmutableInterface} createImmutable() throws EProtoException {
-        try{
-            return clone().m_entity;
-        }catch(CloneNotSupportedException){
-            throw new EProtoException(EProtoException.ERROR_TYPE.CLONEFAILED,e);
-        }
-    }
+    private volatile boolean m_field_${field.name};
+#end
 
-    ## clone
-    @Override
-    protected ${mutableClass} clone() throws CloneNotSupportedException {
-        ${mutableClass} obj = (${mutableClass})super.clone();
-        obj.m_entity = m_entity.clone();
-        return obj;
-    }
+#if(${hasSupperClass})
+    private ${supperClassMutableInterface} m_parent;
+#end
+    private ${pbClassType}.Builder m_builder = ${pbBuilder}.newBuilder();
 
-    ## toString
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[EPROTO OBJECT]:{")
-            .append("Data: )
-            .append(m_entity.toString())
-            .append(", supper: ")
-            .append(super.toString())
-            .append("}")
-        return sb.toString();
-    }
+#####################################################################
+## field method
+#####################################################################
+#foreach(${field} in ${childfields})##
+##get method
+@Override
+#if(${field.isList()})##
+public java.util.List<${field.decorateType}> get${field.decorateMethod}(){
+#else##
+public ${field.decorateType} get${field.decorateMethod}(){
+#end##
+return m_${field.name};
+}
+##set method
+#if(${field.isList()})##
+protected void __set${field.decorateMethod}(java.util.List<${field.decorateType}> value){
+##if(${field.isEProtoObject()})#set($pValue="((${field.decorateType2})value).builder()")#else#set($pValue = "value")#end
+for(${field.decorateType} item: value){
+m_builder.add${field.decorateMethod}(item)
+}
+#else##
+protected void __set${field.decorateMethod}(${field.decorateType} value){
+##if(${field.isEProtoObject()})#set($pValue="((${field.decorateType2})value).builder()")#else#set($pValue = "value")#end
+m_builder.set${field.decorateMethod}(value);
+#end##
+this.m_${field.name} = value;
+}
+#end##
 
-    ###############################################################################
-    ###inner class
-    private class ${ImmutableClass} implements ${ImmutableInterface},Cloneable{
-        ##################################################################
-        ##entity fields###################################################
-        ##################################################################
-        #foreach(${field} in ${fields})##
-        #if(${field.isList()})##
-        private List<${field.decorateType}> m_${field.name};
-        #end##
-        private ${field.decorateType} m_${field.name};
-        #end##
-        #if(${hasSupperClass})##
-        private ${supperClassImmutableInterface} m_parent;
-        #end##
-        priavte ${pbClassType}.Builder m_builder = ${pbBuilder}.newBuilder();
+#foreach(${field} in ${supperFields})##
+##get method
+@Override
+#if(${field.isList()})##
+public java.util.List<${field.decorateType}> get${field.decorateMethod}(){
+#else
+public ${field.decorateType} get${field.decorateMethod}(){
+#end
+return getParent().get${field.decorateMethod}();
+}
+##set method
+#if(${field.isList()})
+protected void __set${field.decorateMethod}(java.util.List<${field.decorateType}> value){
+#else
+protected void __set${field.decorateMethod}(${field.decorateType} value){
+#end
+getParentMutable().set${field.decorateMethod}(value);
+}
+#end
+###################################################################
 
-        ## constructor
-        public ${ImmutableClass}(){}
+###################################################################
+## getParent mutable and immutbale
+#if(${hasSupperClass})##
+private ${supperClassImmutableInterface} getParent(){
+if(null==m_parent){
+m_parent = new ${supperMutableClass}();
+}
+return m_parent;
+}
 
-        #####################################################################
-        ## field method
-        #####################################################################
-        #foreach(${field} in ${childfields})##
-        ##get method
-        @Override
-        #if(${field.isList()})##
-        public List<${field.decorateType}> get${field.decorateMethod}(){
-        #else##
-        public ${field.decorateType} get${field.decorateMethod}(){
-        #end
-            return m_${field.name};
-        }
-        ##set method
-        #if(${field.isList()})
-        protected void __set${field.decorateMethod}(List<${field.decorateType}> value){
-        #if(${field.isEProtoObject()})#set($pValue="((${field.decorateType2})value).builder()")#else#set($pValue = "value")#end
-            for(${field.decorateType} item: value){
-                m_builder.add${field.decorateMethod}($pValue)
-            }
-        #else
-        protected void __set${field.decorateMethod}(${field.decorateType} value){
-        #if(${field.isEProtoObject()})#set($pValue="((${field.decorateType2})value).builder()")#else#set($pValue = "value")#end
-            m_builder.set${field.decorateMethod}($pValue);
-         #end
-            this.m_${field.name} = value;
-        }
-        #end
-
-        #foreach(${field} in ${supperFields})##
-        ##get method
-        @Override
-        #if(${field.isList()})##
-        public List<${field.decorateType}> get${field.decorateMethod}(){
-        #else
-        public ${field.decorateType} get${field.decorateMethod}(){
-        #end
-            return getParent().get${field.decorateMethod}();
-        }
-        ##set method
-        #if(${field.isList()})
-        protected void __set${field.decorateMethod}(List<${field.decorateType}> value){
-        #else
-        protected void __set${field.decorateMethod}(${field.decorateType} value){
-        #end
-            getParentMutable().set${field.decorateMethod}(value);
-        }
-        #end
-
-        ## getParent mutable and immutbale
-        #if(${hasSupperClass})##
-        private ${supperClassImmutableInterface} getParent(){
-            if(null==m_parent){
-                m_parent = new ${supperMutableClass}();
-            }
-            return m_parent;
-        }
-
-        private ${supperClassMutableInterface} getParentMutable(){
-            return (${supperClassMutableInterface})m_parent;
-        }
-        #end
-
-        ##create mutable
-        @Override
-        public ${mutableInterface} createMutable() throw EProtoException {
-           return ${mutableClass}.this.createMutable();
-        }
-        ##create immutable
-        @Override
-        public ${ImmutableInterface} createImmutable() throw EProtoException {
-            return ${mutableClass}.this.createImmutable();
-        }
-        ## clone
-        @Override
-        protected ${ImmutableClass} clone() throws CloneNotSupportedException {
-            ${ImmutableClass} obj = (${ImmutableClass})super.clone();
-            return obj;
-        }
-
-        ## toString
+private ${supperClassMutableInterface} getParentMutable(){
+return (${supperClassMutableInterface})getParent();
+}
+#end##
 
 
-    }
+## toString
+@Override
+public String toString() {
+StringBuilder sb = new StringBuilder();
+sb.append("[EPROTO OBJECT]:{")
+.append("Data:")
+#foreach(${field} in ${childfields})##
+.append(m_${field.name}).append(",")
+#end
+#if(${hasSupperClass})##
+.append(" supper: ")
+.append(m_parent.toString())
+#end
+.append("}");
+return sb.toString();
+}
+
 }
 
