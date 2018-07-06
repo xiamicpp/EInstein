@@ -25,6 +25,7 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplate> {
     protected Template template;
 
     protected static String ENCODE = "UTF-8";
+    protected static  String PB_CLASS_PREFFIX = "PB";
 
     protected static  String GENERATED_PROTO = ".protobuf";
     protected static  String GENERATED_ENTITYS = ".entitys";

@@ -85,7 +85,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
 
     private void generateProtoImports(VelocityContext ctx, CodeTemplate code) throws ESynatx {
         List<Field> fields = code.getDeclaredFields();
-        List<String> protoImports = new ArrayList<>();
+        Set<String> protoImports = new HashSet<>();
 
         Class<?>[] interfaces=code.getInterfaces();
         int protoSupperCount = 0;
@@ -106,9 +106,16 @@ public class GoogleProtoGenerator extends BaseGenerator {
         }
 
         for(Field field:fields){
-            if(!field.getType().isMemberClass())
-                continue;
-            ICodeTemplate templete = codesMap.get(field.getType().getSimpleName());
+            String __simpleName = field.getType().getSimpleName();
+            if(field.getType().isAssignableFrom(List.class)){
+                Type genericType=field.getGenericType();
+                if(genericType == null) continue;
+                if(genericType instanceof ParameterizedType){
+                    Class<?> supper = (Class<?>) ((ParameterizedType)genericType).getActualTypeArguments()[0];
+                    __simpleName = supper.getSimpleName();
+                }
+            }
+            ICodeTemplate templete = codesMap.get(__simpleName);
             if(templete!=null){
                 String path = templete.getProtoPackageName()+GENERATED_PROTO;
                 path=StringUtils.replace(path,".","/").concat("/")
@@ -116,6 +123,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
                 protoImports.add(path);
             }
         }
+
         ctx.put("imports",protoImports);
     }
 
@@ -124,27 +132,26 @@ public class GoogleProtoGenerator extends BaseGenerator {
         List<org.einstein.codegen.api.impl.Field> convertFields = new ArrayList<>(fields.size());
         try {
             for (Field field : fields) {
-                if (field.getType().isMemberClass()) {
-                    ICodeTemplate templete = codesMap.get(field.getType().getSimpleName());
-                    if (templete != null) {
-                        org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                        convertField.setType(decorateClassName(field.getType().getSimpleName(),true,false));
-                        convertField.setName(field.getName());
-                        convertField.setDefaultValue(field.get(null));
-                        convertField.setEProtoObject(true);
-                        convertFields.add(convertField);
-                    }
+                String __simpleName = field.getType().getSimpleName();
+                ICodeTemplate templete = codesMap.get(__simpleName);
+                if (templete !=null) {
+                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
+                    convertField.setType(decorateClassName(field.getType().getSimpleName(),false,false));
+                    convertField.setName(field.getName());
+                    convertField.setDefaultValue(field.get(null));
+                    convertField.setEProtoObject(true);
+                    convertFields.add(convertField);
                 }else if(field.getType().isEnum()){
                     org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
                     convertField.setEnum(true);
-                    convertField.setType(field.getType().getSimpleName());
+                    convertField.setType(__simpleName);
                     convertField.setName(field.getName());
                     List<org.einstein.codegen.api.IField> items = new ArrayList<>();
                     for(Field subField: field.getType().getDeclaredFields()){
                         if(subField.isEnumConstant()){
                             org.einstein.codegen.api.impl.Field enumField = new org.einstein.codegen.api.impl.Field();
                             enumField.setName(subField.getName());
-                            enumField.setType(subField.getType().getSimpleName());
+                            enumField.setType(__simpleName);
                             enumField.setDefaultValue(subField.get(null));
                             enumField.setEnum(true);
                             items.add(enumField);
@@ -159,7 +166,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
                     if(genericType == null) continue;
                     if(genericType instanceof ParameterizedType){
                         Class<?> supper = (Class<?>) ((ParameterizedType)genericType).getActualTypeArguments()[0];
-                        ICodeTemplate templete = codesMap.get(supper.getSimpleName());
+                        templete = codesMap.get(supper.getSimpleName());
                         if(templete!=null){
                             convertField.setEProtoObject(true);
                         }

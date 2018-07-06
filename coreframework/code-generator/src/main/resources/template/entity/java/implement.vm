@@ -5,9 +5,12 @@ import $import;
 #end##
 #parse("template/entity/java/comment.vm")
 
-public class ${entityName} implements ${mutableInterface}{
+public class ${entityName} extends ${supperClass} implements ${mutableInterface}{
 
-#foreach($field in ${childfields})
+#####################################################################
+## ALL FIELDS
+#####################################################################
+#foreach($field in ${fields})
     #if(${field.isList()})
     private java.util.List<${field.decorateType}> m_${field.name};
     #else
@@ -15,94 +18,134 @@ public class ${entityName} implements ${mutableInterface}{
     #end
     private volatile boolean m_field_${field.name};
 #end
-
 #if(${hasSupperClass})
-    private ${supperClassMutableInterface} m_parent;
+    private ${supperClassImmutableInterface} m_parent;
 #end
-    private ${pbClassType}.Builder m_builder = ${pbBuilder}.newBuilder();
+
+    private static com.google.protobuf.Descriptors.Descriptor descriptor;
+#####################################################################
+## ALL FIELD INDEX AND FIELD NAME LIST
+#####################################################################
+#set($Count = 0)
+#foreach($field in ${fields})
+    private static final int f_index_${field.name} = $Count;
+    #set($Count=$Count+1)
+#end
+#foreach($field in ${supperFields})
+    private static final int f_index_${field.name} = $Count;
+    #set($Count=$Count+1)
+#end
+    private static final int f_index_unknown = $Count;
+
+    private static final String[] F_FIELD_NAME = {
+    #foreach($field in ${fields})
+        "${field.name}",
+    #end
+    #foreach($field in ${supperFields})
+        "${field.name}",
+    #end
+        "unknown"
+    };
+#####################################################################
+##CONSTRUCTION
+#####################################################################
+    public ${entityName}(){
+        supper(${pbType}.newBuilder(),${pbType}.parser());
+        descriptor = ${pbType}.getDescriptor();
+    }
 
 #####################################################################
-## field method
+## METHOD GETKEY
 #####################################################################
-#foreach(${field} in ${childfields})##
+    @Override
+    public String getKey(){
+        return ${keyFieldName};
+    }
+#####################################################################
+## METHOD GETCLASSID
+#####################################################################
+    @Override
+    public int getClassID(){
+        return PROTO_CLASS_ID;
+    }
+#####################################################################
+## FIELD METHOD
+#####################################################################
+#foreach(${field} in ${fields})##
 ##get method
-@Override
-#if(${field.isList()})##
-public java.util.List<${field.decorateType}> get${field.decorateMethod}(){
-#else##
-public ${field.decorateType} get${field.decorateMethod}(){
-#end##
-return m_${field.name};
-}
+    @Override
+    #if(${field.isList()})##
+    public java.util.List<${field.decorateType}> get${field.decorateMethod}(){
+    #else##
+    public ${field.decorateType} get${field.decorateMethod}(){
+    #end##
+        return m_${field.name};
+    }
 ##set method
-#if(${field.isList()})##
-protected void __set${field.decorateMethod}(java.util.List<${field.decorateType}> value){
-##if(${field.isEProtoObject()})#set($pValue="((${field.decorateType2})value).builder()")#else#set($pValue = "value")#end
-for(${field.decorateType} item: value){
-m_builder.add${field.decorateMethod}(item)
-}
-#else##
-protected void __set${field.decorateMethod}(${field.decorateType} value){
-##if(${field.isEProtoObject()})#set($pValue="((${field.decorateType2})value).builder()")#else#set($pValue = "value")#end
-m_builder.set${field.decorateMethod}(value);
-#end##
-this.m_${field.name} = value;
-}
+    @Override
+    #if(${field.isList()})##
+    public void set${field.decorateMethod}(java.util.List<${field.decorateType}> value){
+    #else##
+    public void set${field.decorateMethod}(${field.decorateType} value){
+    #end##
+        this.m_${field.name} = value;
+    }
 #end##
 
 #foreach(${field} in ${supperFields})##
 ##get method
-@Override
-#if(${field.isList()})##
-public java.util.List<${field.decorateType}> get${field.decorateMethod}(){
-#else
-public ${field.decorateType} get${field.decorateMethod}(){
-#end
-return getParent().get${field.decorateMethod}();
-}
+    @Override
+    #if(${field.isList()})##
+    public java.util.List<${field.decorateType}> get${field.decorateMethod}(){
+    #else
+    public ${field.decorateType} get${field.decorateMethod}(){
+    #end
+        return getParent().get${field.decorateMethod}();
+    }
 ##set method
-#if(${field.isList()})
-protected void __set${field.decorateMethod}(java.util.List<${field.decorateType}> value){
-#else
-protected void __set${field.decorateMethod}(${field.decorateType} value){
-#end
-getParentMutable().set${field.decorateMethod}(value);
-}
+    @Override
+    #if(${field.isList()})
+    public void set${field.decorateMethod}(java.util.List<${field.decorateType}> value){
+    #else
+    public void set${field.decorateMethod}(${field.decorateType} value){
+    #end
+        getParentMutable().set${field.decorateMethod}(value);
+    }
 #end
 ###################################################################
-
+## METHOD GETPARENT AND GETPARENTMUTABLE
 ###################################################################
 ## getParent mutable and immutbale
 #if(${hasSupperClass})##
-private ${supperClassImmutableInterface} getParent(){
-if(null==m_parent){
-m_parent = new ${supperMutableClass}();
-}
-return m_parent;
-}
+    private ${supperClassImmutableInterface} getParent(){
+        if(null==m_parent){
+        m_parent = new ${supperMutableClass}();
+        }
+        return m_parent;
+    }
 
-private ${supperClassMutableInterface} getParentMutable(){
-return (${supperClassMutableInterface})getParent();
-}
+    private ${supperClassMutableInterface} getParentMutable(){
+        return (${supperClassMutableInterface})getParent();
+    }
 #end##
 
 
 ## toString
-@Override
-public String toString() {
-StringBuilder sb = new StringBuilder();
-sb.append("[EPROTO OBJECT]:{")
-.append("Data:")
-#foreach(${field} in ${childfields})##
-.append(m_${field.name}).append(",")
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[EPROTO OBJECT]:{")
+          .append("Data:")
+#foreach(${field} in ${fields})##
+          .append("${field.name} = ").append(m_${field.name}).append(",")
 #end
 #if(${hasSupperClass})##
-.append(" supper: ")
-.append(m_parent.toString())
+          .append(" supper: ")
+          .append(m_parent.toString())
 #end
-.append("}");
-return sb.toString();
-}
+          .append("}");
+       return sb.toString();
+    }
 
 }
 

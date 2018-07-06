@@ -15,7 +15,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @create by xiamicpp
@@ -32,9 +34,8 @@ public class JavaCodeGenerator extends BaseGenerator {
 
     private static final String[] CLASS_PREFIX = {"E","I","E","I"};
     private static final String[] CLASS_SUFFIX = {"","","Immutable","Immutable"};
-    private static final String BASE_API_EPOBEJCT = "org.einstein.eproto.api.IEProtoObject";
-    private static final String BASE_API_MUTABLE = "org.einstein.eproto.api.IMutable";
-    private static final String BASE_API_SERILIZABLE = "org.einstein.eproto.api.ISerializable";
+
+    private static final String BASE_API_ABSTRACTOBJECT = "org.einstein.eproto.api.impl.EPAbstractProtoObject";
 
     @Override
     protected boolean loadVelocityTemplate() {
@@ -76,7 +77,7 @@ public class JavaCodeGenerator extends BaseGenerator {
             this.generatePackage(code,ctx,true,true);
             this.generateImports(code,ctx,true,true);
             this.generateClassHeader(code,ctx,true,true);
-            this.generateInterfaceFields(code,ctx,true);
+            this.generateFields(code,ctx,true,true);
             this.immutable_interface_template.merge(ctx,out);
             FileUtil.flush(out);
         }catch (IOException e){
@@ -101,7 +102,7 @@ public class JavaCodeGenerator extends BaseGenerator {
             this.generatePackage(code,ctx,true,false);
             this.generateImports(code,ctx,true,false);
             this.generateClassHeader(code,ctx,true,false);
-            this.generateInterfaceFields(code,ctx,false);
+            this.generateFields(code,ctx,false,true);
             this.mutable_interface_template.merge(ctx,out);
             FileUtil.flush(out);
         }catch (IOException e){
@@ -123,7 +124,7 @@ public class JavaCodeGenerator extends BaseGenerator {
             this.generatePackage(code,ctx,false,false);
             this.generateImports(code,ctx,false,false);
             this.generateClassHeader(code,ctx,false,false);
-            this.generateClassFields(code,ctx);
+            this.generateFields(code,ctx,false,false);
             this.implement_template.merge(ctx,out);
             FileUtil.flush(out);
 
@@ -144,10 +145,9 @@ public class JavaCodeGenerator extends BaseGenerator {
     }
 
     private boolean generateImports(CodeTemplate code, VelocityContext ctx, boolean isInterface, boolean isImmutable){
-        List<String> imports = new ArrayList<>();
+        Set<String> imports = new HashSet<>();
         if(isInterface&&isImmutable){
-            //imports.add(BASE_API_EPOBEJCT);
-            imports.add(BASE_API_SERILIZABLE);
+            imports.add(BASE_API_ABSTRACTOBJECT);
         }
 
         List<Field> fields = code.getDeclaredFields();
@@ -171,40 +171,23 @@ public class JavaCodeGenerator extends BaseGenerator {
         ctx.put("entityName",entityName);
         if(isInterface){
             List<String> ctxInterfaces = new ArrayList<>();
-            Class<?>[] interfaces = code.getInterfaces();
-            int protoInterfaceCount = 0;
-            String extendsProto ="";
-            String newImport = "";
-            for(Class<?> pinterface:interfaces){
-                ICodeTemplate superCode= codesMap.get(pinterface.getSimpleName());
-                if(superCode!=null){
-                    protoInterfaceCount++;
-                    extendsProto =superCode.getProtoClassName();
-                    newImport = code.getProtoPackageName()+GENERATED_ENTITYS;
-                }
+            Class<?> p_interface = code.getInterface();
+            ICodeTemplate superCode = null;
+            if(p_interface !=null){
+                superCode= codesMap.get(p_interface.getSimpleName());
             }
-            if(protoInterfaceCount>1){
-                logger.error("not allowed extends multiple EProtoObject!, it extends:{}", interfaces.toString());
-                throw new ESynatx("proto extends multiple proto!, it extends:"+interfaces.toString());
+            if(superCode!=null){
+                String extendsProto =superCode.getProtoClassName();
+                String newImport = code.getProtoPackageName()+GENERATED_ENTITYS;
+                ctxInterfaces.add(newImport+GENERATED_API+"."+decorateClassName(extendsProto,true,isImmutable));
             }
-
-            if(isImmutable){
-                if(protoInterfaceCount>0){
-                    ctxInterfaces.add(newImport+GENERATED_API+"."+decorateClassName(extendsProto,true,true));
-                }else {
-                    //String mutable = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,false);
-                    //String immutable = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,true);
-                    //ctxInterfaces.add(BASE_API_EPOBEJCT+"<"+mutable+","+immutable+">");
-                    ctxInterfaces.add(BASE_API_SERILIZABLE);
-                }
-            }else{
-                if(protoInterfaceCount>0){
-                    ctxInterfaces.add(newImport+GENERATED_API+"."+decorateClassName(extendsProto,true,false));
-                }
+            if(!isImmutable){
                 ctxInterfaces.add(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,true));
             }
             ctx.put("interfaces",ctxInterfaces);
         }else{
+            String pbType=code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE+"."+PB_CLASS_PREFFIX+code.getProtoClassName()+"."+code.getProtoClassName();
+            ctx.put("supperClass",BASE_API_ABSTRACTOBJECT+"<"+pbType+">");
             String mutableInterface = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(code.getProtoClassName(),true,false);
             ctx.put("mutableInterface",mutableInterface);
         }
@@ -212,132 +195,43 @@ public class JavaCodeGenerator extends BaseGenerator {
         return true;
     }
 
-    private void generateClassFields(CodeTemplate code, VelocityContext ctx) throws ESynatx{
-        //childFields
-        List<Field> fields=code.getDeclaredFields();
-        List<org.einstein.codegen.api.impl.Field> convertFields = new ArrayList<>(fields.size());
-        try {
-            for (Field field : fields) {
-                if (field.getType().isMemberClass()) {
-                    ICodeTemplate memeber = codesMap.get(field.getType().getSimpleName());
-                    if (memeber == null) {
-                        logger.error("can not match member in code map, name:{}", field.getType().getSimpleName());
-                        throw new ESynatx("Interface field generate failed, field:" + field.getName());
-                    }
-                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                    convertField.setType(decorateClassName(memeber.getProtoClassName(), true, false));
-                    convertField.setName(field.getName());
-                    convertField.setDefaultValue(field.get(null));
-                    convertField.setDecorateType(memeber.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
-                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,false));
-                    convertFields.add(convertField);
-                }else if(field.getType().isAssignableFrom(List.class)){
-                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                    convertField.setList(true);
-                    Type genericType=field.getGenericType();
-                    if(genericType == null) continue;
-                    if(genericType instanceof ParameterizedType){
-                        Class<?> supper = (Class<?>) ((ParameterizedType)genericType).getActualTypeArguments()[0];
-                        ICodeTemplate templete = codesMap.get(supper.getSimpleName());
-                        if(templete!=null){
-                            convertField.setEProtoObject(true);
-                            convertField.setType(decorateClassName(templete.getProtoClassName(),true,false));
-                            convertField.setName(field.getName());
-                            convertField.setDecorateType(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
-                        }else {
-                            convertField.setName(field.getName());
-                            convertField.setType(supper.getSimpleName());
-                            convertField.setDecorateType(supper.getName());
-                        }
-                        convertField.setDecorateMethod(decorateMethod(field.getName(),true,false));
-                        convertField.setDefaultValue(field.get(null));
-                        convertFields.add(convertField);
-                    }
-                }else{
-                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,false));
-                    convertField.setDecorateType(field.getType().getName());
-                    convertField.setName(field.getName());
-                    convertFields.add(convertField);
-                }
+
+    private void generateFields(CodeTemplate code, VelocityContext ctx, boolean isImmutable,boolean isInterface) throws ESynatx {
+        if(isInterface) {
+            if (isImmutable) {
+                ctx.put("getterMethod", true);
+                ctx.put("setterMethod", false);
+            } else {
+                ctx.put("getterMethod", false);
+                ctx.put("setterMethod", true);
             }
-        }catch (IllegalAccessException e){
-            throw new ESynatx("can not get default value",e);
         }
-        ctx.put("childfields",convertFields);
-
-        //supperClass
-
-    }
-
-    private void generateInterfaceFields(CodeTemplate code, VelocityContext ctx, boolean isImmutable) throws ESynatx {
-
-        if(isImmutable){
-            ctx.put("getterMethod",true);
-            ctx.put("setterMethod",false);
-        }else{
-            ctx.put("getterMethod",false);
-            ctx.put("setterMethod",true);
-        }
-
         List<Field> fields=code.getDeclaredFields();
-        List<org.einstein.codegen.api.impl.Field> convertFields = new ArrayList<>(fields.size());
-        try {
-            for (Field field : fields) {
-                if (field.getType().isMemberClass()) {
-                    ICodeTemplate memeber = codesMap.get(field.getType().getSimpleName());
-                    if (memeber == null) {
-                        logger.error("can not match member in code map, name:{}", field.getType().getSimpleName());
-                        throw new ESynatx("Interface field generate failed, field:" + field.getName());
-                    }
-                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                    convertField.setType(decorateClassName(memeber.getProtoClassName(), true, isImmutable));
-                    convertField.setName(field.getName());
-                    convertField.setDefaultValue(field.get(null));
-                    convertField.setDecorateType(memeber.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
-                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,isImmutable));
-                    convertFields.add(convertField);
-                }else if(field.getType().isAssignableFrom(List.class)){
-                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                    convertField.setList(true);
-                    Type genericType=field.getGenericType();
-                    if(genericType == null) continue;
-                    if(genericType instanceof ParameterizedType){
-                        Class<?> supper = (Class<?>) ((ParameterizedType)genericType).getActualTypeArguments()[0];
-                        ICodeTemplate templete = codesMap.get(supper.getSimpleName());
-                        if(templete!=null){
-                            convertField.setEProtoObject(true);
-                            convertField.setType(decorateClassName(templete.getProtoClassName(),true,isImmutable));
-                            convertField.setName(field.getName());
-                            convertField.setDecorateType(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
-                        }else {
-                            convertField.setName(field.getName());
-                            convertField.setType(supper.getSimpleName());
-                            convertField.setDecorateType(supper.getName());
-                        }
-                        convertField.setDecorateMethod(decorateMethod(field.getName(),true,isImmutable));
-                        convertField.setDefaultValue(field.get(null));
-                        convertFields.add(convertField);
-                    }
-                }else{
-                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,isImmutable));
-                    convertField.setDecorateType(field.getType().getName());
-                    convertField.setName(field.getName());
-                    convertFields.add(convertField);
-                }
-            }
-        }catch (IllegalAccessException e){
-            throw new ESynatx("can not get default value",e);
-        }
+        List<org.einstein.codegen.api.impl.Field> convertFields = analysisProtoField(fields,code,isImmutable);
         ctx.put("fields",convertFields);
+        if(!isInterface){
+            Class<?> supperInterface = code.getInterface();
+            if(supperInterface!=null){
+                ICodeTemplate superCode= codesMap.get(supperInterface.getSimpleName());
+                if(superCode!=null) {
+                    String mutableInterface = superCode.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(superCode.getProtoClassName(),true,false);
+                    String imutableInterface = superCode.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+decorateClassName(superCode.getProtoClassName(),true,true);
+                    String mutableClass = superCode.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_entity+"."+decorateClassName(superCode.getProtoClassName(),false,false);
+                    ctx.put("supperClassImmutableInterface",imutableInterface);
+                    ctx.put("supperClassMutableInterface",mutableInterface);
+                    ctx.put("supperMutableClass",mutableClass);
+                    ctx.put("hasSupperClass", true);
+                }
+            }
+            List<Field> supperFields = code.getSupperFields();
+            List<org.einstein.codegen.api.impl.Field> supperConvertFields = analysisProtoField(supperFields,code,isImmutable);
+            ctx.put("supperFields",supperConvertFields);
+        }
     }
 
     private String decorateMethod(String name,boolean isInterface, boolean isImmutable){
-        if(isImmutable){
-            return  "get"+ StringUtils.capitalize(name);
-        }else
-            return  "set"+StringUtils.capitalize(name);
+
+            return  StringUtils.capitalize(name);
     }
 
     /**
@@ -356,5 +250,54 @@ public class JavaCodeGenerator extends BaseGenerator {
         return CLASS_PREFIX[index]+name+CLASS_SUFFIX[index];
     }
 
+
+    private List<org.einstein.codegen.api.impl.Field> analysisProtoField(List<Field> fields,CodeTemplate code,boolean isImmutable) throws ESynatx {
+        List<org.einstein.codegen.api.impl.Field> convertFields = new ArrayList<>(fields.size());
+        try {
+            for (Field field : fields) {
+                ICodeTemplate memeber = codesMap.get(field.getType().getSimpleName());
+                if (memeber != null) {
+                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
+                    convertField.setType(decorateClassName(memeber.getProtoClassName(), true, true));
+                    convertField.setName(field.getName());
+                    convertField.setDefaultValue(field.get(null));
+                    convertField.setDecorateType(memeber.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
+                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,isImmutable));
+                    convertFields.add(convertField);
+                }else if(field.getType().isAssignableFrom(List.class)){
+                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
+                    convertField.setList(true);
+                    Type genericType=field.getGenericType();
+                    if(genericType == null) continue;
+                    if(genericType instanceof ParameterizedType){
+                        Class<?> supper = (Class<?>) ((ParameterizedType)genericType).getActualTypeArguments()[0];
+                        ICodeTemplate templete = codesMap.get(supper.getSimpleName());
+                        if(templete!=null){
+                            convertField.setEProtoObject(true);
+                            convertField.setType(decorateClassName(templete.getProtoClassName(),true,true));
+
+                            convertField.setDecorateType(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_API+"."+convertField.getType());
+                        }else {
+                            convertField.setType(supper.getSimpleName());
+                            convertField.setDecorateType(supper.getName());
+                        }
+                        convertField.setName(field.getName());
+                        convertField.setDecorateMethod(decorateMethod(field.getName(),true,isImmutable));
+                        convertField.setDefaultValue(field.get(null));
+                        convertFields.add(convertField);
+                    }
+                }else{
+                    org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
+                    convertField.setDecorateMethod(decorateMethod(field.getName(),true,isImmutable));
+                    convertField.setDecorateType(field.getType().getName());
+                    convertField.setName(field.getName());
+                    convertFields.add(convertField);
+                }
+            }
+        }catch (IllegalAccessException e){
+            throw new ESynatx("can not get default value",e);
+        }
+        return convertFields;
+    }
 
 }

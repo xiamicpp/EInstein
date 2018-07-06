@@ -15,16 +15,16 @@ public interface ${entityName} #if(${interfaces.size()}>0)extends #foreach(${int
     #foreach($field in ${fields})
     $!{field.comment}
     #if(${field.isList()})
-    java.util.List<${field.decorateType}> ${field.decorateMethod}();
+    java.util.List<${field.decorateType}> get${field.decorateMethod}();
     #else
-    ${field.decorateType} ${field.decorateMethod}();
+    ${field.decorateType} get${field.decorateMethod}();
     #end
     #end
  #end
  #if(${setterMethod})
     #foreach($field in ${fields})
     $!{field.comment}
-    void ${field.decorateMethod}(#if(${field.isList()}) java.util.List<${field.decorateType}> #else ${field.decorateType} #end value);
+    void set${field.decorateMethod}(#if(${field.isList()}) java.util.List<${field.decorateType}> #else ${field.decorateType} #end value);
     #end
  #end
 }

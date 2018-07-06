@@ -82,6 +82,24 @@ public class CodeTemplate implements ICodeTemplate {
         return proto.getInterfaces();
     }
 
+    public Class<?> getInterface() throws ESynatx {return  filterInterface(proto.getInterfaces());}
+
+    private Class<?> filterInterface(Class<?> [] interfaces) throws ESynatx {
+        int count = 0;
+        Class<?> _interface = null;
+        for(Class<?> interface_:interfaces){
+            Annotation[] annotations=interface_.getDeclaredAnnotations();
+            for(Annotation annotation:annotations){
+                if(annotation.annotationType().getSimpleName().equalsIgnoreCase("EProtoEntity")) {
+                   count++;
+                   _interface = interface_;
+                }
+            }
+        }
+        if(count>1)
+            throw new ESynatx("Multiple EProtoEntity Interface, Current not supported");
+        return _interface;
+    }
 
     private List<Field> filterField(Field[] fields){
         List<Field> rets = new ArrayList<>(fields.length);

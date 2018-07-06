@@ -22,7 +22,7 @@ message ${message} {
 #end
 #foreach(${field} in ${fields})
     #if(${field.isList()} == true)
-    repeated #if(${filed.isEProtoObject()} == true)${field.type}#else$typeFormat.get(${field.type})#end ${field.name} = ${count};
+    repeated #if(${field.isEProtoObject()} == true)${field.type}#else$typeFormat.get(${field.type})#end ${field.name} = ${count};
     #elseif(${field.isEProtoObject()} == true)
     ${field.type} ${field.name} = ${count};
     #elseif(${field.isEnum()}==true)
