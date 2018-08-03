@@ -1,5 +1,6 @@
 package org.einstein.codegen.generator;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.app.VelocityEngine;
 import org.einstein.codegen.api.ICodeTemplate;
@@ -24,8 +25,10 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplate> {
     protected VelocityEngine ve;
     protected Template template;
 
-    protected static String ENCODE = "UTF-8";
     protected static  String PB_CLASS_PREFFIX = "PB";
+    protected static  String PB_CLASS_SUFFIX = ".proto";
+
+    protected static String ENCODE = "UTF-8";
 
     protected static  String GENERATED_PROTO = ".protobuf";
     protected static  String GENERATED_ENTITYS = ".entitys";
@@ -74,5 +77,12 @@ public abstract class BaseGenerator implements IGenerator<ICodeTemplate> {
             directory = directory +packageName.replace(".","/")+"/";
         }
         return directory;
+    }
+
+    protected String decoratePbClassName(String classname, boolean preffix, boolean suffix){
+        String temp;
+        temp = preffix==true? PB_CLASS_PREFFIX+ StringUtils.capitalize(classname):StringUtils.capitalize(classname);
+        temp = suffix==true? temp+PB_CLASS_SUFFIX:temp;
+        return temp;
     }
 }

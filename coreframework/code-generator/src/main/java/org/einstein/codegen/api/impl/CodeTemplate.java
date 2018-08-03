@@ -3,6 +3,7 @@ package org.einstein.codegen.api.impl;
 import org.einstein.codegen.api.ICodeTemplate;
 import org.einstein.codegen.exception.ESynatx;
 import org.einstein.eproto.anno.EProtoEntity;
+import org.einstein.eproto.anno.EProtoField;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -84,6 +85,10 @@ public class CodeTemplate implements ICodeTemplate {
 
     public Class<?> getInterface() throws ESynatx {return  filterInterface(proto.getInterfaces());}
 
+    public List<Field> getKeyField(){
+        return filterKeyField(proto.getDeclaredFields());
+    }
+
     private Class<?> filterInterface(Class<?> [] interfaces) throws ESynatx {
         int count = 0;
         Class<?> _interface = null;
@@ -104,14 +109,26 @@ public class CodeTemplate implements ICodeTemplate {
     private List<Field> filterField(Field[] fields){
         List<Field> rets = new ArrayList<>(fields.length);
         for(Field field:fields){
-            Annotation[] annotations=field.getDeclaredAnnotations();
-            for(Annotation annotation:annotations){
-                if(annotation.annotationType().getSimpleName().equalsIgnoreCase("EProtoField"))
-                   rets.add(field);
+            EProtoField annotation=field.getDeclaredAnnotation(EProtoField.class);
+            if(annotation!=null) {
+                rets.add(field);
             }
         }
         return rets;
     }
+
+
+    private List<Field> filterKeyField(Field[] fields){
+        List<Field> rets = new ArrayList<>(fields.length);
+        for(Field field:fields){
+            EProtoField annotation=field.getDeclaredAnnotation(EProtoField.class);
+            if(annotation!=null&&annotation.isKey()) {
+                rets.add(field);
+            }
+        }
+        return rets;
+    }
+
 
 
 

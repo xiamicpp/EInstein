@@ -72,7 +72,7 @@ public class JavaCodeGenerator extends BaseGenerator {
             out = FileUtil.createFileWriter(interfaceName+".java",dir);
             VelocityContext ctx = new VelocityContext();
             ctx.put("isMutable",false);
-            ctx.put("PROTO_CLASS_ID",code.getProtoClassID());
+
             ctx.put("current_time", TimeUtil.CurrentTime());
             this.generatePackage(code,ctx,true,true);
             this.generateImports(code,ctx,true,true);
@@ -120,7 +120,10 @@ public class JavaCodeGenerator extends BaseGenerator {
             out = FileUtil.createFileWriter(className + ".java", dir);
             VelocityContext ctx = new VelocityContext();
             ctx.put("current_time", TimeUtil.CurrentTime());
-
+            String pbType = code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE+"."+decoratePbClassName(code.getProtoClassName(),true,false)+"."+code.getProtoClassName();
+            ctx.put("pbType",pbType);
+            ctx.put("keyFieldName",generateKeyField(code.getKeyField()));
+            ctx.put("PROTO_CLASS_ID",code.getProtoClassID());
             this.generatePackage(code,ctx,false,false);
             this.generateImports(code,ctx,false,false);
             this.generateClassHeader(code,ctx,false,false);
@@ -298,6 +301,26 @@ public class JavaCodeGenerator extends BaseGenerator {
             throw new ESynatx("can not get default value",e);
         }
         return convertFields;
+    }
+
+
+    private String generateKeyField(List<Field> keyFields) throws ESynatx {
+        StringBuilder sb = new StringBuilder();
+        if(keyFields==null||keyFields.isEmpty()){
+            return "null";
+        }
+        for(Field field:keyFields){
+            if(field.getType().isAssignableFrom(List.class)){
+                throw  new ESynatx("not supported key type");
+            }
+            if(codesMap.get(field.getType().getSimpleName())!=null){
+                throw new ESynatx("not supported key type");
+            }
+
+            sb.append("get"+decorateMethod(field.getName(),false,false)+"()");
+        }
+
+        return sb.toString();
     }
 
 }

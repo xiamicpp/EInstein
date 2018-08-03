@@ -10,7 +10,7 @@ import java.util.List;
 @EProtoEntity(id = 1, desc = "Base Order")
 public interface Order {
 
-    @EProtoField(desc = "ID")
+    @EProtoField(desc = "ID", isKey = true)
     String id = null;
 
     @EProtoField(desc = "desk")

@@ -19,8 +19,7 @@ import java.util.*;
 public class GoogleProtoGenerator extends BaseGenerator {
     private static String OS = System.getProperty("os.name").toLowerCase();
     private static final String PROTOBUF_VERSION = "proto3";
-    private static  String PB_CLASS_PREFFIX = "PB";
-    private static  String PB_CLASS_SUFFIX = ".proto";
+
     private static String protobuf_template = "template/proto/proto.vm";
 
     @Override
@@ -62,14 +61,14 @@ public class GoogleProtoGenerator extends BaseGenerator {
     private boolean generateProtoFile(CodeTemplate code) throws ESynatx {
         Writer out =null;
         try {
-            String fielName = decorateClassName(code.getProtoClassName(),false,true);
+            String fielName = decoratePbClassName(code.getProtoClassName(),false,true);
             String dir = generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
             out = FileUtil.createFileWriter(fielName, dir);
             VelocityContext ctx = new VelocityContext();
             ctx.put("version",PROTOBUF_VERSION);
             ctx.put("package",code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE);
-            ctx.put("classname",decorateClassName(code.getProtoClassName(),true,false));
-            ctx.put("message",decorateClassName(code.getProtoClassName(),false,false));
+            ctx.put("classname",decoratePbClassName(code.getProtoClassName(),true,false));
+            ctx.put("message",decoratePbClassName(code.getProtoClassName(),false,false));
             generateProtoImports(ctx,code);
             generateProtoFields(ctx,code);
             this.template.merge(ctx,out);
@@ -95,10 +94,10 @@ public class GoogleProtoGenerator extends BaseGenerator {
                 protoSupperCount++;
                 String path = supperCode.getProtoPackageName()+GENERATED_PROTO;
                 path = StringUtils.replace(path,".","/").concat("/")
-                        + this.decorateClassName(supperCode.getProtoClassName(),false,true);
+                        + this.decoratePbClassName(supperCode.getProtoClassName(),false,true);
                 protoImports.add(path);
                 ctx.put("hasSupper",true);
-                ctx.put("supperType",decorateClassName(supperCode.getProtoClassName(),false,false));
+                ctx.put("supperType",decoratePbClassName(supperCode.getProtoClassName(),false,false));
             }
         }
         if(protoSupperCount>1){
@@ -119,7 +118,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
             if(templete!=null){
                 String path = templete.getProtoPackageName()+GENERATED_PROTO;
                 path=StringUtils.replace(path,".","/").concat("/")
-                        + this.decorateClassName(templete.getProtoClassName(),false,true);
+                        + this.decoratePbClassName(templete.getProtoClassName(),false,true);
                 protoImports.add(path);
             }
         }
@@ -136,7 +135,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
                 ICodeTemplate templete = codesMap.get(__simpleName);
                 if (templete !=null) {
                     org.einstein.codegen.api.impl.Field convertField = new org.einstein.codegen.api.impl.Field();
-                    convertField.setType(decorateClassName(field.getType().getSimpleName(),false,false));
+                    convertField.setType(decoratePbClassName(field.getType().getSimpleName(),false,false));
                     convertField.setName(field.getName());
                     convertField.setDefaultValue(field.get(null));
                     convertField.setEProtoObject(true);
@@ -192,7 +191,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
 
 
     private boolean  generateGoogelProtoBuf(CodeTemplate code) throws ESynatx {
-        String fielName = decorateClassName(code.getProtoClassName(),false,true);
+        String fielName = decoratePbClassName(code.getProtoClassName(),false,true);
         String dir = this.outPutPath;
                 //generateOutPutDir(code.getProtoPackageName()+GENERATED_PROTO,this.outPutPath);
         String outDir = generateOutPutDir(code.getProtoPackageName()+GENERATED_ENTITYS+GENERATED_GOOGLE,this.outPutPath);
@@ -230,12 +229,7 @@ public class GoogleProtoGenerator extends BaseGenerator {
         }
     }
 
-    private String decorateClassName(String classname, boolean preffix, boolean suffix){
-        String temp;
-        temp = preffix==true? PB_CLASS_PREFFIX+StringUtils.capitalize(classname):StringUtils.capitalize(classname);
-        temp = suffix==true? temp+PB_CLASS_SUFFIX:temp;
-        return temp;
-    }
+
 
 
 }

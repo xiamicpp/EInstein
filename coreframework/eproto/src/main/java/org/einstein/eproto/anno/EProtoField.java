@@ -10,4 +10,6 @@ import java.lang.annotation.*;
 public @interface EProtoField {
 
     String desc();
+
+    boolean isKey() default false;
 }

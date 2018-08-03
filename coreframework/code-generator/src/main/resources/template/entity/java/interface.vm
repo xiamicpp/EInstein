@@ -9,7 +9,7 @@ import $import;
 #set($Count = 1)
 public interface ${entityName} #if(${interfaces.size()}>0)extends #foreach(${interface} in ${interfaces})#if($Count!=1),#end${interface}#set($Count=$Count+1)#end #end{
  #if(!${isMutable})
-    static final int PROTO_CLASS_ID = ${PROTO_CLASS_ID};
+
  #end##
  #if(${getterMethod})
     #foreach($field in ${fields})

@@ -26,12 +26,19 @@ public class test {
     public static void main(String[] args) {
         PBChildOrder.ChildOrder.Builder builder = PBChildOrder.ChildOrder.newBuilder();
         Descriptors.FieldDescriptor descriptor=PBChildOrder.ChildOrder.getDescriptor().findFieldByName("member");
+        System.out.println(descriptor.getName());
         PBOrderField.OrderField.Builder orderFieldBuilder = PBOrderField.OrderField.newBuilder();
         orderFieldBuilder.setId("haha");
-        builder.setMember(orderFieldBuilder);
+        //builder.setMember(orderFieldBuilder);
         builder.setField(descriptor,orderFieldBuilder.build());
        // builder
         System.out.println(builder.build().toString());
+
+        builder.setCompany("hehe");
+
+        System.out.println(builder.build().toString());
+
+        Descriptors.FieldDescriptor orderFieldsDescriptor=PBChildOrder.ChildOrder.getDescriptor().findFieldByName("orderFields");
 
     }
 }

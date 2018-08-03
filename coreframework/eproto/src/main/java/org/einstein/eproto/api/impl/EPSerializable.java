@@ -6,6 +6,8 @@ import com.google.protobuf.Message;
 import org.einstein.eproto.api.ISerializable;
 import org.einstein.eproto.exception.EProtoException;
 
+import java.util.List;
+
 /**
  * @create by xiamicpp
  **/
@@ -19,10 +21,19 @@ public abstract class EPSerializable<T extends com.google.protobuf.GeneratedMess
     }
 
     protected void setPBData(Descriptors.FieldDescriptor descriptor,Object obj){
+
+        if(descriptor.isRepeated()){
+            if(obj instanceof java.util.List){
+                List datas = (List) obj;
+              //  for()
+            }
+            return;
+        }
         builder.setField(descriptor,obj);
     }
 
     public byte[] serialize(){
+
         return this.builder.build().toByteArray();
     }
 
