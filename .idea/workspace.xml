@@ -2,18 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="180dba17-b648-4135-abb2-5986c65dbda0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EChildOrder.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EOrder.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EOrderField.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/protostuffTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/testDescriptor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/testImplements.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/core/core.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/core/pom.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/core/src/main/java/org/einstein/core/util/PropertyUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEInheritedProtoObject.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoFactory.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IESerializableFactory.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/serilizable/EInputStream.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/serilizable/POSerializable.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/util/IRecyclable.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/util/IRecycleHandler.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplate.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" />
+      <change beforePath="$PROJECT_DIR$/businessframework/proto/proto.iml" afterPath="$PROJECT_DIR$/businessframework/proto/proto.iml" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" afterPath="$PROJECT_DIR$/coreframework/code-generator/codegenerator.iml" />
+      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/pom.xml" afterPath="$PROJECT_DIR$/coreframework/code-generator/pom.xml" />
       <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/implement.vm" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/implement.vm" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/interface.vm" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/interface.vm" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/temp/test.java" afterPath="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/temp/test.java" />
-      <change beforePath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/anno/EProtoField.java" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/anno/EProtoField.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/eproto/eproto.iml" afterPath="$PROJECT_DIR$/coreframework/eproto/eproto.iml" />
+      <change beforePath="$PROJECT_DIR$/coreframework/eproto/pom.xml" afterPath="$PROJECT_DIR$/coreframework/eproto/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java" />
       <change beforePath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPAbstractProtoObject.java" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/AbstractProtoObject.java" />
       <change beforePath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPSerializable.java" afterPath="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPSerializable.java" />
+      <change beforePath="$PROJECT_DIR$/coreframework/message/message.iml" afterPath="$PROJECT_DIR$/coreframework/message/message.iml" />
+      <change beforePath="$PROJECT_DIR$/coreframework/message/pom.xml" afterPath="$PROJECT_DIR$/coreframework/message/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/coreframework/pom.xml" afterPath="$PROJECT_DIR$/coreframework/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/eproto/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,6 +46,7 @@
     <ignored path="$PROJECT_DIR$/coreframework/test/target/" />
     <ignored path="$PROJECT_DIR$/coreframework/message/target/" />
     <ignored path="$PROJECT_DIR$/businessframework/proto/target/" />
+    <ignored path="$PROJECT_DIR$/coreframework/core/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +62,8 @@
             <file leaf-file-name="proto.vm" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/proto/proto.vm">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="252">
-                    <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+                  <state relative-caret-position="0">
+                    <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
                     <folding />
                   </state>
                 </provider>
@@ -51,9 +72,314 @@
             <file leaf-file-name="implement.vm" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/implement.vm">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="356">
-                    <caret line="123" column="47" lean-forward="true" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
+                  <state relative-caret-position="162">
+                    <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
                     <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="comment.vm" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/comment.vm">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="126">
+                    <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="PPBufferContext.class" pinned="false" current-in-tab="false">
+              <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/foundation/util/bin/com/pingan/pilot/util/pp/PPBufferContext.class">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="162">
+                    <caret line="13" column="25" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="20" />
+                    <folding>
+                      <marker date="1502153207090" expanded="false" signature="0:104" ph="/.../" />
+                      <marker date="1502153207090" expanded="false" signature="148:197" ph="..." />
+                      <marker date="1502153207090" expanded="true" signature="535:701" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="776:981" ph="{...}" />
+                      <marker date="1502153207090" expanded="false" signature="1011:1022" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1053:1059" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1099:1110" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1139:1145" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1178:1189" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1212:1218" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1264:1275" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1304:1310" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1351:1362" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1412:1418" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1448:1459" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1510:1516" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1556:1567" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1620:1626" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1659:1670" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1705:1711" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1739:1750" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1771:1777" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="1814:1825" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="1883:1889" ph=" }" />
+                      <marker date="1502153207090" expanded="true" signature="1923:2030" ph="{...}" />
+                      <marker date="1502153207090" expanded="false" signature="2064:2075" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="2097:2103" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="2149:2160" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="2185:2191" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="2226:2237" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="2260:2266" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="2314:2325" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="2352:2358" ph=" }" />
+                      <marker date="1502153207090" expanded="false" signature="2402:2413" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="2467:2473" ph=" }" />
+                      <marker date="1502153207090" expanded="true" signature="2509:2673" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="2736:2816" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="2870:3044" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="3105:3175" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="3229:3338" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="3393:3460" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="3508:3611" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="3668:3736" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="3786:3894" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="3949:4016" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="4064:4170" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="4223:4289" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="4335:4439" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="4494:4561" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="4609:4715" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="4772:4840" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="4890:4998" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="5057:5126" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="5178:5288" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="5347:5416" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="5468:5658" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="5726:5800" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="5859:5979" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="6047:6122" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="6183:6315" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="6397:6484" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="6557:6657" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="6719:6791" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="6846:6972" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="7048:7132" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="7199:7293" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="7357:7430" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="7487:7619" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="7697:7782" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="7851:7947" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="8009:8081" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="8136:8266" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="8342:8426" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="8493:8587" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="8647:8718" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="8771:8899" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="8973:9056" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="9121:9213" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="9275:9347" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="9402:9532" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="9608:9692" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="9759:9853" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="9917:9990" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="10047:10179" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="10257:10342" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="10411:10507" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="10573:10647" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="10706:10840" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="10920:11006" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="11077:11175" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="11241:11538" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="11597:12077" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="12157:12401" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="12472:12570" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="12615:12704" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="12740:12828" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="12891:12990" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="13044:13135" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="13207:13330" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="13393:13484" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="13537:13633" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="13677:13760" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="13807:13900" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="13938:14018" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14067:14161" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14201:14285" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14332:14425" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14463:14546" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14591:14683" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14719:14801" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14848:14941" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="14979:15062" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="15111:15205" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="15245:15329" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="15380:15475" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="15517:15602" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="15652:15754" ph="{...}" />
+                      <marker date="1502153207090" expanded="false" signature="15795:15806" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="15864:15870" ph=" }" />
+                      <marker date="1502153207090" expanded="true" signature="15917:16016" ph="{...}" />
+                      <marker date="1502153207090" expanded="false" signature="16054:16065" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="16120:16126" ph=" }" />
+                      <marker date="1502153207090" expanded="true" signature="16186:16287" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="16338:16442" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="16535:16648" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="16732:16805" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="16859:16957" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="17002:17103" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="17190:17300" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="17378:17448" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="17504:17603" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="17650:17756" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="17845:17956" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="18036:18107" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="18161:18259" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="18304:18409" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="18496:18606" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="18684:18754" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="18806:18903" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="18946:19050" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="19135:19244" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="19320:19389" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="19443:19541" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="19586:19691" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="19778:19888" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="19966:20036" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="20092:20191" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="20238:20344" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="20433:20544" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="20624:20695" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="20753:20853" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="20902:21009" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="21100:21212" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="21294:21366" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="21423:21999" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="22047:22169" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="22260:22530" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="22612:22684" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="22730:22823" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="22860:22945" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="22977:23101" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="23138:23525" ph="{...}" />
+                      <marker date="1502153207090" expanded="false" signature="23555:23566" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="23594:23600" ph=" }" />
+                      <marker date="1502153207090" expanded="true" signature="23644:24183" ph="{...}" />
+                      <marker date="1502153207090" expanded="true" signature="24263:24344" ph="{...}" />
+                      <marker date="1502153207090" expanded="false" signature="24377:24388" ph=" { " />
+                      <marker date="1502153207090" expanded="false" signature="24409:24415" ph=" }" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="PPBuffer.class" pinned="false" current-in-tab="false">
+              <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/foundation/util/bin/com/pingan/pilot/util/pp/PPBuffer.class">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="360">
+                    <caret line="30" column="52" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="52" />
+                    <folding>
+                      <marker date="1502153207092" expanded="false" signature="0:104" ph="/.../" />
+                      <marker date="1502153207092" expanded="false" signature="148:417" ph="..." />
+                      <marker date="1502153207092" expanded="true" signature="924:1285" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="1308:1319" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="1330:1336" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="1378:1389" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="1433:1439" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="1499:1697" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="1733:1744" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="1779:1785" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="1838:1849" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="1885:1891" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="1938:1949" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="1977:1983" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="2039:2309" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="2369:2546" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="2576:2587" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="2607:2613" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="2653:2664" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="2687:2693" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="2741:2997" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="3079:4023" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="4066:4270" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="4300:4311" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="4334:4340" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="4377:4388" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="4418:4424" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="4457:4468" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="4494:4500" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="4544:4555" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="4601:4607" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="4670:4975" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="5008:5019" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="5040:5046" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="5102:5233" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="5294:5373" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="5428:5502" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="5559:5691" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="5746:5877" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="5930:6127" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="6182:6585" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="6642:6705" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="6764:6831" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="6890:7039" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="7108:7204" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="7293:8617" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="8685:8957" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="9039:9266" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="9328:9499" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="9575:9799" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="9863:10136" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="10214:10443" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="10505:10775" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="10851:11079" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="11139:11406" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="11480:11707" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="11769:12039" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="12115:12343" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="12407:12680" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="12758:12987" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="13053:13329" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="13409:13639" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="13683:13694" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="13738:13744" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="13807:14036" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="14082:14093" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="14155:14161" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="14226:14338" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="14391:14481" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="14528:14602" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="14651:14787" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="14834:14970" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="15015:15251" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="15298:15790" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="15838:15849" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="15895:15901" ph=" }" />
+                      <marker date="1502153207092" expanded="false" signature="15951:15962" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="16012:16018" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="16068:16300" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="16346:16695" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="16742:16879" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="16936:17548" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="17608:17849" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="17942:18168" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="18222:18365" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="18452:18675" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="18731:18977" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="19066:19294" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="19348:19593" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="19680:19907" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="19959:20203" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="20288:20514" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="20568:20813" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="20900:21127" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="21183:21429" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="21518:21746" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="21804:22051" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="22142:22371" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="22417:22520" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="22587:22685" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="22733:22830" ph="{...}" />
+                      <marker date="1502153207092" expanded="false" signature="22860:22871" ph=" { " />
+                      <marker date="1502153207092" expanded="false" signature="22899:22905" ph=" }" />
+                      <marker date="1502153207092" expanded="true" signature="22949:23476" ph="{...}" />
+                      <marker date="1502153207092" expanded="true" signature="23556:23637" ph="{...}" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -65,106 +391,160 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/temp/test.java">
+      <file leaf-file-name="EOrderImmutable.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderImmutable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+            <state relative-caret-position="72">
+              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1211#1212#0" expanded="true" />
+                <element signature="e#1250#1251#0" expanded="true" />
+                <element signature="e#1300#1301#0" expanded="true" />
+                <element signature="e#1344#1345#0" expanded="true" />
+                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="e#1440#1441#0" expanded="true" />
+                <element signature="e#1481#1482#0" expanded="true" />
+                <element signature="e#1519#1520#0" expanded="true" />
+                <element signature="e#1565#1566#0" expanded="true" />
+                <element signature="e#1605#1606#0" expanded="true" />
+                <element signature="e#1656#1657#0" expanded="true" />
+                <element signature="e#1699#1700#0" expanded="true" />
+                <element signature="e#1761#1762#0" expanded="true" />
+                <element signature="e#1805#1806#0" expanded="true" />
+                <element signature="e#1856#1857#0" expanded="true" />
+                <element signature="e#1883#1884#0" expanded="true" />
+                <element signature="e#1931#1932#0" expanded="true" />
+                <element signature="e#1959#1960#0" expanded="true" />
+                <element signature="e#2003#2004#0" expanded="true" />
+                <element signature="e#2030#2031#0" expanded="true" />
+                <element signature="e#2087#2088#0" expanded="true" />
+                <element signature="e#2114#2115#0" expanded="true" />
+                <element signature="e#2186#2187#0" expanded="true" />
+                <element signature="e#2213#2214#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChildOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/ChildOrder.java">
+      <file leaf-file-name="AbstractProtoObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/AbstractProtoObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="126">
+              <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testDescriptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/testDescriptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#566#602#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="EOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrder.java">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="972">
-              <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="505">
+              <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="20" />
+              <folding>
+                <element signature="e#2157#2158#0" expanded="true" />
+                <element signature="e#2184#2185#0" expanded="true" />
+                <element signature="e#2235#2236#0" expanded="true" />
+                <element signature="e#2262#2263#0" expanded="true" />
+                <element signature="e#2310#2311#0" expanded="true" />
+                <element signature="e#2338#2339#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EChildOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EChildOrder.java">
+      <file leaf-file-name="testImplements.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/testImplements.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="72" lean-forward="false" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.proto" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/Order.proto">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChildOrder.proto" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/ChildOrder.proto">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EOrderField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="64" lean-forward="true" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EPAbstractProtoObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPAbstractProtoObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="10" column="85" lean-forward="false" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EPSerializable.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPSerializable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ISerializable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+            <state relative-caret-position="198">
+              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="protostuffTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/protostuffTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="36" column="53" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="36" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="POSerializable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/serilizable/POSerializable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1893">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2042#2043#0" expanded="true" />
+                <element signature="e#2072#2073#0" expanded="true" />
+                <element signature="e#2107#2108#0" expanded="true" />
+                <element signature="e#2137#2138#0" expanded="true" />
+                <element signature="e#2319#2320#0" expanded="true" />
+                <element signature="e#2373#2374#0" expanded="true" />
+                <element signature="e#2409#2410#0" expanded="true" />
+                <element signature="e#2443#2444#0" expanded="true" />
+                <element signature="e#2482#2483#0" expanded="true" />
+                <element signature="e#2573#2574#0" expanded="true" />
+                <element signature="e#2612#2613#0" expanded="true" />
+                <element signature="e#2706#2707#0" expanded="true" />
+                <element signature="e#2746#2747#0" expanded="true" />
+                <element signature="e#2795#2796#0" expanded="true" />
+                <element signature="e#2836#2837#0" expanded="true" />
+                <element signature="e#2886#2887#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/core/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropertyUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/core/src/main/java/org/einstein/core/util/PropertyUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coreframework/eproto/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,9 +575,11 @@
       <find>PARSER</find>
       <find>decorateClassName</find>
       <find>getParent</find>
+      <find>instance</find>
     </findStrings>
     <replaceStrings>
       <replace>decoratePbClassName</replace>
+      <replace>buffer</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -211,26 +593,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoClean.java" />
-        <option value="$PROJECT_DIR$/coreframework/message/pom.xml" />
-        <option value="$PROJECT_DIR$/install-protobuf.sh" />
-        <option value="$PROJECT_DIR$/denpendence_protobuf.sh" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplete.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/TimeUtile.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/util/TimeUtil.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrder.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderImmutable.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/beta/einstein/EProtoGen.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/comment.vm" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/interface.vm" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/templete/entity/java/implement.vm" />
-        <option value="$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/entitys/api/IQueryBO.java" />
-        <option value="$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/entitys/api/test.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/pom.xml" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/ChildOrder.proto" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplate.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/IField.java" />
@@ -242,13 +604,9 @@
         <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/exception/EProtoException.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/test/test.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/test/ETest.java" />
-        <option value="$PROJECT_DIR$/coreframework/eproto/pom.xml" />
-        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java" />
-        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPAbstractProtoObject.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/OrderField.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/ChildOrder.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/proto/proto.vm" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrder.java" />
         <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/anno/EProtoField.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java" />
@@ -256,12 +614,36 @@
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplate.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/interface.vm" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/implement.vm" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderField.java" />
-        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java" />
-        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EChildOrder.java" />
         <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/temp/test.java" />
         <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPSerializable.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPAbstractProtoObject.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderField.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EChildOrder.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoFactory.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/util/IRecycleHandler.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/util/IRecyclable.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/serilizable/EInputStream.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrder.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/implement.vm" />
+        <option value="$PROJECT_DIR$/coreframework/message/pom.xml" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EOrderField.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EChildOrder.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderImmutable.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EChildOrderImmutable.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEInheritedProtoObject.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/AbstractProtoObject.java" />
+        <option value="$PROJECT_DIR$/coreframework/core/pom.xml" />
+        <option value="$PROJECT_DIR$/coreframework/core/src/main/java/org/einstein/core/util/PropertyUtil.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/pom.xml" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/protostuffTest.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/testImplements.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EOrder.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/testDescriptor.java" />
+        <option value="$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/serilizable/POSerializable.java" />
+        <option value="$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderImmutable.java" />
       </list>
     </option>
   </component>
@@ -313,21 +695,15 @@
           <item name="message" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="message" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-          <item name="athena" type="36feed69:MavenProjectsStructure$PluginNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-62" />
-    <option name="y" value="24" />
-    <option name="width" value="1920" />
-    <option name="height" value="929" />
+    <option name="x" value="2" />
+    <option name="y" value="41" />
+    <option name="width" value="1918" />
+    <option name="height" value="1005" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -345,9 +721,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -397,55 +773,6 @@
               <item name="code-generator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="generator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="parse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="proto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -467,29 +794,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="generator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="proto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="temp" type="462c0819:PsiDirectoryNode" />
+              <item name="protostuff" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
@@ -505,15 +810,6 @@
               <item name="code-generator" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
               <item name="generated-src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
@@ -528,19 +824,41 @@
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
               <item name="EInstein" type="462c0819:PsiDirectoryNode" />
               <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
-              <item name="pb" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
               <item name="EInstein" type="462c0819:PsiDirectoryNode" />
               <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="code-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
-              <item name="protobuf" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
+              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
@@ -580,108 +898,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="anno" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
+              <item name="serilizable" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
               <item name="EInstein" type="462c0819:PsiDirectoryNode" />
               <item name="coreframework" type="462c0819:PsiDirectoryNode" />
               <item name="message" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-src" type="462c0819:PsiDirectoryNode" />
-              <item name="pb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="eproto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EInstein" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EInstein" type="462c0819:PsiDirectoryNode" />
-              <item name="coreframework" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -734,7 +957,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test (1)">
+  <component name="RunManager" selected="JUnit.testDescriptor.testPBBuilderSet">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -764,25 +987,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="org.einstein.test.temp.test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="codegenerator" />
-      <envs />
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.einstein.proto.implement.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.einstein.proto.implement.test.test" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -849,56 +1053,6 @@
       <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
     </configuration>
-    <configuration name="CodeTempleteTest.getProto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.einstein.codegen.api.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="codegenerator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.einstein.codegen.api.impl" />
-      <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.api.impl.CodeTempleteTest" />
-      <option name="METHOD_NAME" value="getProto" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="GoogleProtoGeneratorTest.generate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.einstein.codegen.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="codegenerator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.einstein.codegen.generator" />
-      <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.generator.GoogleProtoGeneratorTest" />
-      <option name="METHOD_NAME" value="generate" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="JavaCodeGeneratorTest.generateCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -933,6 +1087,81 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="protostuffTest.testSeriliazable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.einstein.codegen.protostuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="codegenerator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.einstein.codegen.protostuff" />
+      <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.protostuff.protostuffTest" />
+      <option name="METHOD_NAME" value="testSeriliazable" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="testDescriptor.testPBBuilderFieldSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.einstein.codegen.protostuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="codegenerator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.einstein.codegen.protostuff" />
+      <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.protostuff.testDescriptor" />
+      <option name="METHOD_NAME" value="testPBBuilderFieldSet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="testDescriptor.testPBBuilderSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.einstein.codegen.protostuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="codegenerator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.einstein.codegen.protostuff" />
+      <option name="MAIN_CLASS_NAME" value="org.einstein.codegen.protostuff.testDescriptor" />
+      <option name="METHOD_NAME" value="testPBBuilderSet" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1265,19 +1494,19 @@
       <envs />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CodeTempleteTest.getProto" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.GoogleProtoGeneratorTest.generate" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.JavaCodeGeneratorTest.generateCode" />
-      <item index="3" class="java.lang.String" itemvalue="Application.test" />
-      <item index="4" class="java.lang.String" itemvalue="Application.test (1)" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.JavaCodeGeneratorTest.generateCode" />
+      <item index="1" class="java.lang.String" itemvalue="Application.test (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.protostuffTest.testSeriliazable" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.testDescriptor.testPBBuilderFieldSet" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.testDescriptor.testPBBuilderSet" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.test (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.JavaCodeGeneratorTest.generateCode" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GoogleProtoGeneratorTest.generate" />
-        <item index="3" class="java.lang.String" itemvalue="Application.test" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CodeTempleteTest.getProto" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.testDescriptor.testPBBuilderSet" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.testDescriptor.testPBBuilderFieldSet" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.protostuffTest.testSeriliazable" />
+        <item index="3" class="java.lang.String" itemvalue="Application.test (1)" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.JavaCodeGeneratorTest.generateCode" />
       </list>
     </recent_temporary>
   </component>
@@ -1316,60 +1545,63 @@
       <workItem from="1530751909727" duration="49752000" />
       <workItem from="1531106195926" duration="16000" />
       <workItem from="1533006156461" duration="132000" />
-      <workItem from="1533277939876" duration="8076000" />
+      <workItem from="1533277939876" duration="12275000" />
+      <workItem from="1533532936453" duration="211000" />
+      <workItem from="1533629856318" duration="3944000" />
+      <workItem from="1536143728240" duration="39476000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.07.06 at 16h 34m 54s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderFieldSet - 2018.09.07 at 14h 57m 46s.xml">
+      <configuration name="testDescriptor.testPBBuilderFieldSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.07.06 at 17h 09m 58s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderFieldSet - 2018.09.07 at 14h 57m 49s.xml">
+      <configuration name="testDescriptor.testPBBuilderFieldSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.07.06 at 17h 10m 55s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderFieldSet - 2018.09.07 at 14h 57m 55s.xml">
+      <configuration name="testDescriptor.testPBBuilderFieldSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.07.06 at 17h 32m 06s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderSet - 2018.09.07 at 14h 57m 58s.xml">
+      <configuration name="testDescriptor.testPBBuilderSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.07.06 at 17h 33m 55s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderSet - 2018.09.07 at 14h 58m 13s.xml">
+      <configuration name="testDescriptor.testPBBuilderSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.08.03 at 14h 33m 14s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderSet - 2018.09.07 at 14h 58m 17s.xml">
+      <configuration name="testDescriptor.testPBBuilderSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.08.03 at 15h 19m 58s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderSet - 2018.09.07 at 14h 58m 22s.xml">
+      <configuration name="testDescriptor.testPBBuilderSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.08.03 at 15h 21m 17s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderSet - 2018.09.07 at 14h 58m 25s.xml">
+      <configuration name="testDescriptor.testPBBuilderSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.08.03 at 15h 22m 08s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderSet - 2018.09.07 at 14h 58m 28s.xml">
+      <configuration name="testDescriptor.testPBBuilderSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JavaCodeGeneratorTest_generateCode - 2018.08.03 at 15h 26m 28s.xml">
-      <configuration name="JavaCodeGeneratorTest.generateCode" configurationId="JUnit" />
+    <history-entry file="testDescriptor_testPBBuilderSet - 2018.09.07 at 14h 58m 32s.xml">
+      <configuration name="testDescriptor.testPBBuilderSet" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251670000" />
+    <option name="totallyTimeSpent" value="299500000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-62" y="24" width="1920" height="929" extended-state="0" />
+    <frame x="2" y="41" width="1918" height="1005" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.475" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.4664179" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21419676" sideWeight="0.25452608" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08839191" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21419676" sideWeight="0.7454739" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2138794" sideWeight="0.26066098" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08795309" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2138794" sideWeight="0.739339" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2571885" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26492536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1475,145 +1707,15 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/entitys/pb/PBQueryBO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7020">
-          <caret line="52" column="43" lean-forward="false" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IMessage.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IESerializableFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEKeyed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IMutable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/foundation/util/bin/com/pingan/pilot/util/selector/IObjectWithFields.class" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="67" column="21" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="67" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/Java/jdk1.8.0_121/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="211" column="6" lean-forward="false" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar!/com/google/protobuf/Descriptors.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="121" column="65" lean-forward="false" selection-start-line="121" selection-start-column="65" selection-end-line="121" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar!/com/google/protobuf/Parser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/exception/EProtoException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar!/com/google/protobuf/Message.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/OrderField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/test/ITestImmutable.java" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/test/ETest.java" />
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/OrderField.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/pb/PBOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="706" column="41" lean-forward="false" selection-start-line="706" selection-start-column="41" selection-end-line="706" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/ICodeTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/pb/PBChildOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="1251" column="69" lean-forward="false" selection-start-line="1251" selection-start-column="69" selection-end-line="1251" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar!/com/google/protobuf/GeneratedMessageV3.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="1756" column="23" lean-forward="false" selection-start-line="1756" selection-start-column="23" selection-end-line="1756" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/pb/PBOrderField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="395" column="13" lean-forward="false" selection-start-line="395" selection-start-column="13" selection-end-line="395" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderField.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/entitys/api/IQueryBO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
@@ -1621,18 +1723,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrder.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/message/generated-src/org/einstein/message/eproto/entitys/api/IQueryBOImmutable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="11" column="75" lean-forward="false" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/comment.vm">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="-2520">
+          <caret line="125" column="61" lean-forward="false" selection-start-line="125" selection-start-column="61" selection-end-line="125" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -1645,109 +1747,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderFieldImmutable.java">
+    <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/foundation/util/bin/com/pingan/pilot/util/stream/PInputStream.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/proto/proto.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/anno/EProtoEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/GoogleProtoGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/anno/EProtoField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/BaseGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/api/impl/CodeTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="88" column="55" lean-forward="false" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+        <state relative-caret-position="-2965">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#2634#2635#0" expanded="false" />
-            <element signature="e#2698#2699#0" expanded="false" />
+            <marker date="1502153206258" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1502153206258" expanded="false" signature="152:306" ph="..." />
+            <marker date="1502153206258" expanded="false" signature="774:785" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="809:815" ph=" }" />
+            <marker date="1502153206258" expanded="true" signature="843:850" ph="{}" />
+            <marker date="1502153206258" expanded="true" signature="888:974" ph="{...}" />
+            <marker date="1502153206258" expanded="false" signature="1002:1013" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="1029:1035" ph=" }" />
+            <marker date="1502153206258" expanded="true" signature="1097:1215" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="1254:1309" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="1358:1715" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="1763:2253" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="2295:2676" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="2700:2904" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="2954:3573" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="3604:3788" ph="{...}" />
+            <marker date="1502153206258" expanded="false" signature="3816:3827" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="3856:3862" ph=" }" />
+            <marker date="1502153206258" expanded="false" signature="3898:3909" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="3922:3928" ph=" }" />
+            <marker date="1502153206258" expanded="false" signature="3967:3978" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="3999:4005" ph=" }" />
+            <marker date="1502153206258" expanded="true" signature="4048:4055" ph="{}" />
+            <marker date="1502153206258" expanded="true" signature="4081:4196" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="4241:4319" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="4364:4529" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="4557:4691" ph="{...}" />
+            <marker date="1502153206258" expanded="false" signature="4761:4772" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="4806:4812" ph=" }" />
+            <marker date="1502153206258" expanded="false" signature="4868:4879" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="4908:4914" ph=" }" />
+            <marker date="1502153206258" expanded="false" signature="4944:4955" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="4975:4981" ph=" }" />
+            <marker date="1502153206258" expanded="false" signature="5009:5020" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="5040:5046" ph=" }" />
+            <marker date="1502153206258" expanded="true" signature="5094:5548" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="5594:5827" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="5877:6039" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="6093:6162" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="6210:6254" ph="{...}" />
+            <marker date="1502153206258" expanded="true" signature="6298:6605" ph="{...}" />
+            <marker date="1502153206258" expanded="false" signature="6640:6651" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="6668:6674" ph=" }" />
+            <marker date="1502153206258" expanded="false" signature="6699:6710" ph=" { " />
+            <marker date="1502153206258" expanded="false" signature="6726:6732" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/GoogleProtoGeneratorTest.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/comment.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/generator/JavaCodeGeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IChildOrderImmutable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderImmutable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/java/org/einstein/codegen/generator/JavaCodeGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="125" column="61" lean-forward="false" selection-start-line="125" selection-start-column="61" selection-end-line="125" selection-end-column="61" />
+        <state relative-caret-position="126">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1755,41 +1812,15 @@
     <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/interface.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrder.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EChildOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/ISerializable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/Order.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/implement.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="123" column="47" lean-forward="true" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
+        <state relative-caret-position="378">
+          <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -1802,53 +1833,424 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EChildOrder.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/OrderField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="72" lean-forward="false" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
+        <state relative-caret-position="144">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/temp/test.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/dyuproject/protostuff/protostuff-runtime/1.0.7/protostuff-runtime-1.0.7.jar!/com/dyuproject/protostuff/runtime/RuntimeSchema.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+        <state relative-caret-position="95">
+          <caret line="221" column="32" lean-forward="false" selection-start-line="221" selection-start-column="20" selection-end-line="221" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EChildOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#364#365#0" expanded="false" />
+            <element signature="e#402#403#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#538#539#0" expanded="false" />
+            <element signature="e#573#574#0" expanded="false" />
+            <element signature="e#621#622#0" expanded="false" />
+            <element signature="e#652#653#0" expanded="false" />
+            <element signature="e#693#694#0" expanded="false" />
+            <element signature="e#730#731#0" expanded="false" />
+            <element signature="e#764#765#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#843#844#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#915#916#0" expanded="false" />
+            <element signature="e#945#946#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/protobuf/ChildOrder.proto">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EOrderField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="61" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#313#314#0" expanded="false" />
+            <element signature="e#339#340#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
+            <element signature="e#422#423#0" expanded="false" />
+            <element signature="e#465#466#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#562#563#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/test/proto/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderFieldImmutable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/message/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/framework/messaging/qpid/bin/com/pingan/pilot/msg/qpid/test/QpidQNSCompressionPackingTest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/framework/messaging/api/bin/com/pingan/pilot/messaging/api/msg/PMsgPacketEncoder$ECompression.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderField.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/resources/template/entity/java/implement.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="64" lean-forward="true" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPAbstractProtoObject.java">
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="85" lean-forward="false" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
+        <state relative-caret-position="108">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEVersion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEKeyed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/EPSerializable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="648">
+          <caret line="42" column="29" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IChildOrderImmutable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/api/IOrderImmutable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EChildOrderImmutable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="87" column="46" lean-forward="false" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEProtoObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/IEInheritedProtoObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar!/com/google/protobuf/Descriptors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1611">
+          <caret line="1249" column="52" lean-forward="false" selection-start-line="1249" selection-start-column="52" selection-end-line="1249" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="49" column="21" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="49" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/kevin/0C3219170C321917/task/C-002/core-framework/foundation/util/bin/com/pingan/pilot/util/PropertyUtilities.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-395">
+          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <marker date="1502153207467" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1502153207467" expanded="true" signature="203:210" ph="{}" />
+            <marker date="1502153207467" expanded="true" signature="292:608" ph="{...}" />
+            <marker date="1502153207467" expanded="true" signature="678:990" ph="{...}" />
+            <marker date="1502153207467" expanded="true" signature="1063:1373" ph="{...}" />
+            <marker date="1502153207467" expanded="true" signature="1452:1766" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/core/src/main/java/org/einstein/core/util/PropertyUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar!/com/google/protobuf/GeneratedMessageV3.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="1857" column="27" lean-forward="false" selection-start-line="1857" selection-start-column="27" selection-end-line="1857" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/pb/PBOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="693" column="35" lean-forward="false" selection-start-line="693" selection-start-column="35" selection-end-line="693" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/protostuffTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="36" column="53" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="36" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/proto/implement/testImplements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/EOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="20" />
+          <folding>
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2184#2185#0" expanded="true" />
+            <element signature="e#2235#2236#0" expanded="true" />
+            <element signature="e#2262#2263#0" expanded="true" />
+            <element signature="e#2310#2311#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/src/main/test/java/org/einstein/codegen/protostuff/testDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#566#602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/api/impl/AbstractProtoObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/eproto/src/main/java/org/einstein/eproto/serilizable/POSerializable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1893">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2042#2043#0" expanded="true" />
+            <element signature="e#2072#2073#0" expanded="true" />
+            <element signature="e#2107#2108#0" expanded="true" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2319#2320#0" expanded="true" />
+            <element signature="e#2373#2374#0" expanded="true" />
+            <element signature="e#2409#2410#0" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+            <element signature="e#2482#2483#0" expanded="true" />
+            <element signature="e#2573#2574#0" expanded="true" />
+            <element signature="e#2612#2613#0" expanded="true" />
+            <element signature="e#2706#2707#0" expanded="true" />
+            <element signature="e#2746#2747#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2886#2887#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coreframework/code-generator/target/generated-src/org/einstein/test/proto/entitys/entity/EOrderImmutable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#1250#1251#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#1519#1520#0" expanded="true" />
+            <element signature="e#1565#1566#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1699#1700#0" expanded="true" />
+            <element signature="e#1761#1762#0" expanded="true" />
+            <element signature="e#1805#1806#0" expanded="true" />
+            <element signature="e#1856#1857#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1931#1932#0" expanded="true" />
+            <element signature="e#1959#1960#0" expanded="true" />
+            <element signature="e#2003#2004#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#2114#2115#0" expanded="true" />
+            <element signature="e#2186#2187#0" expanded="true" />
+            <element signature="e#2213#2214#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

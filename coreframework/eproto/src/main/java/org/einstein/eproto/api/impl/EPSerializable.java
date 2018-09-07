@@ -37,7 +37,7 @@ public abstract class EPSerializable<T extends com.google.protobuf.GeneratedMess
         return this.builder.build().toByteArray();
     }
 
-    public T deSerialize(byte[] bytes) throws EProtoException {
+    protected T deSerialize(byte[] bytes) throws EProtoException {
         try {
             return parser.parseFrom(bytes);
         } catch (InvalidProtocolBufferException e) {

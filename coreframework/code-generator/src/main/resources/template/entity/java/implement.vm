@@ -7,7 +7,7 @@ import $import;
 
 public class ${entityName} extends ${supperClass} implements ${mutableInterface}{
 
-    static final int PROTO_CLASS_ID = ${PROTO_CLASS_ID};
+    public static final int PROTO_CLASS_ID = ${PROTO_CLASS_ID};
 
 #####################################################################
 ## ALL FIELDS
@@ -24,7 +24,7 @@ public class ${entityName} extends ${supperClass} implements ${mutableInterface}
     private ${supperClassImmutableInterface} m_parent;
 #end
 
-    private static com.google.protobuf.Descriptors.Descriptor descriptor;
+    private com.google.protobuf.Descriptors.Descriptor descriptor;
 #####################################################################
 ## ALL FIELD INDEX AND FIELD NAME LIST
 #####################################################################

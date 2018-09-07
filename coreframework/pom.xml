@@ -15,6 +15,7 @@
         <module>eproto</module>
         <module>code-generator</module>
         <module>message</module>
+        <module>core</module>
     </modules>
 
 

@@ -67,6 +67,22 @@
             <version>3.5.1</version>
         </dependency>
 
+        <!-- protostuff -->
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>1.0.7</version>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>1.0.7</version>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

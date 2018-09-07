@@ -17,6 +17,12 @@
             <artifactId>protobuf-java</artifactId>
             <version>3.5.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.beta.einstein</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

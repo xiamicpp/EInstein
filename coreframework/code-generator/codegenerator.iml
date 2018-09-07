@@ -24,6 +24,11 @@
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />
     <orderEntry type="module" module-name="eproto" />
+    <orderEntry type="module" module-name="core" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.5.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.dyuproject.protostuff:protostuff-core:1.0.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.dyuproject.protostuff:protostuff-runtime:1.0.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.dyuproject.protostuff:protostuff-collectionschema:1.0.7" level="project" />
   </component>
 </module>
